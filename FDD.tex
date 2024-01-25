@@ -1,0 +1,44 @@
+\documentclass[12pt,a4paper]{report}
+
+% Packages for enhanced functionality
+\usepackage{graphicx} % To include images
+\usepackage{hyperref} % For hyperlinks
+\usepackage{amsmath}  % For mathematical expressions
+\usepackage{amsfonts} % For mathematical fonts
+\usepackage{geometry} % For page layout
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+%Created by ChatGPT 4, courtesy of Pascal.
+
+
+% Since \include forces a new page, use it thoughtfully
+% Cover Page
+% Note: With \include, make sure to not include file extension
+\include{files/general/coverpageEHW}
+% If the Tachyon cover page is for a different section/part, include it where appropriate
+%\include{/files/general/coverpageTachyon}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Introduction
+\include{files/general/introduction}
+
+% Mechanical Systems
+\include{files/mech/mechanical}
+
+% Traction Systems
+\include{files/mech/traction}
+
+% Electrical Systems
+\include{files/elec/electrical}
+
+% Safety
+\include{files/general/safety}
+
+% Testing
+\include{files/general/testing}
+
+\end{document}
