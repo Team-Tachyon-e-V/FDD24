@@ -6,7 +6,19 @@
 \usepackage{amsmath}  % For mathematical expressions
 \usepackage{amsfonts} % For mathematical fonts
 \usepackage{geometry} % For page layout
+\usepackage{tikz} % for diagrams
+
 \geometry{a4paper, margin=1in}
+
+%This limits the depth of table of contents to 2 step until subsections
+\setcounter{tocdepth}{2}
+
+\usepackage{titlesec}
+
+% Remove "Chapter" prefix from chapter titles
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+
 
 \begin{document}
 %Created by ChatGPT 4, courtesy of Pascal.
