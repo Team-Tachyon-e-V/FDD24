@@ -1,0 +1,229 @@
+\documentclass[a4paper, twoside,  12pt]{article}
+% !TEX TS-program = xelatex
+
+%% Global Variables
+\def\ehw{\textbf{EHW}}
+\def\randr{\textit{\textbf{Rules \& Regulations}}}
+
+
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{subfig}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{sectsty}
+\usepackage{apacite}
+\usepackage{float}
+\usepackage{titling} 
+\usepackage{blindtext}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tabularray}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{wallpaper}
+\usepackage{background}
+\usepackage{afterpage}
+\definecolor{ehwBlue}{rgb}{0, 0, 0.741}
+\definecolor{ehwOrange}{rgb}{0.839,0.8117,0.72156}
+\usepackage{titlesec}
+\usepackage{colortbl}
+\usepackage{fontspec}
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\usepackage{geometry}
+\usepackage{mfirstuc}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage[nameinlink]{cleveref}
+\usepackage{caption}
+\usepackage[
+        backend=biber,
+        style=authoryear-comp,
+        sorting=nyt,
+    ]{biblatex}
+\addbibresource{ref.bib} 
+\setlength{\parindent}{0cm} %  This changes the indentation of all paragraphs in the document
+
+
+\backgroundsetup{
+    scale=1,
+    color=black,
+    opacity=0.8,
+    angle=0,
+    contents={\includegraphics[width=21cm]{images/BackgroundPage.png}}
+}
+
+\titleformat{\section} % Changes the font  color for all section titles
+{\color{ehwBlue}\normalfont\Large\bfseries}
+{\thesection}
+{1em}
+{}
+\titleformat{\subsection}% Changes the font  color for all subsection titles
+{\color{ehwBlue}\normalfont\large\bfseries}
+{\thesubsection}
+{1em}
+{}
+\titleformat{\subsubsection}% Changes the font  color for all subsubsection titles
+{\color{ehwBlue}\normalfont\large\bfseries}
+{\thesubsubsection}
+{1em}
+{}
+
+\arrayrulecolor{ehwBlue} % This changes the color of all tables to EHW blue
+\setmainfont{Regular.ttf} % Sets the font of the document to regular Breite Grotesk
+% 
+\newfontfamily\headingfont[]{Light.ttf} % Changes the type of font for the headers
+\titleformat*{\section}{\LARGE \color{ehwBlue}{\headingfont}}
+\titleformat*{\subsection}{\Large\color{ehwBlue}{\headingfont}}
+\titleformat*{\subsubsection}{\large\color{ehwBlue}{\headingfont}}
+
+
+
+\renewcommand{\labelitemi}{\textcolor{ehwBlue}{$\bullet$}} % There was a mistake with itemize list. So this fixes it by making all the points bullets.
+
+\fancypagestyle{mypagestyle}{%
+  \fancyhf{}% Clear header/footer
+  \fancyhead[OC]{\textcolor{ehwBlue}{European Hyperloop Week}}% Author on Odd page, Centred
+  \fancyhead[EC]{\textcolor{ehwBlue}{Rules \& Regulations}}% Title on Even page, Centred
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{.4pt}% Header rule of .4pt
+  \renewcommand{\headrule}{\color{ehwBlue}\hrule}
+  \fancyfoot[C]{\color{ehwBlue}{\textbf{\thepage}}}
+} % This creates a new type of page setup, where the odd pages are marked with European Hyperloop week and the even pages say the name of the document
+
+\fancypagestyle{nobgpagestyle}{%
+  \fancyhf{}% Clear header/footer
+  % Define any other formatting for the blank pages here
+}
+\setlength{\footskip}{45pt} % With this I changed the position of the page numbers so that it fits into the image
+
+\newfontfamily\italicfont{Condensed.ttf} % Sets the italics font to Condensed Breite Grotesk. I couldn't make it work by normal means since the ttf package apparently doesn't contain information regarding how the font will look in italics or bold.
+
+\newgeometry{top=1in, bottom=1in, left=1in, right=1in}
+
+\setlength\extrarowheight{4.5pt} % This increases the size of the cells so the text seems to fit better.
+
+% This is to create an intentionally left-blank page
+\newcommand{\blankpage}{
+  \thispagestyle{nobgpagestyle}
+  \begin{center}
+    \vspace*{\fill}
+    This page has been left intentionally blank.
+    \vspace*{\fill}
+  \end{center}
+  \newpage
+}
+
+\setlength{\footskip}{60pt} % With this I changed the position of the page numbers so that it fits into the image
+
+\renewcommand{\textbf}[1]{\textcolor{ehwBlue}{#1}} % Changes the definition of textbf
+
+% Change caption format
+\DeclareCaptionLabelFormat{blue}{\textcolor{ehwBlue}{#1 #2}}
+\captionsetup[table]{labelformat=blue}
+\captionsetup[figure]{labelformat=blue}
+
+% Redefine the appearance of the checkbox
+% Define a counter for the checkboxes
+\newcounter{checkboxcount}
+\setcounter{checkboxcount}{0}
+
+% Define the checkbox style with blue border
+\newcommand{\bluecheckbox}{%
+  \stepcounter{checkboxcount}%
+  \textcolor{ehwBlue}{\CheckBox[height=0.4cm, width=0.4cm, name=task\thecheckboxcount]{}}
+}
+
+%%%%%%%% DOCUMENT %%%%%%%%
+\begin{document}
+\NoBgThispage
+
+%%%% Title Page
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% horizontal line and its thickness
+\center 
+ 
+% University
+\includegraphics[width=0.2\textwidth]{images/ZurichImage.png}\\[1cm]
+
+% Document info
+								% Course Code
+{\color{ehwBlue}\HRule} \\[0.8cm]
+{\fontsize{36}{42}\selectfont \bfseries \textcolor{ehwBlue}{{Template Document }}}\\[0.7cm]		% Assignment
+{\color{ehwBlue}\HRule} \\[2cm]
+\textsc{\LARGE\textcolor{ehwBlue}{ European Hyperloop Week}}\\[1cm]
+\large
+
+
+\textcolor{ehwBlue}{Tech Committee}\\[1.5cm]
+\huge \textcolor{ehwBlue}{\today}\\[4cm]
+\includegraphics[width=0.3\textwidth]{images/LogoBlue.png}\\[1cm] 	% University logo
+\vfill 
+\ThisLRCornerWallPaper{1}{images/BackgroundCover.png}
+\end{titlepage}
+\pagestyle{mypagestyle}
+% \begin{center}
+%     \makebox[\textwidth]{ \includegraphics[width=\paperwidth]{images/image9.png}}
+% \end{center}
+
+
+%\begin{abstract}
+%%Your abstract.
+%%\end{abstract}
+
+%%%% SECTIONS
+%% Section 1
+
+\blankpage
+
+\input{Sections/Foreword}
+\newpage
+
+\blankpage
+
+\tableofcontents
+\vfill
+
+All rights reserved. No part of this publication may be copied, reproduced, or distributed in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the EHW 2023-2024 Committee and Team Tachyon e.V., except in the case of brief quotations embodied in critical reviews and certain other non-commercial uses permitted by copyright law.
+
+\begin{center}
+    {\huge \italicfont{\today, the EHW Committee}}\\
+\end{center}
+
+\newpage
+\blankpage
+\input{Sections/Introduction}
+\input{Sections/System}
+
+
+\setlength\bibitemsep{\baselineskip} % Add this line to insert a blank line between bibliography items
+
+\printbibliography
+
+
+
+
+
+
+
+
+
+\end{document}

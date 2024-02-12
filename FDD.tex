@@ -1,19 +1,140 @@
 \documentclass[12pt,a4paper]{report}
+% !TEX TS-program = xelatex
 
-% Packages for enhanced functionality
+%%Global shortcuts/variables
+\def\ehw{\textbf{EHW}}
+\def\randr{\textit{\textbf{Rules \& Regulations}}}
+
+
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{subfig}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm,bottom=1cm,left=2cm,right=2cm,marginparwidth=1.5cm]{geometry}
+
+
+% Packages 
 \usepackage{graphicx} % To include images
-\usepackage{hyperref} % For hyperlinks
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % For hyperlinks
 \usepackage{amsmath}  % For mathematical expressions
 \usepackage{amsfonts} % For mathematical fonts
-\usepackage{geometry} % For page layout
 \usepackage{tikz} % for diagrams
 
-\geometry{a4paper, margin=1in}
+\usepackage{sectsty}
+\usepackage{float}
+\usepackage{titling} 
+\usepackage{blindtext}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tabularray}
+\usepackage{gensymb}
+\usepackage{wallpaper}
+\usepackage{background}
+\usepackage{afterpage}
+\definecolor{ehwBlue}{rgb}{0, 0, 0.741}
+\definecolor{ehwOrange}{rgb}{0.839,0.8117,0.72156}
+\usepackage{titlesec}
+\usepackage{colortbl}
+\usepackage{fontspec}
+
+\usepackage{mfirstuc}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage[nameinlink]{cleveref}
+
 
 %This limits the depth of table of contents to 2 step until subsections
 \setcounter{tocdepth}{2}
 
-\usepackage{titlesec}
+
+\titleformat{\section} % Changes the font  color for all section titles
+{\color{ehwBlue}\normalfont\Large\bfseries}
+{\thesection}
+{1em}
+{}
+\titleformat{\subsection}% Changes the font  color for all subsection titles
+{\color{ehwBlue}\normalfont\large\bfseries}
+{\thesubsection}
+{1em}
+{}
+\titleformat{\subsubsection}% Changes the font  color for all subsubsection titles
+{\color{ehwBlue}\normalfont\large\bfseries}
+{\thesubsubsection}
+{1em}
+{}
+
+\arrayrulecolor{ehwBlue} % This changes the color of all tables to EHW blue
+\setmainfont{Regular.ttf} % Sets the font of the document to regular Breite Grotesk
+% 
+\newfontfamily\headingfont[]{Light.ttf} % Changes the type of font for the headers
+\titleformat*{\section}{\LARGE\color{ehwBlue}{\headingfont}}
+\titleformat*{\subsection}{\LARGE\color{ehwBlue}{\headingfont}}
+\titleformat*{\subsubsection}{\LARGE\color{ehwBlue}{\headingfont}}
+
+\setlength{\headheight}{2pt}
+
+\renewcommand{\labelitemi}{\textcolor{ehwBlue}{$\bullet$}} % There was a mistake with itemize list. So this fixes it by making all the points bullets.
+
+
+%%%Optional. \iffalse if otherwise.
+\iffalse
+\fancypagestyle{mypagestyle}{%
+  \fancyhf{}% Clear header/footer
+  \fancyhead[OC]{\textcolor{ehwBlue}{European Hyperloop Week}}% Author on Odd page, Centred
+  \fancyhead[EC]{\textcolor{ehwBlue}{Rules \& Regulations}}% Title on Even page, Centred
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{.4pt}% Header rule of .4pt
+  \renewcommand{\headrule}{\color{ehwBlue}\hrule}
+  \fancyfoot[C]{\color{ehwBlue}{\textbf{\thepage}}}
+} % This creates a new type of page setup, where the odd pages are marked with European Hyperloop week and the even pages say the name of the document
+
+\fancypagestyle{nobgpagestyle}{
+  \fancyhf{}% Clear header/footer
+  % Define any other formatting for the blank pages here
+}
+\fi
+
+
+
+
+\setlength{\footskip}{25pt} % With this I changed the position of the page numbers so that it fits into the image
+
+\newfontfamily\italicfont{Condensed.ttf} % Sets the italics font to Condensed Breite Grotesk. I couldn't make it work by normal means since the ttf package apparently doesn't contain information regarding how the font will look in italics or bold.
+
+%\newgeometry{top=1in, bottom=1in, left=1in, right=1in}
+
+\setlength\extrarowheight{4.5pt} % This increases the size of the cells so the text seems to fit better.
+
+% This is to create an intentionally left-blank page
+\newcommand{\blankpage}{
+  \thispagestyle{nobgpagestyle}
+  \begin{center}
+    \vspace*{\fill}
+    This page has been left intentionally blank.
+    \vspace*{\fill}
+  \end{center}
+  \newpage
+}
+
+% Redefine the appearance of the checkbox
+% Define a counter for the checkboxes
+\newcounter{checkboxcount}
+\setcounter{checkboxcount}{0}
+
+% Define the checkbox style with blue border
+\newcommand{\bluecheckbox}{%
+  \stepcounter{checkboxcount}%
+  \textcolor{ehwBlue}{\CheckBox[height=0.4cm, width=0.4cm, name=task\thecheckboxcount]{}}
+}
+
+
 
 % Remove "Chapter" prefix from chapter titles
 \titleformat{\chapter}[display]
@@ -27,30 +148,30 @@
 % Since \include forces a new page, use it thoughtfully
 % Cover Page
 % Note: With \include, make sure to not include file extension
-\include{files/general/coverpageEHW}
+\include{texfiles/general/coverpageEHW}
 % If the Tachyon cover page is for a different section/part, include it where appropriate
-%\include{/files/general/coverpageTachyon}
+%\include{/texfiles/general/coverpageTachyon}
 
 % Table of Contents
 \tableofcontents
 \newpage
 
 % Introduction
-\include{files/general/introduction}
+\include{texfiles/general/introduction}
 
 % Mechanical Systems
-\include{files/mech/mechanical}
+\include{texfiles/mech/mechanical}
 
 % Traction Systems
-\include{files/mech/traction}
+\include{texfiles/mech/traction}
 
 % Electrical Systems
-\include{files/elec/electrical}
+\include{texfiles/elec/electrical}
 
 % Safety
-\include{files/general/safety}
+\include{texfiles/general/safety}
 
 % Testing
-\include{files/general/testing}
+\include{texfiles/general/testing}
 
 \end{document}
