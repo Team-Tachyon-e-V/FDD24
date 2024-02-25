@@ -5,7 +5,7 @@
 \def\ehw{\textbf{EHW}}
 \def\randr{\textit{\textbf{Rules \& Regulations}}}
 
-
+%%Template provided by EHW. Tachyon Hyperloop added minor changes.
 %%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
 %% Language and font encodings
 \usepackage[english]{babel}
@@ -24,6 +24,9 @@
 \usepackage{amsfonts} % For mathematical fonts
 \usepackage{tikz} % for diagrams
 
+
+
+\usepackage{verbatim}
 \usepackage{sectsty}
 \usepackage{float}
 \usepackage{titling} 
@@ -33,7 +36,7 @@
 \usepackage{xcolor}
 \usepackage[shortlabels]{enumitem}
 \usepackage{tabularray}
-\usepackage{gensymb}
+\usepackage{textcomp, gensymb}
 \usepackage{wallpaper}
 \usepackage{background}
 \usepackage{afterpage}
@@ -42,6 +45,8 @@
 \usepackage{titlesec}
 \usepackage{colortbl}
 \usepackage{fontspec}
+\usepackage{forloop}
+
 
 \usepackage{mfirstuc}
 \usepackage{longtable}
@@ -54,19 +59,23 @@
 %This limits the depth of table of contents to 2 step until subsections
 \setcounter{tocdepth}{2}
 
-
-\titleformat{\section} % Changes the font  color for all section titles
+\titleformat{\chapter} % Changes the font  color for all chapter titles
 {\color{ehwBlue}\normalfont\Large\bfseries}
 {\thesection}
 {1em}
 {}
-\titleformat{\subsection}% Changes the font  color for all subsection titles
+\titleformat{\section} % Changes the font  color for all section titles
 {\color{ehwBlue}\normalfont\large\bfseries}
+{\thesection}
+{1em}
+{}
+\titleformat{\subsection}% Changes the font  color for all subsection titles
+{\color{ehwBlue}\normalfont\normalsize\bfseries}
 {\thesubsection}
 {1em}
 {}
 \titleformat{\subsubsection}% Changes the font  color for all subsubsection titles
-{\color{ehwBlue}\normalfont\large\bfseries}
+{\color{ehwBlue}\normalfont\normalsize\bfseries}
 {\thesubsubsection}
 {1em}
 {}
@@ -75,9 +84,9 @@
 \setmainfont{Regular.ttf} % Sets the font of the document to regular Breite Grotesk
 % 
 \newfontfamily\headingfont[]{Light.ttf} % Changes the type of font for the headers
-\titleformat*{\section}{\LARGE\color{ehwBlue}{\headingfont}}
-\titleformat*{\subsection}{\LARGE\color{ehwBlue}{\headingfont}}
-\titleformat*{\subsubsection}{\LARGE\color{ehwBlue}{\headingfont}}
+\titleformat*{\section}{\Large\color{ehwBlue}{\headingfont}}
+\titleformat*{\subsection}{\large\color{ehwBlue}{\headingfont}}
+\titleformat*{\subsubsection}{\large\color{ehwBlue}{\headingfont}}
 
 \setlength{\headheight}{2pt}
 
@@ -139,7 +148,7 @@
 
 % Remove "Chapter" prefix from chapter titles
 \titleformat{\chapter}[display]
-  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+  {\normalfont\huge\bfseries}{}{0pt}{\LARGE}
 
 
 \begin{document}
@@ -155,7 +164,7 @@
 
 % Table of Contents
 \tableofcontents
-\newpage
+
 
 % Introduction
 \include{texfiles/general/introduction}
@@ -174,5 +183,7 @@
 
 % Testing
 \include{texfiles/general/testing}
+
+
 
 \end{document}
