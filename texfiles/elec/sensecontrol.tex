@@ -1,13 +1,20 @@
-\section{Sensing and Control}
+
 
 \subsection{Introduction}
-Our S\&C part consists of a 
+Our S\&C subsystem consists of a 
 \begin{itemize}
-    \item Braking Controller, using a TMS
-    \item Thermal (Cooling) Controller
-    \item Telemetry Device
-    \item CAN Bus
-    \item GUI/Logging system
+    \item Control Boards: \begin{itemize}
+            \item Braking Controller
+            \item Thermal (Cooling) Controller
+    \end{itemize}
+
+    \item Telemetry Device: \begin{itemize}
+            \item CAN Bus
+            \item Telemetry Transceiver
+            \item Network Transceiver
+            \item GUI/Logging system
+    \end{itemize}
+
 \end{itemize}
 
 \subsubsection{FDD.9 Budget, Funding, and Manufacturing Methods}
@@ -47,20 +54,14 @@ Parts list:
 \begin{table}[h]
     \centering
     \caption{Parts List}
+        \begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
         \textbf{Amount} & \textbf{Name} & \textbf{Company, (Serial Number)} & \textbf{Dimensions [mm x mm x mm]} & \textbf{Weight [kg]} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
         \hline
-        1 & Power Inverter & Leadrive EV0019 & 300x300x150 & 9 & 800V & 200A \\
-        \hline
-        1 & Motor & Emrax 188AC & 200x200x200 & 15 & 120V & 50A \\
-        \hline
-        2 & HV Battery Pack & GrePow & 6x4x2 inches & 20 & 444V & 200A \\
-        \hline
-        2 & LV Battery Packs & KingLong & 150x70x50 & 5 & 24V & 20A \\
-        \hline
         32 & Additional Temperature Sensors (NTC, 10k Ohm) & Company & 2x2x2 & 0 & - & - \\
     \end{tabular}
+        \end{adjustbox}
 \end{table}
 
 
