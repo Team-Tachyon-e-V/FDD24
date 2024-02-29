@@ -1,0 +1,114 @@
+\subsection{Overview}
+%Electrical overview content here
+(a) Explain the main requirements and constraints that drive the design. \\
+Strict EHW rules \\
+reliability \\
+reusability \\
+lightweight \\
+power of pump, valves etc. 
+
+\par Our Low Voltage system drives all electrical and digital control systems of the Fermion. As stated previously,
+reliability is crucial in this case. A failure of any component may lead to the shutdown of critical systems, such as the battery management system.
+Furthermore, an overvoltage may potentially damage these systems, causing safety hazards. We had the option between building a LV battery pack from spare LiPo cells we ordered for the HV battery pack, and using automotive-grade ventilated lead-acid batteries.
+After considering the safety problems of LiPo cells and the efforts of either building a second (smaller) LV BMS or taking the risk of having a singular point of failure by controlling both systems with the same BMS, powering the BMS with the cells it controls, we went for the approach with lead-acid batteries, that is widely used in automotive systems \\
+\subsubsection*{Power requirements}
+To calculate the power requirements, let's consider the power consumption of each component:
+
+
+( Moussa: Bitte finde die einzelnen Daten heraus. Pumpe ist Pierburg CW150A. Valve ist bei den brakes controllern. Raspberry Pi und Microcontroller passen.)
+\begin{itemize}
+    \item \textbf{Solenoid Valves:} Assuming 4 valves à 5 Watts = 20 Watts
+    \item \textbf{Thermal Pump:} Given the thermal pump specifications (12V, 9A), the power consumption is \(12 \, \text{V} \times 9 \, \text{A} = 108 \, \text{W}\) max.
+
+    \item \textbf{Raspberry Pi 4:}
+        \item Total power for 1 Raspberry Pi 4: \(10 \, \text{W}\).
+
+    \item \textbf{Microcontrollers (TIC2000 F280039C):}
+    \begin{itemize}
+        \item Microcontroller power consumption can vary. Assuming around 2 Watts for each microcontroller.
+        \item Total power for 3 microcontrollers: \(3 * 2  \text{W} = 6 \, \text{W}\).
+    \end{itemize}
+
+    \item \textbf{BMS (Orion BMS 2 for 120 Cells):}
+    \begin{itemize}
+        \item Power consumption can vary based on the specific BMS model. Assuming around 10 Watts.
+    \end{itemize}
+
+    \item \textbf{Leadrive Inverter:} Power consumption of the inverter can vary. Assuming around 50 Watts for this calculation.
+
+    \item Network transceiver: We use the Rocket M2, which consumes up to 6 Watt of energy.
+\end{itemize}
+
+Now, summing up all the power requirements:
+
+\[ 20 \, \text{W} + 108 \, \text{W} + 5 \, \text{W} + 6 \, \text{W} + 10 \, \text{W} + 50 \, \text{W} = 210 \, \text{W} \]
+
+So, the estimated power requirement for the system, considering these components, is approximately 210 Watts, or roughly 8.5 A at 24 V. \\
+Using the discharge chart of the data sheet of the LV Battery (at Moussa: Bitte Bild von Discharge Time - Discharge Current einfügen),
+it is evident that even at full power (9A - including some headroom for losses), we can run our low voltage system for 20 minutes. During the competition, we can rule out that we will use that much power over the whole 20 minutes. If we assume that the thermal system
+is activated while the HV system is at work, and that this duration takes 2 minutes maximum (the actual run will be much less - max. 20 seconds), and we assume only a usage of 100 W for the rest of the time,
+we can use the LV battery for well over 20 minutes. 
+In conclusion, the capacity of 9Ah is a trade-off between the mass and the available runtime of the system.
+\subsection{Electrical and mechanical design process}
+%Electrical and mechanical design process content here
+\subsubsection{(a) Present Schematics or logic diagrams of the boards.}
+\subsubsection{(b) Present temperature simulations for vacuum conditions.}
+For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the
+lack of gas flow, which eliminates the cooling heat flow from winds. The simulation tool solves
+the heat transfer equation \( \frac{\partial T}{\partial t} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} + \frac{\partial^2 T}{\partial z^2} \right) \)
+by discretizing through Finite-Element-Methods.
+
+\subsection{Electrical system characteristics}
+%Content of the electrical system characteristics here
+\begin{table}
+    \centering
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|}
+       \hline
+       \textbf{Column 1} & \textbf{Column 2}  \\
+       \hline
+       Battery Type & Lead-Acid(integrated)\\
+       \hline
+       Capacity[Ah] & 9 \\
+       \hline
+       Nominal Voltage[V] & 12 \\
+       \hline
+       Cell configuration & 2s \\
+       \hline
+       Max. discharge [A] & 10 \\
+       \hline
+       Weight per cell [Kg] & 2,7 \\
+       \hline 
+       Dimensions per cell (L x W x H)[mm] & 151 x 65 x 94 \\
+       \hline 
+    \end{tabular}
+    \end{adjustbox}
+    \label{Low Voltage Battery Specs}
+\end{table}    
+
+\subsection{Interface with other system}
+%Interface with other system content here n
+(a) Briefly reference the communication protocols or control mechanisms of the boards, which should be explained in the respective Sense and Control subsection. \\
+All the electric subsystems are located within the pod. \\
+It powers the entire sensing, control and telemetry system. 
+The LV battery itself does not communicate. Its sensor data is processed by the thermal control board.
+When the voltage drops below a certain threshold, the complete system shuts down.
+
+\subsection{Final system description}
+%Description of the system here
+The two lead-acid batteries, chained in series, provide a nominal voltage of 24V (12V each). When fully charged, the voltage can increase to up to 26V. The lead acid batteries have the problem of voltage drops while discharging. Hence, we monitor the voltage while using the LV battery system.
+
+The 24 V power source gets transferred down to 12V (for the Thermal Pump) and 5V for the micro-controllers by buck converters, and drives the valves and several sensors at 24V simultaneously. It is being monitored by NTC thermistors for overheating, and by the thermal system for undervoltage. \\
+After reaching out to the EHW technical committee, we were able to clarify that a BMS, used by Lithium-Ion batteries, is not required for lead-acid batteries due to the inherently different chemical structure which makes over- and undercharging much less critical.
+
+For charging, we are using a battery charger specified for 12V and 24V lead acid cells from Würth  0510955908. The charging of lead-acid batteries in series is unproblematic, given that we regularly test for drifts and manually balance the cells.
+
+\subsection{Manufacturing process}
+%Manufacturing process content here
+As the cells come in hard-shell covers already, the manufacturing process is not very complicated. We will 3D-print a casing.
+
+\subsection{Testing}
+%Testing content here
+We will test whether the lead acid cells and the thermistors are accurate to their datasheet.
+%\subsection{FMEA}
+%FMEA content here
