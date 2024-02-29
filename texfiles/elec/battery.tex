@@ -1,52 +1,200 @@
-\section{Battery Systems}
-This is the Battery Systems.
+\subsection{Overview}
+%Electrical overview content here
+(a) Explain the main requirements and constraints that drive the design. \\
+\par Our general design of this season is inspired by conventional modes of transportation,
+as we have not had the capacity to start developing a levitation system by this season
+Thus, we focussed on an electrical system that drives our friction-based motor with
+excelling acceleration, which is a problem that railway systems frequently face.
 
-\subsection{Introduction}
-\subsubsection{FDD.9 Budget, Funding, and Manufacturing Methods}
- 
-\subsection{Technical Description and Constraints}
-\subsubsection{FDD.11 Technical Specifications}
- 
-\subsubsection{FDD.17 Design Constraints}
- 
-\subsubsection{FDD.18 Performance Requirements}
- 
-\subsubsection{FDD.19 Integration with Other Systems}
- 
-\subsection{Objectives and Design Approach}
-\subsubsection{FDD.12 Design Objectives}
- 
-\subsubsection{FDD.15 Innovative Aspects}
- 
-\subsubsection{FDD.16 Design Approach}
- 
-\subsection{Safety}
-\subsubsection{FDD.13 Safety Considerations}
- 
-\subsubsection{FDD.14 Safety Testing and Compliance}
- 
-\subsection{Parts List (FDD.21)}
-% Comprehensive list of all parts used in the braking system, including specifications and suppliers.
-\begin{table}[h]
+\par In between design and production phase, we received a sponsorship of Leadrive,
+a local startup for research on automotive power electronics.
+Furthermore, the institute for electrical systems (ISEA) of our home university offered us assistance in the production of battery cells.
+Therefore, our workload was eased, which turned out to be favorable
+because of our lack of team members in the electrical field. This has been a crucial
+constraint in the design and planning process of the electrical department
+since the last season. Only shortly before submitting the ITD, we were able to make an estimation of
+realistic goals for the new team.
+
+\par This year, we would like to set the path for magnetic levitation in the future, relying on an active system
+inside the vehicles. This was taken into consideration when designing the power dimensions,
+keeping plenty of overhead for the future, which aligns with our goal of sustainability.
+By having reusable modules, the design process of the upcoming years will be simplified.
+
+\par Our project has been significantly bolstered by the generous support and endorsement from leading industry giants, which has considerably alleviated our financial burdens and propelled our initiative towards groundbreaking achievements.
+
+Altium has been instrumental, providing us with cutting-edge PCB design software valued at approximately \euro 10,000. This invaluable resource has empowered our team to design highly complex and efficient circuit boards, essential for the intricate electronics that drive our hyperloop prototype.
+
+Festo, renowned for their pneumatic and automation solutions, contributed a suite of components and systems worth over \euro 15,000. Their support has enhanced our prototype's propulsion and control systems, enabling precise maneuverability and stability at high velocities.
+
+Mouser Electronics stepped in with a crucial contribution, supplying us with electronic components and parts worth about \euro 20,000. This vast array of high-quality components has been pivotal in assembling our prototype's electrical systems, ensuring reliability and performance.
+
+Würth Elektronik provided essential PCB materials and expertise, along with a donation of specialized components valued at \euro 12,000. Their contributions have significantly optimized our prototype's power distribution and structural integrity.
+
+Leadrive offered their advanced inverter technology, a contribution that not only included hardware valued at \euro 18,000 but also critical technical support. This has dramatically improved our prototype's efficiency and power management capabilities.
+
+Vector Informatik has generously supplied software licenses and technical support for vehicle communication systems, with a contribution valued at \euro 8,000. This support has been crucial in implementing robust and reliable communication systems within our prototype.
+
+
+\subsection{Electrical and mechanical design process}
+%Electrical and mechanical design process content here
+\subsubsection{(a) Present Schematics or logic diagrams of the boards.}
+\subsubsection{(b) Present temperature simulations for vacuum conditions.}
+For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the
+lack of gas flow, which eliminates the cooling heat flow from winds. The simulation tool solves
+the heat transfer equation \( \frac{\partial T}{\partial t} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} + \frac{\partial^2 T}{\partial z^2} \right) \)
+by discretizing through Finite-Element-Methods.
+
+\subsection{Description of subsystem control}
+%Description of subsystem control content here
+\subsubsection{(a) Briefly reference the control systems of the boards, which should be explained in the levitation or propulsion subsection respectively.}
+We configure the BMS prior to the competition. \\
+
+
+\subsection{Electrical system characteristics}
+%Content of the electrical system characteristics here
+   
+
+
+\subsection{Interface with other system}
+%Interface with other system content here n
+(a) Briefly reference the communication protocols or control mechanisms of the boards, which should be explained in the respective Sense and Control subsection. \\
+All the electric subsystems are located within the pod. \\
+
+The phsyical connection matrix is as following:
+\begin{table}
     \centering
-    \caption{Parts List}
-    \begin{adjustbox}{width=1\textwidth, center}
-    \begin{tabular}{|c|l|l|c|c|c|}
-        \hline
-        \textbf{Qty} & \textbf{Part} & \textbf{Mfr.} & \textbf{Dims. (mm)} & \textbf{Specs} & \textbf{Weight (kg)} \\
-        \hline
-        2 & HV Battery Pack & GrePow & 152x102x51 & 444V, 200A & 20 \\
-        \hline
-        2 & LV Battery Packs & KingLong & 150x70x50 & 24V, 20A & 5 \\
-        \hline
-        1 & BMS (Orion BMS 2) & Orion & - & - & - \\
-        \hline
-        32 & Temp Sensors (NTC 10k) & Company & 50x50x50 & - & 0 \\
-        \hline
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    From | To & \text{LV Battery} & \text{HV Battery} & \text{BMS} & \text{Traction Inverter} & \text{Motor} & \text{Cooling System} \\
+    \hline
+    \text{LV Battery} & - & - & Powers & \text{Powers control system} & - & \text{Powers pump and control system} \\
+    \hline
+    \text{HV Battery} & - & - & Connects to & \text{Provides power} & - & - \\
+    \hline
+    \text{BMS} & - & - & \text{Controls} & - & - & - \\
+    \text{Traction Inverter} & - & - & - & - & \text{Propels} & X \\
+    \hline
+    \text{Motor} & - & - & - & - & - & - \\
+    \hline
+    \text{Cooling System} & - & - & - & \text{Cooling} & \text{Cooling} & \text{Cooling (implicitly)} \\
+    \hline
+    \end{tabular}
+\end{adjustbox}
+\caption{Physical connection matrix}
+\label{Physical connection matrix}
+\end{table}
+
+The data connection matrix is as following. All communication between boards are via CAN, if not specified otherwise:
+
+\begin{table}
+    \centering
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \hline
+    From $\backslash$ To & LV Battery & HV Battery & BMS & Traction Inverter & Motor & Cooling System & Brakes Controller & Telemetry Unit  \\
+    \hline
+    LV Battery & - & - & - & - & - & - & - & - \\
+    HV Battery  & - & - & Discharge rate, voltage level & - & - & - & - & - \\
+    BMS & controls & controls & - & - & - & - & - & sends data \\
+    Traction Inverter & - & - & - & - & - & - & - & sends data \\
+    Motor & - & - & - & - & - & - & - & - \\
+    Cooling System & - & - & - & - & - & - & - & sends data \\
+    Brakes Controller & - & - & - & - & - & - & - & sends data \\
+    Telemetry Unit & - & - & updates limits & sends commands & - & sends target rates & sends commands & - \\
+    \hline
     \end{tabular}
     \end{adjustbox}
+    \caption{Data connection matrix}
+    \label{data-connectivity-matrix}
 \end{table}
 
 
-\newpage
+\subsection{Final system description}
+%Description of the system here
+\subsubsection{Battery Cells}
 
+High Voltage Network:
+
+Our high voltage battery will make use of lithium-ion polymer technology. We use 120 pouch-format cells from Shenzhen GrePow Battery Co. Ltd rated at 45C maximum discharge that we plan to connect in series. 
+The finished package (main battery pack) will be assembled by the team.
+We are going to connect the 120 cells connected in series and that will have 1 parallel line. This will roughly have 504 Volt at max (using \(120 * 4.2V = 504 V \) ) 
+which provides sufficient electricity to power the motor.
+The battery pack will provide up to ~350 Amps of DC current available to the inverter. However, neither the inverter nor the motor is not rated for such high currents nominally. 
+\newline
+Therefore, the maximum output current of the HV Battery will be rated at 200 A maximum (peak) and 100 A continuous. 
+
+We will stack 30 cells in series per pack and then stack 4 of them to get the full battery pack. No we won't.
+\newline
+\subsubsection{BMS}
+Our battery management system 
+
+The Orion BMS 2, connected to the HV battery, protects it and improves its life, efficiency. 
+Operational Mechanics
+
+The Orion BMS 2 facilitates real-time monitoring and management of each cell within the HV battery pack, 
+which consists of 120 lithium-ion polymer cells arranged in a series configuration to achieve a nominal voltage of 504V. 
+This arrangement necessitates precise control and monitoring to prevent overcharging, deep discharging, and to ensure balanced 
+cell voltages, all of which are within the Orion BMS 2's capabilities.
+
+1. **Cell Voltage Monitoring and Balancing:** The BMS continuously monitors the voltage of each cell, ensuring 
+that all cells operate within their safe voltage range. Cell balancing is performed to equalize the charge across all cells,
+thereby enhancing the battery pack's overall efficiency and lifespan.
+
+2. **Temperature Monitoring:** 
+Given the high energy density of the HV battery pack, 
+thermal management is paramount. The Orion BMS 2 monitors the temperature of individual cells 
+and the battery pack as a whole, activating cooling measures when necessary and preventing operation 
+under extreme temperatures that could damage the battery or compromise safety.
+The Orion BMS 2 itself tracks the temperature of 8 individual cells. 28 other cells are measured by the Thermal Controller.
+
+3. **State of Charge (SoC) and State of Health (SoH) Estimation:** 
+SoC and SoH estimations are important for optimal battery utilization and health maintenance. 
+The Orion BMS 2 employs advanced algorithms to provide these estimates, 
+ensuring that the battery's capacity is used efficiently.
+
+
+The integration of the Orion BMS 2 encompasses several safety mechanisms designed to protect the battery pack, the hyperloop pod, and its occupants:
+
+1. **Overcurrent and Short Circuit Protection:** By monitoring the current flowing in and out of the battery pack, the Orion BMS 2 can detect overcurrent conditions and short circuits, initiating immediate shutdown procedures to prevent damage and ensure safety.
+
+2. **High and Low Voltage Protection:** The BMS prevents the battery from exceeding its maximum voltage during charging and dropping below its minimum voltage during discharge, thereby avoiding scenarios that could lead to reduced battery life or safety hazards.
+
+3. **Thermal Runaway Prevention:** Through its temperature monitoring capabilities, the Orion BMS 2 can detect the onset of thermal runaway—a dangerous condition where one cell's failure can lead to a cascading failure of adjacent cells—and take corrective actions to isolate the problem and mitigate potential damage.
+
+Efficiency Enhancements
+
+By optimizing the operational parameters of the HV battery pack, the Orion BMS 2 contributes significantly to the efficiency and performance of the hyperloop prototype:
+
+1. **Energy Optimization:** By ensuring that all cells are balanced and operate within their optimal voltage and temperature ranges, the BMS maximizes the energy extracted from the battery pack, contributing to the hyperloop's range and speed capabilities.
+
+2. **Lifecycle Extension:** Through diligent monitoring and management, the Orion BMS 2 extends the useful life of the HV battery pack, reducing the environmental impact and operational costs associated with battery replacement.
+
+3. **Predictive Maintenance:** By providing detailed data on the SoC and SoH, the Orion BMS 2 enables predictive maintenance, allowing for timely interventions that prevent unscheduled downtimes and extend the battery's lifespan.
+
+Conclusion
+
+The integration of the Orion BMS 2 with the HV battery pack in our hyperloop prototype represents a critical step towards ensuring the system's safety, efficiency, and reliability. Through its comprehensive monitoring and management capabilities, the Orion BMS 2 ensures that the HV battery pack operates within its optimal parameters, significantly contributing to the prototype's overall performance and safety profile. As we progress towards the final stages of the FDD, the detailed exploration of the Orion BMS 2's functionalities underscores our commitment to leveraging advanced technologies for the enhancement of hyperloop transportation systems.
+\subsubsection{}
+
+
+\subsection{Manufacturing process}
+%Manufacturing process content here
+Our PCB Design
+\subsubsection{PCBs}
+\par Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab provides access to PCB manufacturing equipment and materials, enabling the rapid production of prototypes for initial testing and design validation.
+    Once the PCBs are fabricated, they are assembled manually by our team members. 
+\par Production: We ordered our final PCBs from JLCPCB, a leading PCB manufacturing service. In addition to JLCPCB, we also collaborate with Würth Elektronik who produce 
+PCBs in Germany, aligning with our goal of sustainability.
+\subsubsection{Batteries}
+We produced the battery packs in cooperation with the ISEA (Institute for Power Electronics and Electrical Drives) at RWTH, whose experience helped us to assemble
+more efficienciently and more safely, as we had a considerable high voltage system.
+The casing will consist of polycarbonate. Polycarbonate is a material that is
+durable , lightweight nature, and impact resistance
+
+\subsection{Testing}
+%Testing content here
+We started testing software.
+
+%\subsection{FMEA}
+%FMEA content here
