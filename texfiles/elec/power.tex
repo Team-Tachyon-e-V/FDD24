@@ -1,47 +1,216 @@
-\section{Power Electronics}
+\subsection{Overview}
+%Electrical overview content here
+(a) Explain the main requirements and constraints that drive the design. \\
+\par Our general design of this season is inspired by conventional modes of transportation,
+as we have not had the capacity to start developing a levitation system by this season
+Thus, we focussed on an electrical system that drives our friction-based motor with
+excelling acceleration, which is a problem that railway systems frequently face.
 
-\subsection{Introduction}
-We have a motor.
-\subsubsection{FDD.9 Budget, Funding, and Manufacturing Methods}
- 
-\subsection{Technical Description and Constraints}
-\subsubsection{FDD.11 Technical Specifications}
+\par In between design and production phase, we received a sponsorship of Leadrive,
+a local startup for research on automotive power electronics.
+Therefore, our workload was eased, which turned out to be favorable
+because of our lack of team members in the electrical field. This has been a crucial
+constraint in the design and planning process of the electrical department
+since the last season. Only shortly before submitting the ITD, we were able to make an estimation of
+realistic goals for the new team.
 
-\subsubsection{FDD.17 Design Constraints}
- 
-\subsubsection{FDD.18 Performance Requirements}
- 
-\subsubsection{FDD.19 Integration with Other Systems}
- 
-\subsection{Objectives and Design Approach}
-\subsubsection{FDD.12 Design Objectives}
- 
-\subsubsection{FDD.15 Innovative Aspects}
- 
-\subsubsection{FDD.16 Design Approach}
- 
-\subsection{Safety}
-\subsubsection{FDD.13 Safety Considerations}
- 
-\subsubsection{FDD.14 Safety Testing and Compliance}
- 
-\subsection{Parts List (FDD.21)}
-% Comprehensive list of all parts used in the braking system, including specifications and suppliers.
+\par This year, we would like to set the path for magnetic levitation in the future, relying on an active system
+inside the vehicles. This was taken into consideration when designing the power dimensions,
+keeping plenty of overhead for the future, which aligns with our goal of sustainability.
+By having reusable modules, the design process of the upcoming years will be simplified.
 
-\begin{table}[h]
+\par Our project has been significantly bolstered by the generous support and endorsement from leading industry giants, which has considerably alleviated our financial burdens and propelled our initiative towards groundbreaking achievements.
+
+Altium has been instrumental, providing us with cutting-edge PCB design software valued at approximately \euro 10,000. This invaluable resource has empowered our team to design highly complex and efficient circuit boards, essential for the intricate electronics that drive our hyperloop prototype.
+
+Festo, renowned for their pneumatic and automation solutions, contributed a suite of components and systems worth over \euro 15,000. Their support has enhanced our prototype's propulsion and control systems, enabling precise maneuverability and stability at high velocities.
+
+Mouser Electronics stepped in with a crucial contribution, supplying us with electronic components and parts worth about \euro 20,000. This vast array of high-quality components has been pivotal in assembling our prototype's electrical systems, ensuring reliability and performance.
+
+Würth Elektronik provided essential PCB materials and expertise, along with a donation of specialized components valued at \euro 12,000. Their contributions have significantly optimized our prototype's power distribution and structural integrity.
+
+Leadrive offered their advanced inverter technology, a contribution that not only included hardware valued at \euro 18,000 but also critical technical support. This has dramatically improved our prototype's efficiency and power management capabilities.
+
+Vector Informatik has generously supplied software licenses and technical support for vehicle communication systems, with a contribution valued at \euro 8,000. This support has been crucial in implementing robust and reliable communication systems within our prototype.
+
+
+\subsection{Electrical and mechanical design process}
+%Electrical and mechanical design process content here
+\subsubsection{(a) Present Schematics or logic diagrams of the boards.}
+\subsubsection{(b) Present temperature simulations for vacuum conditions.}
+For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the
+lack of gas flow, which eliminates the cooling heat flow from winds. The simulation tool solves
+the heat transfer equation \( \frac{\partial T}{\partial t} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} + \frac{\partial^2 T}{\partial z^2} \right) \)
+by discretizing through Finite-Element-Methods.
+
+\subsection{Description of subsystem control}
+%Description of subsystem control content here
+\subsubsection{(a) Briefly reference the control systems of the boards, which should be explained in the levitation or propulsion subsection respectively.}
+We configure the BMS prior to the competition. \\
+
+
+\subsection{Electrical system characteristics}
+%Content of the electrical system characteristics here
+\begin{table}
     \centering
-    \caption{Parts List}
-    \begin{tabular}{|p{0.7cm}|p{4cm}|p{4cm}|p{3cm}|p{0.7cm}|p{1cm}|p{1cm}|}
-        \hline
-        \textbf{Amount} & \textbf{Name} & \textbf{Company, (Serial Number)} & \textbf{Dimensions [mm x mm x mm]} & \textbf{Weight [kg]} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
-        \hline
-        1 & Power Inverter & Leadrive EV0019 & 300x300x150 & 9 & 800V & 200A \\
-        \hline
-        1 & Motor & Emrax 188AC & 200x200x200 & 15 & 120V & 50A \\
-        \hline
-
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|}
+       \hline
+       \textbf{Column 1} & \textbf{Column 2}  \\
+       \hline
+       Battery Type & Lead-Acid(integrated)\\
+       \hline
+       Capacity[Ah] & 9 \\
+       \hline
+       Normial Voltage[V] & 12 \\
+       \hline
+       Cell configuration & 2s \\
+       \hline
+       Maximum discharge current (lower limit) [A] & 10 \\
+       \hline
+       Weight per cell [Kg] & 2,7 \\
+       \hline 
+       Dimensions per cell (L x W x H)[mm] & 151 x 65 x 94 \\
+       \hline 
     \end{tabular}
+    \end{adjustbox}
+    \label{Low Voltage Battery Specs}
+\end{table}    
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|l|c|c|c|l|l|}
+        \hline
+        \textbf{Parameter} & \textbf{MIN} & \textbf{NOM} & \textbf{MAX} & \textbf{Unit} & \textbf{Conditions} \\
+        \hline
+        Ambient Temp. for Operation ($T_{\text{AMB}}$) & -40 & - & 90 & °C & - \\
+        \hline
+        Ambient Temp. for Storage ($T_{\text{STO}}$) & -40 & - & 85 & °C & - \\
+        \hline
+        Relative Humidity & 0 & - & 95 & \% & - \\
+        \hline
+        Flow Rate of Coolant ($V_{\text{CLNT}}$) & 8 & 12 & 16 & l/min & Derating @ $8\sim12$ l/min \\
+        \hline
+        Inlet Temp. of Coolant ($T_{\text{CLNT}}$) & -40 & - & 85 & °C & Derating @ $65\sim85$°C \\
+        \hline
+        Cooling Inlet Pressure ($P_{\text{INLET}}$) & - & - & 2.5 & bar & - \\
+        \hline
+        Pressure Drop between Cooling Inlet and Outlet ($P_{\text{DROP}}$) & - & 0.25 & - & bar & $T_{\text{CLNT}}=65°C$, $V_{\text{CLNT}}=12$ l/min \\
+        \hline
+        Input Voltage ($V_{\text{DC}}$) & 260 & 600 & 850 & V & Full operation @ $450-800$V \\
+        \hline
+        Input Current ($I_{\text{DC}}$) & - & 200 & - & A & Continuous \\
+        \hline
+        Peak Input Current ($I_{\text{DCPK}}$) & - & 300 & - & A & For max $t_{\text{PK}}$ duration \\
+        \hline
+        Output Voltage ($V_{\text{AC}}$) & - & 400 & - & Vrms & - \\
+        \hline
+        Output Current ($I_{\text{AC}}$) & - & - & 200 & Arms & Continuous \\
+        \hline
+        Peak Output Current ($I_{\text{ACPK}}$) & - & - & 300 & Arms & For max $t_{\text{PK}}$ duration \\
+        \hline
+        Output Power ($S_{\text{AC}}$) & - & 135 & - & kVA & Continuous \\
+        \hline
+        Peak Output Power ($S_{\text{ACPK}}$) & - & 200 & - & - & For max $t_{\text{PK}}$ duration \\
+        \hline
+        Peak Duration ($t_{\text{PK}}$) & - & - & 60 & s & - \\
+        \hline
+        Input Voltage for Control ($V_{\text{BAT}}$) & 6 & - & 36 & V & Full functional @ $8-32$V (control board) \\
+        \hline
+        Max. Efficiency ($\eta$) & 97 & - & - & \% & - \\
+        \hline
+        Torque Control Accuracy ($\epsilon_{\text{TRQ}}$) & - & - & 3 & \% & Torque $>100$Nm \\
+        \hline
+         & - & - & 3 & Nm & Torque $<100$Nm \\
+        \hline
+        Torque Control Speed ($t_{\text{TRQ}}$) & - & - & 100 & ms & - \\
+        \hline
+        Speed Control Accuracy ($\epsilon_{\text{SPD}}$) & - & - & 30 & rpm & - \\
+        \hline
+    \end{tabular}
+    \end{adjustbox}
+
+    \caption{800V Single Inverter Specifications}
+    \label{inverter_specs}
+\end{table}
+
+\subsection{Interface with other system}
+%Interface with other system content here n
+(a) Briefly reference the communication protocols or control mechanisms of the boards, which should be explained in the respective Sense and Control subsection. \\
+All the electric subsystems are located within the pod. \\
+
+The phsyical connection matrix is as following:
+\begin{table}
+    \centering
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    From | To & \text{LV Battery} & \text{HV Battery} & \text{BMS} & \text{Traction Inverter} & \text{Motor} & \text{Cooling System} \\
+    \hline
+    \text{LV Battery} & - & - & Powers & \text{Powers control system} & - & \text{Powers pump and control system} \\
+    \hline
+    \text{HV Battery} & - & - & Connects to & \text{Provides power} & - & - \\
+    \hline
+    \text{BMS} & - & - & \text{Controls} & - & - & - \\
+    \text{Traction Inverter} & - & - & - & - & \text{Propels} & X \\
+    \hline
+    \text{Motor} & - & - & - & - & - & - \\
+    \hline
+    \text{Cooling System} & - & - & - & \text{Cooling} & \text{Cooling} & \text{Cooling (implicitly)} \\
+    \hline
+    \end{tabular}
+\end{adjustbox}
+\caption{Physical connection matrix}
+\label{Physical connection matrix}
+\end{table}
+
+The data connection matrix is as following. All communication between boards are via CAN, if not specified otherwise:
+
+\begin{table}
+    \centering
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \hline
+    From $\backslash$ To & LV Battery & HV Battery & BMS & Traction Inverter & Motor & Cooling System & Brakes Controller & Telemetry Unit  \\
+    \hline
+    LV Battery & - & - & - & - & - & - & - & - \\
+    HV Battery  & - & - & Discharge rate, voltage level & - & - & - & - & - \\
+    BMS & controls & controls & - & - & - & - & - & sends data \\
+    Traction Inverter & - & - & - & - & - & - & - & sends data \\
+    Motor & - & - & - & - & - & - & - & - \\
+    Cooling System & - & - & - & - & - & - & - & sends data \\
+    Brakes Controller & - & - & - & - & - & - & - & sends data \\
+    Telemetry Unit & - & - & updates limits & sends commands & - & sends target rates & sends commands & - \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Data connection matrix}
+    \label{data-connectivity-matrix}
 \end{table}
 
 
-\newpage
+\subsection{Final system description}
+
+
+\subsection{Manufacturing process}
+%Manufacturing process content here
+Our PCB Design
+\subsubsection{PCBs}
+\par Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab provides access to PCB manufacturing equipment and materials, enabling the rapid production of prototypes for initial testing and design validation.
+    Once the PCBs are fabricated, they are assembled manually by our team members. 
+\par Production: We ordered our final PCBs from JLCPCB, a leading PCB manufacturing service. In addition to JLCPCB, we also collaborate with Würth Elektronik who produce 
+PCBs in Germany, aligning with our goal of sustainability.
+
+\subsubsection{Inverter}
+The inverter is a product from Leadrive used as an OEM product in automotive and mobility industry. \\
+
+    Support from Leadrive: The development of the inverter system is supported by Leadrive, a company specializing in advanced inverter technology. Their expertise significantly contributes to the optimization of our propulsion system.
+    Collaboration with Formula Student Team of FH Aachen: Additionally, we collaborate with the Formula Student Team of FH Aachen, benefiting from their practical experience in electric vehicle design and inverter application. This partnership enriches our project with valuable insights into inverter integration and performance enhancement.
+
+\subsection{Testing}
+%Testing content here
+We started testing software.
+
+%\subsection{FMEA}
+%FMEA content here
