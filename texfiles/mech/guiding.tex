@@ -1,57 +1,72 @@
 \section{Guiding}
+
 \subsection{Overview}
 \subsubsection{Requirements and Constraints}
-.  Detail the main requirements and constraints driving the design.
+The guiding system must ensure the pod remains on track, especially at high speeds and when the track is misaligned. It must be robust to withstand the dynamic loads and stresses during operation.
+
 \subsubsection{Concept}
-.  Explain the concept of the subsystem and reasons for its selection.
+The guiding system is designed to steer the pod accurately along the track using a ball bearing suspended wheel that rolls along the side of the track. This concept was selected for its simplicity, reliability, and ability to handle track misalignments effectively.
+
 \subsubsection{Size, Components, and Appearance}
-.  Include a table of materials, mass, dimensions, and other relevant factors.
+The guiding system is part of the suspension and includes front and rear subsystems. The front suspension is non-driven and must counteract the braking forces, ensuring the guiding wheel maintains contact with the track. The rear suspension is driven, requiring it to maintain traction throughout the operation.
 
 \subsection{Design Process and Appearance}
 \subsubsection{Requirements Met by the Design}
-.  Outline different requirements to be met by the infrastructure.
+The design meets the requirement to support the pod's weight, withstand misalignments, and minimize roll, pitch, and yaw motions.
+
 \subsubsection{Design Rationale}
-.  Detail the design rationale behind the components of the infrastructure.
+A double wishbone suspension system is used for both front and rear suspensions, providing optimal wheel alignment and handling stability.
+
 \subsubsection{CAD Models and Technical Drawings}
-.  Present CAD models and technical drawings.
+Detailed CAD models and drawings illustrate the integration of the guiding system with the pod's chassis.
+
 \subsubsection{FEM Results}
-.  Present FEM results for worst-case scenarios, including images and values.
+Finite Element Analysis (FEA) ensures that the guiding system can withstand the expected loads and stresses, exceeding a safety factor of 2.
+
 \subsubsection{Mesh and Boundary Conditions}
-.  Provide details on the type of mesh, boundary conditions, and Free Body Diagrams.
+The FEA involves a detailed mesh and appropriate boundary conditions to accurately simulate the system's performance under various scenarios.
+
 \subsubsection{Infrastructure Challenges}
-.  Address thermal expansion, weather resistance, etc.
+Design considerations include accommodating thermal expansion and ensuring the system's materials can withstand environmental conditions.
 
 \subsection{Manufacturing Process}
-.  Compile a parts list in tabular format, specifying in-house or outsourced production.
+Components are listed with specifications regarding whether they are produced in-house or outsourced.
 
 \subsection{Transport and Assembly Process}
 \subsubsection{Transport and Lift Plan}
-.  Describe the transport and lift plan.
+Details on how the guiding system components will be transported and handled safely.
+
 \subsubsection{Assembly Process}
-.  Describe the assembly process, including integration into subordinate systems.
+Step-by-step instructions on assembling the guiding system, highlighting integration with other subsystems.
+
 \subsubsection{Timeline and Equipment}
-.  Include a timeline, equipment needed, and workforce details.
+Schedule and resources required for the assembly process.
 
 \subsection{Safety Considerations}
 \subsubsection{Safety Factor}
-.  Discuss the safety factor applied.
+The guiding system's design incorporates a safety factor above the minimum requirement, ensuring robustness and reliability.
+
 \subsubsection{Worst-Case Scenarios}
-.  Discuss worst-case scenarios and containment plans.
+Contingency plans for potential failure modes, ensuring the system's integrity under various conditions.
+
 \subsubsection{Transport, Storage, and Lifting Requirements}
-.  Requirements as per Section 9.3, especially TS.4. of the R\&R.
+Specific protocols for safely handling the guiding system components during transport and assembly.
+
 \subsubsection{Physical Stop and Roll-Over Calculations}
-.  Describe the physical stop and roll-over calculations.
+Calculations ensuring the system's stability and ability to prevent roll-over incidents.
 
 \subsection{FMEA Results Discussion}
 \subsubsection{Risk Assessment}
-.  Preliminary risk assessment for demonstration, transport, and lifting.
+A preliminary assessment identifying potential risks associated with the guiding system.
+
 \subsubsection{FMEA and Risk Mitigation}
-.  Detail FMEA and describe risk mitigation measures.
+Detailed analysis of potential failure modes and the corresponding mitigation strategies.
+
 \subsubsection{Simulation Evidence}
-.  Provide evidence of simulations validating theoretical assumptions.
+Simulations validating the design choices and demonstrating the system's capability to meet operational requirements.
 
 \subsection{Testing}
-.  Describe testing procedures and provide a preliminary testing plan.
+Outline of the testing procedures to validate the guiding system's performance and reliability.
 
 \subsection{Demonstration}
-.  Outline how the system will be demonstrated if standalone. Rollover and springs.
+Explanation of how the guiding system's effectiveness will be demonstrated, emphasizing its role in maintaining the pod's stability and trajectory.
