@@ -1,47 +1,282 @@
-\section{Aerodynamics and Shell}
+\section{Aerodynamics}
+
+
 \subsection{Overview}
+The design of the Hyperloop pod aeroshell is meticulously crafted to optimize aerodynamic performance and ensure stability during high-speed travel. This section explores the key design considerations and features of the aeroshell subsystem, highlighting its role in reducing air resistance and enhancing the overall efficiency of the Hyperloop transportation system.
+
 \subsubsection{Requirements and Constraints}
-.  Detail the main requirements and constraints driving the design.
+The Hyperloop pod aeroshell is required to fulfill several critical functions to ensure optimal performance of the transportation system. Firstly, it must minimize air resistance to facilitate smooth movement through the Hyperloop tube, thereby reducing energy consumption and increasing overall speed. Additionally, the aeroshell should enhance stability and control during acceleration, deceleration, and maneuvers, contributing to passenger comfort and safety. Furthermore, the design should incorporate features to manage airflow efficiently, preventing turbulence and ensuring a streamlined flow around the pod. Compliance with safety regulations and structural integrity are also paramount, ensuring the aeroshell can withstand operational stresses and environmental conditions encountered during Hyperloop travel.
+
 \subsubsection{Concept}
-.  Explain the concept of the subsystem and reasons for its selection.
+The concept of the aeroshell subsystem revolves around maximizing aerodynamic efficiency while ensuring structural integrity and safety compliance. Inspired by proven aerodynamic principles, the aeroshell design prioritizes minimizing air resistance, enhancing stability, and facilitating controlled airflow. By incorporating features such as a streamlined front and rear configurations, the aeroshell optimizes performance while maintaining adherence to safety standards and regulatory requirements outlined in the Functional Design Description (FDD) for the Hyperloop competition.
 \subsubsection{Size, Components, and Appearance}
 .  Include a table of materials, mass, dimensions, and other relevant factors.
+\begin{table}[ht]
+\centering
+
+\label{table:components}
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{|>{\bfseries}m{2.5cm}|m{1.4cm}|m{1.7cm}|m{2.1cm}|m{2.2cm}|m{2.6cm}|m{2.2cm}|}
+\hline
+Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/ outsourced \\
+\hline
+Wheels & x8 & 1 & 100 x 50 & Polyurethane & Injection molding & Outsourced \\
+Axles & x8 & 0.2 & 10 x 90 & Duplex Steel & Lathing & In-house \\
+L-bracket 1 & x16 & 0.1 & 20x30x50 & Aluminium 7075 & Milling & In-house \\
+L-bracket 2 & x8 & 0.2 & 30x40x60 & Aluminium 7075 & CNC & Outsourced \\
+PART & AMOUNT & WEIGHT & SIZE & MATERIAL & PROCESS & SPONSORING \\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\caption{Components and Manufacturing Details}
+\end{table}
+
+
+\subsection{Theoretical concepts}
+
+Theoretical understanding forms the backbone of our approach towards designing the aerodynamic components of the Hyperloop pod. In this section, we delve into the foundational concepts guiding our Computational Fluid Dynamics (CFD) simulations, specifically focusing on the utilization of the \(k-\omega\) SST turbulence model.
+
+\subsubsection{Relevance of Turbulence Modeling}
+
+Turbulence plays a pivotal role in determining the flow characteristics around the Hyperloop pod as it travels through the tube. Traditional approaches relying solely on laminar flow assumptions are inadequate for capturing the complex flow phenomena at high speeds encountered in the Hyperloop environment. Therefore, turbulence modeling becomes indispensable for accurately predicting flow behavior, including boundary layer separation, vortex shedding, and wake formation.
+
+\subsubsection{Introduction to \(k-\omega\) SST Turbulence Model}
+
+The \(k-\omega\) SST (Shear-Stress Transport) turbulence model is a widely used approach in CFD simulations, renowned for its robustness and accuracy in capturing both near-wall and free-stream turbulence effects. This model combines the strengths of the \(k-\omega\) and \(k-\epsilon\) models, making it suitable for simulating a wide range of flow regimes, from boundary layers to separated flows.
+
+\subsubsection{Key Features of \(k-\omega\) SST Model}
+
+The \(k-\omega\) SST model resolves turbulent viscosity through two transport equations: one for turbulent kinetic energy (\(k\)) and the other for specific turbulence dissipation rate (\(\omega\)). By incorporating wall functions and a low-Reynolds number correction, this model accurately predicts near-wall behavior while maintaining stability and computational efficiency. Additionally, the SST formulation seamlessly transitions between the near-wall region, where wall functions are utilized, and the outer flow region, where the standard \(k-\omega\) model is applied.
+
+The equations governing the \(k-\omega\) SST model are as follows:
+
+\begin{align*}
+\frac{\partial (\rho k)}{\partial t} + \frac{\partial (\rho u_j k)}{\partial x_j} &= P_k - \beta^* \rho \omega k + \frac{\partial}{\partial x_j} \left[ \left( \mu + \frac{\mu_t}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] \\
+\frac{\partial (\rho \omega)}{\partial t} + \frac{\partial (\rho u_j \omega)}{\partial x_j} &= P_\omega - \beta \rho \omega^2 + \frac{\partial}{\partial x_j} \left[ \left( \mu + \frac{\mu_t}{\sigma_\omega} \right) \frac{\partial \omega}{\partial x_j} \right]
+\end{align*}
+
+where:
+\begin{itemize}
+    \item \(P_k\) and \(P_\omega\) are the production terms for \(k\) and \(\omega\) respectively,
+    \item \(\beta\) and \(\beta^*\) are constants,
+    \item \(\mu\) is the dynamic viscosity,
+    \item \(\mu_t\) is the turbulent viscosity,
+    \item \(\sigma_k\) and \(\sigma_\omega\) are the turbulent Prandtl numbers.
+\end{itemize}
+
+\subsubsection{Aerodynamics Concepts: Lift and Drag}
+
+In aerodynamics, lift and drag are two fundamental forces that influence the motion of an object through a fluid. Lift is the force perpendicular to the relative motion of the fluid and the object, while drag is the force parallel to the relative motion.
+
+The lift force (\(L\)) and drag force (\(D\)) can be calculated using the following formulas:
+
+\begin{align*}
+L &= \frac{1}{2} \rho V^2 S C_L \\
+D &= \frac{1}{2} \rho V^2 S C_D
+\end{align*}
+
+where:
+\begin{itemize}
+    \item \(\rho\) is the fluid density,
+    \item \(V\) is the velocity of the flow relative to the object,
+    \item \(S\) is the reference area (such as wing area for an airfoil),
+    \item \(C_L\) is the lift coefficient,
+    \item \(C_D\) is the drag coefficient.
+\end{itemize}
+
+\subsubsection{Key Fluid Mechanics Concepts}
+
+Several key principles from fluid mechanics are crucial for understanding aerodynamic behavior in CFD simulations:
+
+\begin{itemize}
+    \item \textbf{Reynolds Number (\(Re\))}: A dimensionless quantity representing the ratio of inertial forces to viscous forces in the flow. It is defined as \(Re = \frac{\rho V L}{\mu}\), where \(\rho\) is the fluid density, \(V\) is the velocity, \(L\) is a characteristic length (such as chord length for an airfoil), and \(\mu\) is the dynamic viscosity.
+    
+    \item \textbf{Boundary Layer}: The thin layer of fluid adjacent to the surface of an object where viscous effects dominate. Understanding boundary layer behavior is essential for predicting aerodynamic drag and lift forces accurately.
+    
+    \item \textbf{Turbulent Flow}: Flow characterized by chaotic, irregular motion with fluctuations in velocity and pressure. Turbulent flow phenomena significantly affect drag, lift, and heat transfer in aerodynamic systems.
+\end{itemize}
+\subsubsection{Unique Flow Regime}
+
+The Hyperloop pod operates within a distinctive flow regime characterized by very low Reynolds numbers (\(Re\)) and high Mach numbers (\(Ma\)). At low Reynolds numbers (\(Re < 10^6\)), viscous effects dominate, resulting in laminar flow over most of the aeroshell surface. High Mach numbers (\(Ma > 0.3\)) introduce compressibility effects, necessitating careful consideration of shock wave formation and drag rise. The interplay between these factors significantly influences the aerodynamic performance of the pod.
+
+\subsubsection{Boundary Layer Control}
+
+Effective boundary layer control is paramount for optimizing the aerodynamic efficiency of the pod. Transition delay techniques, such as passive and active boundary layer control, are employed to mitigate boundary layer separation and delay the onset of turbulent flow. Shaping the aeroshell to promote laminar-to-turbulent transition further upstream helps maintain attached flow and reduce drag. Additionally, employing boundary layer suction or blowing can manipulate flow separation points, enhancing overall aerodynamic performance.
+
+\subsubsection{Kantrowitz Limit}
+
+The Kantrowitz limit poses a critical challenge in the design of the Hyperloop pod aeroshell. Near this limit, where the pod's diameter approaches half the diameter of the tube, compressibility effects become significant. As the pod approaches transonic speeds, shock waves form, leading to increased drag and potential instability. Mitigating the adverse effects of the Kantrowitz limit requires careful shaping of the aeroshell to minimize wave drag and reduce perturbations in the flow field.
+
+
+
+\subsubsection{Meshing in CFD Simulations}
+
+Meshing, or grid generation, is a crucial step in CFD simulations that involves dividing the computational domain into discrete elements or cells. A well-structured mesh ensures accurate representation of flow physics while minimizing computational cost. For our Hyperloop pod simulations, a structured meshing approach is adopted to ensure optimal grid quality and resolution in critical flow regions.
+
+\subsubsection{Finite Element Method (FEM)}
+
+The Finite Element Method (FEM) is a numerical technique used to solve partial differential equations governing physical phenomena, such as fluid flow and structural mechanics. In the context of CFD simulations, FEM is employed to discretize the governing equations over the computational domain, enabling the solution of complex fluid flow problems. By dividing the domain into finite elements and employing appropriate interpolation functions, FEM facilitates the accurate approximation of flow variables within each element.
+
+\subsubsection{Integration into CFD Simulations}
+
+For our Hyperloop pod design, the \(k-\omega\) SST turbulence model serves as a cornerstone in our CFD simulations. By accurately capturing turbulent flow phenomena, including laminar-to-turbulent transition
+\subsection{Results of Simulations}
+\subsubsection{CFD Simulations}
+\subsubsection{FEM Simulations}
+
+
+(To be done)The results of computational fluid dynamics (CFD) simulations provide valuable insights into the aerodynamic behavior of the Hyperloop pod aeroshell. Detailed analysis of flow patterns, pressure distributions, and drag coefficients derived from simulations inform design refinements and performance enhancements. The following subsection presents key findings and observations obtained from CFD simulations conducted on the Hyperloop pod aeroshell design.
 
 \subsection{Design Process and Appearance}
-\subsubsection{Requirements Met by the Design}
-.  Outline different requirements to be met by the infrastructure.
-\subsubsection{Design Rationale}
-.  Detail the design rationale behind the components of the infrastructure.
 \subsubsection{CAD Models and Technical Drawings}
 .  Present CAD models and technical drawings.
+\begin{figure}[!ht]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{shell_frontview.jpg}
+    \caption{CAD shell Frontview}
+    \label{fig:shell_frontview}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{shell_side.jpg}
+    \caption{CAD shell sideview}
+    \label{fig:shell_sideview}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{shell_rear.jpg}
+    \caption{CAD Shell back}
+    \label{fig:shell_back}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{shell_topview.jpg}
+    \caption{CAD shell topview}
+    \label{fig:shell_topview}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{shell_drawing.jpg}
+    \caption{CAD Shell drawing }
+    \label{fig:shell_drawing}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{shell_bottom.jpg}
+    \caption{CAD shell bottom}
+    \label{fig:shell_bottom}
+  \end{minipage}
+\end{figure}
+\par %
+
+\subsubsection{Materials}
+.  Present and justify the selection of materials used in the subsystem
+.  Provide relevant properties of the materials selected.
+The Aeroshell is constructed sustainably with natural basalt fibre for biodegradability and superior tensile strenth. This iteration we used 3D printes molds, which enhance the design precision. Furthermore various safety features have been added to the Body, including using Polyester based Resins that are fire resistant.
+\par %
+
+\subsubsection{Design Rationale}
+.  Detail the design rationale behind the components of the infrastructure.
+.  Provide a rationale for why the specific configuration has been chosen
+\newline
+The Hyperloop shell was designed in Autodesk Fusion 360. First we collected several information about optimal aerodynamic shell designs.To fit the chassis we went with a rounded rectangular form. The shell has smooth and regular surfaces for laminar airflow. Originally doors were planned for easy access to the battery. Due to time constraints we decided to implement a quick release mechanism so one is able to “take off” the whole shell and have access to the whole chassis. Furthermore the rear end is flattened to reduce the drag force on our pod.
+\par %
+
+
 \subsubsection{FEM Results}
 .  Present FEM results for worst-case scenarios, including images and values.
+\paragraph{Calculations}
+.  Provide reasoning and the necessary calculations to justify the simulated loads.
 \subsubsection{Mesh and Boundary Conditions}
 .  Provide details on the type of mesh, boundary conditions, and Free Body Diagrams.
-\subsubsection{Infrastructure Challenges}
-.  Address thermal expansion, weather resistance, etc.
+
 
 \subsection{Manufacturing Process}
 .  Compile a parts list in tabular format, specifying in-house or outsourced production.
+.Describe what efforts have been made so that the designed part is realistically manufacturable.
+\begin{table}[ht]
+\centering
 
-\subsection{Transport and Assembly Process}
-\subsubsection{Transport and Lift Plan}
-.  Describe the transport and lift plan.
-\subsubsection{Assembly Process}
-.  Describe the assembly process, including integration into subordinate systems.
-\subsubsection{Timeline and Equipment}
-.  Include a timeline, equipment needed, and workforce details.
+\label{table:components}
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{|>{\bfseries}m{2.5cm}|m{1.4cm}|m{1.7cm}|m{2.1cm}|m{2.2cm}|m{2.6cm}|m{2.2cm}|}
+\hline
+Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/ outsourced \\
+\hline
+Bed lift & x2 & 7 & - & steel & - & Outsourced \\
+Lamination bolt & x8 & 0,01 & M6 & stainless steel & - & Outsourced \\
+Nuts & x8 & 0,0012 & M6 & alloyed steel & - & Outsourced \\
+3D-Print & x1 & - & - & - & - & Outsourced \\
+Epoxidharz & x1 & - & - & - & -& Outsorced \\
+PART & AMOUNT & WEIGHT & SIZE & MATERIAL & PROCESS & SPONSORING \\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\caption{Components and Manufacturing Details}
+\end{table}
+
+\par %
+
+The construction process for Fermions aeroshell involves a systematic approach to ensure the optimal integration of basalt fibers and polyester resin. Beginning with a detailed design and 3D model, the chosen shape, dimensions, and structural requirements are meticulously defined using Autodesk Fusion 360. To get the shape designed in CAD, we are 3D-printing our Shell. Following material selection a custom mold is prepared to reflect the rounded rectangular aeroshell geometry. \newline
+In preparation for the layup process, the mold undergoes surface treatment with a mold release agent to facilitate subsequent removal. Basalt fibers are then cut to specified lengths and strategically laid onto the mold, ensuring even distribution and coverage, particularly in areas with complex shapes or anticipated high-stress points. The wet layup method is employed, involving the careful application of polyester resin to saturate and bond with the basalt fibers. \newline
+To consolidate the composite structure, a consolidation tool is utilized, eliminating air bubbles and enhancing the adhesion between the basalt fibers and the resin. The aeroshell is left to fully dry. Following a thorough curing process, the aeroshell is demolded with precision to prevent damage to the composite structure. \newline
+Post-demolding, excess material is trimmed, and meticulous finishing is conducted to achieve a smooth and aerodynamic surface. After the shell is cured and demoulded, the mountings will be fixed from the inside with layup. To give Fermion a modern look and therefore visualize the new and futuristic approach of the hyperloop system, the shell will be painted. \newline
+
+\subsection{Integration process}
+\subsubsection{Assembling}
+\textbf{Preparation Phase:} 
+Firstly, we gather all the necessary components, such as the aeroshell, chassis, and lifting mechanism. We meticulously inspect each part, ensuring they're in optimal condition for assembly. If we spot any damaged or faulty components, we promptly replace them to avoid any issues during integration.
+
+\textbf{Assembly of Lifting Mechanism:} 
+Following the preparation phase, we carefully assemble the lifting mechanism according to the manufacturer's instructions. This involves constructing the hydraulic arms and triangular metal structure. Proper assembly is crucial for the smooth operation and safety of the lifting process.
+
+\textbf{Attachment to Chassis:} 
+Once the lifting mechanism is assembled, we securely attach it to the chassis. We make sure to create a firm and stable connection to support the weight of the aeroshell during lifting. Bolting the lifting mechanism securely to the chassis is vital for stability and safety.
+\subsubsection{Assembly interaction}
+\textbf{Lifting the Aeroshell:} 
+With the lifting mechanism securely in place, we begin the process of lifting the aeroshell. We lift it evenly and cautiously to prevent any tilting or imbalance that could potentially damage the aeroshell. Careful operation of the lifting mechanism is essential for a safe and smooth lifting process.
+
+\textbf{Integration Phase:} 
+Once the aeroshell is lifted to the appropriate height, we carefully lower it onto the chassis. Alignment is critical at this stage to ensure proper fitting and performance. We verify that the aeroshell aligns correctly with the mounting points on the chassis.
+
+\textbf{Securing and Final Checks:} 
+After positioning the aeroshell on the chassis, we secure it using appropriate fasteners. We ensure these fasteners are tightened securely to firmly attach the aeroshell to the chassis. Conducting a thorough final inspection is crucial to confirm the secure attachment of the aeroshell and the proper functioning of the lifting mechanism.
+
+\textbf{Final Checks:} 
+In the final stage of the integration process, we conduct a comprehensive inspection. We check to ensure that the aeroshell is securely attached and that the lifting mechanism is functioning correctly. Any issues identified during these final checks are addressed promptly to ensure successful integration.
+
+
 
 \subsection{Safety Considerations}
 \subsubsection{Safety Factor}
-.  Discuss the safety factor applied.
+.  Discuss the safety factor applied to structural elements.
+\par %
+Various safety measures have been considered to minimize failures. Furthermore performing FEA ensures that our aeroshell can sustain High Shear Stresses. An assembly test was performed to ensure violation of the keep out zones. As already mentioned in "Materials", the resins for the chosen composite are fire resistant.
+\par %
 \subsubsection{Worst-Case Scenarios}
-.  Discuss worst-case scenarios and containment plans.
-\subsubsection{Transport, Storage, and Lifting Requirements}
-.  Requirements as per Section 9.3, especially TS.4. of the R\&R.
-\subsubsection{Physical Stop and Roll-Over Calculations}
-.  Describe the physical stop and roll-over calculations.
-
+.  Discuss worst-case scenarios (e.g., worst-case braking deceleration) and what you plan to do to avoid or contain them.
+\par %
+1. Structural Failure: 
+\par %
+Structural fatigue could result from manufacturing defects, material weaknesses or unforeseen stress factors. To avoid structural failure, we carefully selected materials with high fatigue resistance for constructing the aeroshell. (carbon fiber reinforced polymers)
+\par %
+2. High speed collision:
+\par %
+High speed collisions could occur when external objects penetrate the shell. The Aeroshell must be able to withstand the impact forces. Similar to the first point, we are using carefully selected materials.
+\par %
+3. Fire Incidents:
+\par %
+In the event of a fire within the system, the aeroshell ist designed to withstand high temperatures and prevent the spread of flames due to the fire resistant resins.
+\par %
 \subsection{FMEA Results Discussion}
 \subsubsection{Risk Assessment}
 .  Preliminary risk assessment for demonstration, transport, and lifting.
@@ -50,8 +285,18 @@
 \subsubsection{Simulation Evidence}
 .  Provide evidence of simulations validating theoretical assumptions.
 
-\subsection{Testing}
-.  Describe testing procedures and provide a preliminary testing plan.
 
-\subsection{Demonstration}
-.  Outline how the system will be demonstrated if standalone. Rollover and springs.
+\subsection{Testing}
+\subsubsection{Safety Procedures Documentation}
+.  Describe testing procedures.
+\subsubsection{preliminary testing plan}
+.  Provide a preliminary testing plan, including methodology and expected results.
+
+
+\subsection{Additional considerations}
+.  Additional considerations when writing the document for specific subsystems: Breaking, Pneumatic system, Aeroshell.
+i. 		Include CFD analyses for the conditions expected during the demonstration, and their
+		results, covering values such as lift, drag, or moment coefficient.
+ii. 		If you plan on demonstrating inside a tube, include it in the CFD simulations.
+iii. 	In case the system uses high voltage, indicate how will the MIDs be shut off when the
+		aeroshell is covering the pod
