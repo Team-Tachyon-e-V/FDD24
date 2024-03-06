@@ -27,7 +27,7 @@ In this section, the main components of the sensor network and software architec
 % Merged detailed content from the first snippet
 
 \subsubsection{Parts Lists}
-Example Thermal Partslist start:
+Example Thermal Parts list start:
 % Comprehensive list of all parts used in the thermal system, including specifications and suppliers.
 Parts list:
 \begin{table}[h]
@@ -38,7 +38,7 @@ Parts list:
         \hline
         \textbf{Amount} & \textbf{Name} & \textbf{Company, (Serial Number)} & \textbf{Dimensions [mm x mm x mm]} & \textbf{Weight [kg]} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
         \hline
-        32 & Additional Temperature Sensors (NTC, 10k Ohm) & Company & 2x2x2 & 0 & - & - \\
+        38& Additional Temperature Sensors (NTC, 10k Ohm) & Mouser & 1000x3x3& 200*10^(-6)& - & - \\
     \end{tabular}
         \end{adjustbox}
 \end{table}
@@ -56,12 +56,33 @@ For the brakes, we adhere to: \\
 The software follow a simple state: \\
 \includegraphics[width=\textwidth]{texfiles/elec/eimg/brakesoftware_ext}
 
+The implementation of the hardware architecture goes as follows:
+\includegraphics[width=\textwidth]{texfiles/elec/eimg/Brakes_architecture}
+
+Regarding the Thermal Management Controller, :\\ 
+
+The software acts in accordance with next state diagram: \\
+\textbf{--- INSERT STATE DIAGRAM ---}
+%\includegraphics[width=\textwidth]{texfiles/elec/eimg/brakesoftware_ext}
+
+The following hardware architecture is to be implemented:
+\includegraphics[width=\textwidth]{texfiles/elec/eimg/Thermal_architecture}
 
 \subsection{Control Boards/Units in the Vehicle}
 % Insert content from the first snippet related to Control Boards/Units in the Vehicle here.
 
+\begin{enumerate}
+    \item Brakes Controller
+
+    \item Thermal Controller
+The Thermal Management Controller is responsible for cooling the Traction Components, i.e., Motor and Traction Controller. The actuator is the coolant pump which is controlled  with the feedback of the temperature of coolant in the cooling loop.  The Pump Speed is controlled via PWM to the MOSFET Bridge. The PWM duty cycle is simply calculated from a lookup table that is referenced to the temperature difference between target and actual temperatures. The only safety feature to be developed is to issue an emergency stop signal to HV Systems in the event the coolant temperature exceeds a critical
+temperature
+
+\end{enumerate}
+
 \subsection{Communication and Navigation}
 % Insert content from the first snippet related to Communication and Navigation here.
+The Communication Protocol used consists of a CAN BUS
 
 \subsection{Integration with other systems}
 The friction brakes, the cooling pump and the motor are controlled through our system.
@@ -70,3 +91,14 @@ The friction brakes, the cooling pump and the motor are controlled through our s
 % Insert content from the first snippet related to GUI here.
 
 % Continue merging additional sections and sub-sections from the first snippet into the structured format of the second snippet as needed.
+
+\subsection{Telemetry Device}
+
+\subsubsection{Introduction}
+\begin{enumerate}
+    \item Brief overview of Telemetry Components
+    \item Diagram with the connection of all boards with NAP and control station.
+    \item Explanation of the Signals Transmitted
+\end{enumerate}
+
+\subsubsection{Parts Lists}
