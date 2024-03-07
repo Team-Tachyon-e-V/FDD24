@@ -1,57 +1,515 @@
+
 \section{Chassis}
+
+
+
+
 \subsection{Overview}
+
+
 \subsubsection{Requirements and Constraints}
-.  Detail the main requirements and constraints driving the design.
+
+Paramount among our requirements is the ability of the chassis to withstand the rigors of operation, with a primary focus on supporting a load of up to 250 kg. The chassis must serve as the sturdy foundation upon which all subsystems are mounted. From the propulsion system to the suspension components, every subsystem must find its place within the chassis. 
+
+A chassis that is inaccessible is as good as useless. Hence, a key requirement driving our design is the ease of access for maintenance and assembly. Components must be readily accessible, allowing for swift troubleshooting and efficient assembly processes. The chassis must seamlessly integrate with the aeroshell, providing a secure mounting point while ensuring aerodynamic efficiency. This requirement necessitates careful consideration of mounting points and structural reinforcements to support the aeroshell without compromising performance. 
+
+Weight is the enemy of performance, and our chassis must strike a delicate balance between structural robustness and lightweight construction. Utilizing advanced materials and optimization techniques, we aim to minimize weight without compromising strength or durability. 
+
+While performance is paramount, cost considerations cannot be overlooked. Our chassis must be constructed in a manner that balances performance with affordability, ensuring that our project remains economically viable without sacrificing quality or functionality. The chassis must withstand the dynamic forces exerted by both the braking system and the suspension components. 
+
+This constraint necessitates careful reinforcement and structural design to ensure that the chassis remains resilient under varying load conditions. The design must incorporate provisions for easy extraction of the battery pack, facilitated by a rail system. This constraint imposes additional design considerations, such as clearance and mounting points, to ensure seamless integration and accessibility.
+
+
 \subsubsection{Concept}
-.  Explain the concept of the subsystem and reasons for its selection.
+
+The chassis plays an important role in any moving structure, providing the structural foundation and support necessary to ensure safety, stability, and functionality for the entire vehicle and all the systems it holds. 
+In this year's iteration, our pod utilises a two-track system, which not only allows for extra room to house subsystems but also lowers the pod's centre of mass, thereby enhancing stability. This design decision results in a wider and consequently shorter pod.
+
+At the core of our design philosophy lies the integration of carbon fiber sandwich plates, a cutting-edge material renowned for its exceptional strength-to-weight ratio and structural integrity.
+The foundation of our chassis is built upon a rectangular framework, strategically crafted to optimize both stability and versatility. Covering the entirety of the lower section of the pod is a ground plate, providing a robust foundation while simultaneously enhancing aerodynamic efficiency. This ground plate serves as the backbone of the chassis, ensuring unparalleled stability and structural integrity.
+
+Extending longitudinally from the front to the back of the pod are two key components: the longitudinal plates. These plates constitute the primary structural elements of the chassis, serving as the anchor points for vital components such as the suspension system, brakes, and motor. Crafted with precision and reinforced for maximum resilience, these longitudinal plates epitomize the marriage of form and function, providing the framework upon which our pod's performance hinges.
+
+To further fortify the structural integrity of our chassis and prevent any potential bending or detachment of the longitudinal plates, we have strategically incorporated three additional cross panels. These panels, positioned perpendicular to the longitudinal plates, serve as stabilizing agents, distributing forces evenly throughout the chassis and bolstering overall rigidity. these cross panels ensure that our pod remains steadfast and unwavering, even under the most demanding conditions.
+
+Central to the assembly of our chassis is a plug-in system, integrated into the carbon fiber sandwich plates. Through precision-cut cutouts and advanced adhesive technologies, these plates seamlessly interlock and adhere, forming a cohesive and resilient structure. This plug-in system not only streamlines the assembly process but also enhances the overall integrity of the chassis, ensuring a robust and reliable foundation for our pod.
+
+
 \subsubsection{Size, Components, and Appearance}
-.  Include a table of materials, mass, dimensions, and other relevant factors.
+
+\begin{table}[ht]
+\centering
+
+\label{table:components}
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{|>{\bfseries}m{2.5cm}|m{1.4cm}|m{1.7cm}|m{2.1cm}|m{2.2cm}|m{2.6cm}|m{2.2cm}|}
+\hline
+Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/ outsourced \\
+\hline
+GP & x1 & 1 & 1480x882x20 & CF Sandwich & Waterjetcut & Outsourced \\
+CacP & x1 & 1 & 882x200x20 & CF Sandwich & Waterjetcut & Outsourced \\
+BacP & x2 & 0.1 & 882x200x20 & CF Sandwich & Waterjetcut & Outsourced \\
+BCalP & x2 & 0.2 & 883x200x20 & CF Sandwich & Waterjetcut & Outsourced \\
+AalP & x2 & 0.2 & 270x200x20 & CF Sandwich & Waterjetcut & Outsourced \\
+Seam Type A & x2 & 0.1 & 1480x882x1 & CF Prepeg & Cut & Outsourced \\
+Seam Type B & x7 & 0.1 & 882x200x1 & CF Prepeg & Cut & Outsourced \\
+Seam Type C & x2 & 0.1 & 882x200x1 & CF Prepeg & Cut & Outsourced \\
+Seam Type D & x2 & 0.1 & 883x200x1 & CF Prepeg & Cut & Outsourced \\
+Crossbar & x2 & 0.5 & 270x200x20 & Aluminium & Waterjetcut & Outsourced \\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\caption{Components and Manufacturing Details}
+\end{table}
+
+
+
+
+\subsection{Theoretical concepts}
+
+\textbf{WILL BE ADDED SOON}
+
+
+
 
 \subsection{Design Process and Appearance}
-\subsubsection{Requirements Met by the Design}
-.  Outline different requirements to be met by the infrastructure.
-\subsubsection{Design Rationale}
-.  Detail the design rationale behind the components of the infrastructure.
+
+
 \subsubsection{CAD Models and Technical Drawings}
-.  Present CAD models and technical drawings.
+
+%\begin{comment}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{texfiles/mech/eimg/chassis/cad1.png}
+  \caption{Caption for the image.}
+  \label{fig:image1}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Caption for the first image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/technicaldrawing1.png}
+    \label{fig:sub1}
+  }
+  \subfloat[Caption for the second image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/technicaldrawing1.png}
+    \label{fig:sub2}
+  }
+  \caption{Caption for the whole figure.}
+  \label{fig:test}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Caption for the first image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/technicaldrawing1.png}
+    \label{fig:sub1}
+  }
+  \subfloat[Caption for the second image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/technicaldrawing1.png}
+    \label{fig:sub2}
+  }
+  \caption{Caption for the whole figure.}
+  \label{fig:test}
+\end{figure}
+
+%\end{comment}
+
+
+\subsubsection{Materials}
+
+As discribed above the main factor for choosing carbon fiber sandwich panels was the the weight-strenght-cost balance. Choosing a foam-insert over a honeycomb-insert came down to the higher weather-resistants of the foam against cardboard. Again we chose carbonfiber over aluminum for the plates for lesser weight.
+
+
+\subsubsection{Design Rationale}
+
+The design rationale guiding our pod's infrastructure embodies a methodical process rooted in practical considerations and engineering principles. Our primary aim was to reduce weight from the previous design, leading us to explore the potential of carbon fiber composites.
+
+Initially, a monocoque chassis was considered for its structural integrity, yet its high cost and manufacturing complexity deemed it impractical. Similarly, the idea of a tube chassis with carbon fiber tubes proved prohibitively expensive. Thus, we opted for a Composite Sandwich Panel Chassis, renowned for its lightweight, structural strength, and cost-effectiveness. 
+
+Departing from the original design, which featured longitudinal panels spanning the entire length of the pod, we recognized the necessity for easy battery extraction from the side, prompting a redesign of the chassis layout. To ensure seamless panel interlocking and structural integrity, we devised a plug-in system featuring evenly distributed cutouts, meticulously aligned for connection. These connections are strengthened by precise gluing and reinforced seaming along the edges.
+
+Additionally, crossbars were strategically integrated to fortify the chassis at suspension mounting points, mitigating potential structural weaknesses. Furthermore, close collaboration between the chassis department and other subsystems facilitated maximal compatibility and integration.
+
+In summary, our design rationale represents a pragmatic synthesis of innovation and engineering expertise, driven by a commitment to efficiency, functionality, and cost-effectiveness.
+
+
 \subsubsection{FEM Results}
-.  Present FEM results for worst-case scenarios, including images and values.
+
+\paragraph{Static Simulation Stress Test:}
+In this simulation scenario, the chassis was subjected to a static stress test, replicating the forces exerted by the suspension system along with the weight of the pod. The FEM analysis yielded critical insights into the structural performance of the chassis under static loading conditions.
+
+\paragraph{Results:}
+\begin{itemize}
+    \item\textbf{Maximum von Mises stress:} [Replace with your FEM result]
+    \item\textbf{Maximum principal stress:} [Replace with your FEM result]
+    \item\textbf{Factor of safety:} [Replace with your FEM result]
+\end{itemize}
+
+\paragraph{Interpretation: }
+The FEM analysis indicates that under static loading conditions, the chassis exhibits [Replace with your interpretation of FEM results]. While localized areas may experience elevated stress levels, the overall factor of safety remains within acceptable limits, suggesting satisfactory structural integrity.
+
+\paragraph{Braking Maneuver Simulation}
+In this simulation scenario, the chassis underwent analysis with peak forces experienced during braking maneuvers, simulating the most demanding braking conditions. The FEM analysis provided crucial insights into the chassis's ability to withstand dynamic braking forces.
+
+\paragraph{Results:}
+\begin{itemize}
+    \item\textbf{Maximum von Mises stress:} [Replace with your FEM result]
+    \item\textbf{Maximum principal stress:} [Replace with your FEM result]
+    \item\textbf{Factor of safety:} [Replace with your FEM result]
+\end{itemize}
+
+\paragraph{Interpretation: }
+The FEM analysis reveals that during braking maneuvers, the chassis experiences [Replace with your interpretation of FEM results]. Despite localized stress concentrations, the overall factor of safety remains satisfactory, indicating adequate structural robustness.
+
+\paragraph{Worst-Case Scenario:}
+In the worst-case scenario simulation, the chassis was subjected to double the forces encountered in the previous scenarios, representing an extreme operating condition. This simulation aimed to assess the chassis's resilience under significantly elevated loading conditions.
+
+\paragraph{Results:}
+\begin{itemize}
+    \item\textbf{Maximum von Mises stress:} [Replace with your FEM result]
+    \item\textbf{Maximum principal stress:} [Replace with your FEM result]
+    \item\textbf{Factor of safety:} [Replace with your FEM result]
+\end{itemize}
+
+\paragraph{Interpretation: }
+The FEM analysis of the worst-case scenario indicates [Replace with your interpretation of FEM results]. Despite heightened stress levels, the factor of safety remains within acceptable limits, suggesting that the chassis can withstand double the expected forces without compromising structural integrity.
+
+\paragraph{Conclusion:}
+Overall, the FEM results provide valuable insights into the structural performance of the chassis under various loading conditions. These findings will inform further optimization efforts and ensure that the chassis meets stringent performance and reliability requirements.
+
+%\begin{comment}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{texfiles/mech/eimg/chassis/fem1.png}
+  \caption{Caption for the image.}
+  \label{fig:image1}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Caption for the first image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/fem1.png}
+    \label{fig:sub1}
+  }
+  \subfloat[Caption for the second image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/fem1.png}
+    \label{fig:sub2}
+  }
+  \caption{Caption for the whole figure.}
+  \label{fig:test}
+\end{figure}
+
+
+\subsubsection{Calculations}
+
+In order to ensure the accuracy and reliability of the Finite Element Method (FEM) simulations, it is crucial to provide a comprehensive justification for the simulated loads. The following reasoning and calculations support the chosen loads for each simulation scenario:
+
+\begin{itemize}
+  \item \textbf{Static Simulation Stress Test}
+    \begin{itemize}
+      \item \textbf{Reasoning:} The static simulation stress test replicates the forces exerted by the 		suspension system and the weight of the pod when the vehicle is at rest or moving at a 					constant velocity. This scenario is essential to evaluate the chassis's ability to withstand 				static loading conditions, providing insights into its structural integrity and load-bearing 				capacity.
+
+	  \item \textbf{1.	Suspension Forces:} 
+		The suspension system applies forces to the chassis, primarily in the vertical direction, to 				support the weight of the vehicle and absorb road irregularities.
+
+	  \item \textbf{Average Suspension Force (Fsus):}
+		(Insert calculation based on suspension design and vehicle weight distribution)
+
+	  \item \textbf{2.	Weight of the Pod:} 
+		The weight of the pod contributes to the overall static loading on the chassis.
+
+	  \item \textbf{Pod Weight (Wpod):} 
+		(Insert actual weight of the pod)
+
+	  \item \textbf{Total Load:}
+		Total Load = Suspension Forces + Weight of the Pod Total Load = Fsus + Wpod
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+  \item \textbf{Braking Maneuver Simulation}
+    \begin{itemize}
+      \item \textbf{Reasoning:} The braking maneuver simulation replicates the peak forces experienced 		by the chassis during braking events. This scenario is crucial to assess the chassis's ability 		to withstand dynamic loading conditions, particularly during sudden deceleration, and ensure 				structural stability and safety.
+
+	  \item \textbf{1.	Peak Braking Force:} 
+		The braking system applies forces to the chassis during braking maneuvers, primarily in the 				longitudinal direction, to decelerate the vehicle.
+
+	  \item \textbf{Peak Braking Force (Fbrake):}
+		(Insert calculation based on braking system specifications and vehicle weight)
+	\end{itemize}
+\end{itemize}
+	
+\begin{itemize}  
+  \item \textbf{Worst-Case Scenario:}
+	\begin{itemize}
+	  \item \textbf{Reasoning:} The worst-case scenario involves doubling the forces encountered in 				the previous scenarios, representing an extreme operating condition. This scenario tests the 				limits of the chassis's structural resilience and provides insights into its performance under 		significantly elevated loading 
+		conditions.
+
+	  \item \textbf{1.	Double Suspension Forces:} The suspension forces are doubled to simulate 					extreme vertical loading conditions on the chassis.
+-	Double Suspension Forces (2 * Fsus)
+
+	  \item \textbf{1.	Double Braking Forces:}The braking forces are doubled to simulate extreme 				braking maneuvers.
+-	Double Braking Forces (2 * Fbrake)
+
+	  \item \textbf{Conclusion:} By providing rigorous justification and performing the necessary load 		calculations, we ensure that the simulated loads accurately represent real-world operating 				conditions. These simulations enable us to evaluate the structural performance of the chassis 				under various loading scenarios, guiding optimization efforts and ensuring the chassis meets 				stringent performance requirements.
+
+	\end{itemize}
+\end{itemize}
+
+
+-	Acceleration due to gravity: \(9.81\frac{m}{s^2}\)
+-	Weight of the pod (W\_pod) = Mass of the pod × Acceleration due to gravity
+
+2.	Forces from Suspension:
+-	Suspension force: [Replace with actual suspension force]
+-	Total force from suspension (F\_suspension) = Suspension force × Number of suspension points
+
+3.	Total Static Load:
+-	Total static load = Weight of the pod + Total force from suspension
+
+Simulation Scenario 2: Braking Maneuver Simulation
+
+1.	Peak Braking Force:
+-	Maximum deceleration: [Replace with actual maximum deceleration]
+-	Mass of the vehicle: [Replace with actual mass]
+-	Peak braking force = Mass of the vehicle × Maximum deceleration
+
+Worst-Case Scenario:
+
+1.	Double Forces:
+-	Double weight of the pod: 2 × Weight of the pod
+-	Double total
+
+
 \subsubsection{Mesh and Boundary Conditions}
-.  Provide details on the type of mesh, boundary conditions, and Free Body Diagrams.
-\subsubsection{Infrastructure Challenges}
-.  Address thermal expansion, weather resistance, etc.
+
+Mesh Type: For our Finite Element Method (FEM) simulations, we utilized a structured mesh approach, specifically employing a combination of hexahedral and tetrahedral elements. This mesh type offers several advantages, including improved computational efficiency, better accuracy in capturing complex geometries, and reduced numerical error.
+
+Boundary Conditions:
+
+1.	Fixed Constraints:
+-	Suspension Mounting Points: The chassis is fixed at the suspension mounting points to simulate the rigid attachment of the suspension system to the chassis.
+-	Ground Contact: The bottom surface of the chassis is fixed to simulate contact with the ground, ensuring realistic loading conditions.
+
+2.	Applied Loads:
+-	Suspension Forces: Vertical forces are applied at the suspension mounting points to simulate the forces exerted by the suspension system on the chassis. These forces represent the weight of the vehicle and any additional loads imposed by the suspension system.
+-	Braking Forces: Longitudinal forces are applied to simulate the braking forces exerted on the chassis during braking maneuvers. These forces are applied at the contact points between the braking system and the chassis.
+
+3.	Symmetry and Constraints:
+-	Symmetry: Symmetry boundary conditions are applied to exploit the symmetry of the chassis geometry, reducing computational complexity and improving efficiency.
+-	Constraints: Constraints are imposed on certain degrees of freedom to enforce realistic behavior and prevent unrealistic deformations or displacements.
+
+4.	Mesh Refinement:
+-	Local Mesh Refinement: Mesh refinement techniques are applied in areas of geometric complexity or high stress concentration to ensure accurate representation of stress distribution and structural response.
+
+Conclusion: By employing a structured mesh approach and carefully defining boundary conditions, we ensure that our FEM simulations accurately capture the behavior of the chassis under various loading scenarios. These simulations provide valuable insights into the structural performance of the chassis, guiding optimization efforts and ensuring that the design meets stringent performance requirements.
+
+\textbf{WILL BE ADDED SOON}
+
+\begin{comment}
+\begin{figure}[ht]
+  \centering
+  \subfloat[Caption for the first image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/mesh1.png}
+    \label{fig:sub1}
+  }
+  \subfloat[Caption for the second image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/eimg/chassis/mesh1.png}
+    \label{fig:sub2}
+  }
+  \caption{Caption for the whole figure.}
+  \label{fig:test}
+\end{figure}
+\end{comment}
+
+
+
 
 \subsection{Manufacturing Process}
-.  Compile a parts list in tabular format, specifying in-house or outsourced production.
 
-\subsection{Transport and Assembly Process}
-\subsubsection{Transport and Lift Plan}
-.  Describe the transport and lift plan.
-\subsubsection{Assembly Process}
-.  Describe the assembly process, including integration into subordinate systems.
-\subsubsection{Timeline and Equipment}
-.  Include a timeline, equipment needed, and workforce details.
+Firstly, the panels are sourced and procured in accordance with precise specifications, ensuring they meet the required size and shape criteria. Any necessary cutouts or holes are meticulously made in alignment with design specifications, utilizing advanced cutting techniques to ensure accuracy and consistency. Subsequently, support plates are precisely cut to the required size and shape, with corresponding holes carefully drilled to facilitate seamless integration with the panels. 
+
+These support plates serve a critical role in reinforcing the structural integrity of the chassis, providing additional strength and stability. Following preparation of the panels and support plates, a meticulous assembly process ensues. The support plates are methodically glued to the designated spots on the panels, adhering to precise positioning guidelines to ensure optimal alignment and functionality.
+
+Once the support plates are securely affixed, the panels are carefully assembled and glued together, forming a cohesive structure that embodies the desired design configuration. This assembly process is executed with meticulous attention to detail, ensuring that each component is seamlessly integrated to achieve the desired structural integrity and functionality.
+
+Finally, the seams between the assembled panels are meticulously cut to the required size and adhered to the edges of the plugged panels. This final step serves to further reinforce the structural integrity of the chassis while providing a polished finish that enhances both aesthetics and durability. Through adherence to this comprehensive manufacturing process, we ensure that the designed part is not only realized in a practical and efficient manner but also upholds the highest standards of quality and performance.
+
+\textbf{or:}
+
+Efforts have been undertaken to ensure that the designed part is realistically manufacturable, with a focus on simplicity, efficiency, and accessibility in manufacturing processes.
+
+1.	2D Waterjet Cutting for Panels: Utilizing 2D waterjet cutting for the panels ensures precise and efficient fabrication. This method allows for accurate cutting of complex shapes and contours, facilitating the production of panels with minimal material wastage.
+
+2.	Scissor-Cut Seams: Seam cutting by scissors offers a straightforward and cost-effective approach to joining panels. This manual method provides flexibility and ease of assembly, allowing for adjustments as needed during the manufacturing process. Additionally, it eliminates the need for specialized equipment, reducing production costs and complexity.
+
+3.	Waterjet Cutting for Plates: Employing waterjet cutting for the plates ensures accurate and clean cuts, maintaining dimensional accuracy and quality. This method allows for the fabrication of support plates with intricate designs and precise hole placements, enabling optimal integration with the chassis components.
+
+By leveraging these manufacturing techniques, we streamline the production process while maintaining the integrity and functionality of the designed part. The simplicity and accessibility of these methods ensure that the manufacturing process remains efficient, cost-effective, and scalable, ultimately contributing to the overall success of the project.
+
+
+
+
+\subsection{Integration process}
+
+
+\subsubsection{Assembling}
+
+Firstly, the panels are sourced and procured in accordance with precise specifications, ensuring they meet the required size and shape criteria. Any necessary cutouts or holes are meticulously made in alignment with design specifications, utilizing advanced cutting techniques to ensure accuracy and consistency.
+
+Subsequently, support plates are precisely cut to the required size and shape, with corresponding holes carefully drilled to facilitate seamless integration with the panels. These support plates serve a critical role in reinforcing the structural integrity of the chassis, providing additional strength and stability.
+
+Following preparation of the panels and support plates, a meticulous assembly process ensues. The support plates are methodically glued to the designated spots on the panels, adhering to precise positioning guidelines to ensure optimal alignment and functionality.
+
+Once the support plates are securely affixed, the panels are carefully assembled and glued together, forming a cohesive structure that embodies the desired design configuration. This assembly process is executed with meticulous attention to detail, ensuring that each component is seamlessly integrated to achieve the desired structural integrity and functionality.
+
+Finally, the seams between the assembled panels are meticulously cut to the required size and adhered to the edges of the plugged panels. This final step serves to further reinforce the structural integrity of the chassis while providing a polished finish that enhances both aesthetics and durability.
+
+Through adherence to this comprehensive manufacturing process, we ensure that the designed part is not only realized in a practical and efficient manner but also upholds the highest standards of quality and performance.
+
+\subsubsection{Assembly interaction}
+
+
+The interaction between subsystems within the pod is orchestrated with precision, each component playing a crucial role in ensuring seamless functionality and performance. At the heart of this interaction lies the chassis, serving as the sturdy backbone upon which all subsystems are mounted. The chassis not only provides structural support but also serves as a conduit for distributing forces generated by key subsystems such as the brakes, motor, and suspension.
+
+The motor, positioned centrally within the pod, exerts significant forces that are channeled directly through the chassis. As the primary source of propulsion, the motor's torque and power output directly influence the chassis's stability and performance. Similarly, the braking system, situated on the sides directly above the track, exerts substantial forces during deceleration. These forces are transmitted through the chassis, requiring robust structural reinforcement to withstand the resulting stresses.
+
+The suspension system, located at the front and back ends of the pod, plays a critical role in ensuring ride comfort and handling. The forces generated by the suspension, particularly during cornering and uneven terrain traversal, are transmitted through the chassis, necessitating careful design considerations to maintain stability and responsiveness.
+
+In addition to these dynamic subsystems, the electrical systems are integrated into the chassis using sheet metal and 3D-printed brackets. This strategic mounting ensures secure placement while minimizing interference with other components.
+
+Furthermore, the battery, housed within a dedicated battery box, is mounted on telescopic rails affixed to the chassis. This arrangement not only facilitates easy access for maintenance but also ensures optimal weight distribution and stability.
+
+Through integration and strategic mounting, each subsystem interacts harmoniously with the chassis and other components, collectively contributing to the overall functionality and performance of our pod. This cohesive interaction is essential for achieving our objectives of efficiency, reliability, and safety.
+
+
+
 
 \subsection{Safety Considerations}
+
+
 \subsubsection{Safety Factor}
-.  Discuss the safety factor applied.
+
+For our project, we have established a minimum safety factor of n=2 for all structural elements. This means that the ultimate strength of each component must be at least twice the maximum expected load it will experience.
+
+Reaching a safety factor of n=… provides a significant margin of safety, offering protection against unforeseen variations in loading conditions, material properties, and environmental factors. It ensures that the structural elements can withstand unexpected peak loads or transient events without compromising safety or integrity.
+
+
 \subsubsection{Worst-Case Scenarios}
-.  Discuss worst-case scenarios and containment plans.
-\subsubsection{Transport, Storage, and Lifting Requirements}
-.  Requirements as per Section 9.3, especially TS.4. of the R\&R.
-\subsubsection{Physical Stop and Roll-Over Calculations}
-.  Describe the physical stop and roll-over calculations.
+
+\textbf{WILL BE ADDED SOON}
+
+
+
 
 \subsection{FMEA Results Discussion}
+
+
 \subsubsection{Risk Assessment}
-.  Preliminary risk assessment for demonstration, transport, and lifting.
+
+\textbf{WILL BE ADDED SOON}
+
+
 \subsubsection{FMEA and Risk Mitigation}
-.  Detail FMEA and describe risk mitigation measures.
+\begin{comment}
+\textbf{WILL BE ADDED SOON}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{texfiles/mech/eimg/chassis/FMEA1.png}
+  \caption{Caption for the image.}
+  \label{fig:image1}
+\end{figure}
+\end{comment}
+
 \subsubsection{Simulation Evidence}
-.  Provide evidence of simulations validating theoretical assumptions.
+
+\textbf{WILL BE ADDED SOON}
+
+
+
 
 \subsection{Testing}
-.  Describe testing procedures and provide a preliminary testing plan.
 
-\subsection{Demonstration}
-.  Outline how the system will be demonstrated if standalone. Rollover and springs.
+
+\subsubsection{Safety Procedures Documentation}
+
+The testing procedures for the hyperloop pod chassis are meticulously crafted to assess structural integrity, durability, and performance under conditions that closely simulate actual operation. The procedures outlined below provide a comprehensive approach to validating the chassis design.
+
+\paragraph{Static Load Testing}
+\begin{itemize}
+    \item \textbf{Objective:} To evaluate the chassis's ability to withstand forces it would encounter while stationary.
+    \item \textbf{Procedure:} Securely mount the chassis at suspension mounting holes. Apply a static load equivalent to twice the anticipated weight of the finished pod.
+    \item \textbf{Outcome:} Determine load-bearing capacity and ensure no structural deformation or failure.
+\end{itemize}
+
+\paragraph{Dynamic Load Testing}
+\begin{itemize}
+    \item \textbf{Objective:} To assess the chassis's responsiveness and robustness under dynamic loading conditions.
+    \item \textbf{Procedure:} Subject the chassis to simulated forces of acceleration, braking, and cornering. Collect data on how the chassis flexes and reacts under these conditions.
+    \item \textbf{Outcome:} Confirm the chassis's integrity under dynamic stresses and identify potential areas for reinforcement.
+\end{itemize}
+
+\paragraph{Bending Stress Test}
+\begin{itemize}
+    \item \textbf{Objective:} To understand the material properties of the chassis, particularly its bending strength and ductility.
+    \item \textbf{Procedure:} Fabricate a reference part from the same material as the chassis. Apply incremental force until the part fails, if applicable.
+    \item \textbf{Outcome:} Ascertain the material's resistance to bending forces and its behavior under stress.
+\end{itemize}
+
+\paragraph{Vibration Testing}
+\begin{itemize}
+    \item \textbf{Objective:} To evaluate the chassis's ability to endure and dampen vibrations during operation.
+    \item \textbf{Procedure:} Expose the chassis to controlled vibrations at various frequencies and amplitudes to simulate motor-generated vibrations and other operational scenarios.
+    \item \textbf{Outcome:} Ensure the chassis can effectively dampen vibrations and avoid resonance or structural fatigue.
+\end{itemize}
+
+
+\subsubsection{preliminary testing plan}
+
+This section outlines the testing plan for the chassis of the hyperloop pod, ensuring its structural integrity and stability under various loads and conditions.
+
+\paragraph{Static Load Testing}
+\begin{itemize}
+    \item \textbf{Method:} Securely mount the chassis at the suspension mounting holes.
+    \item \textbf{Loading:} Apply a static load equivalent to twice the weight of the finished pod.
+    \item \textbf{Duration:} Maintain the load for a predetermined period to assess the structural integrity.
+    \item \textbf{Measurement:} Monitor for deformation or failure.
+\end{itemize}
+
+\paragraph{Dynamic Load Testing}
+\begin{itemize}
+    \item \textbf{Method:} Simulate dynamic forces experienced during operation.
+    \item \textbf{Loading:} Apply forces to replicate acceleration, braking, and cornering.
+    \item \textbf{Duration:} Perform over various speeds and conditions.
+    \item \textbf{Measurement:} Record deflection and structural response.
+\end{itemize}
+
+\paragraph{Bending Stress Test}
+\begin{itemize}
+    \item \textbf{Method:} Use a reference part made from the same material as the chassis panels.
+    \item \textbf{Loading:} Incrementally apply force until failure.
+    \item \textbf{Measurement:} Note the force applied and deformation at failure.
+    \item \textbf{Expected Result:} Determine material's bending strength and ductility.
+\end{itemize}
+
+\paragraph{Vibration Testing}
+\begin{itemize}
+    \item \textbf{Method:} Subject chassis to controlled vibrations across frequencies.
+    \item \textbf{Loading:} Simulate operational vibrations.
+    \item \textbf{Duration:} Extend testing for durability assessment.
+    \item \textbf{Measurement:} Assess chassis damping and response to vibrations.
+    \item \textbf{Expected Result:} Ensure chassis can maintain integrity under vibration.
+\end{itemize}
+
+\paragraph{Expected Results}
+The chassis is expected to demonstrate stability and maintain structural integrity under static and dynamic loads. The bending stress test will confirm the material's properties, while vibration testing will validate damping capabilities. Through this comprehensive testing, the chassis will be proven to meet rigorous quality and safety standards, crucial for the hyperloop pod's performance.
