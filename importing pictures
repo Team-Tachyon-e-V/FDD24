@@ -1,0 +1,29 @@
+Just one picture in the Center of the Page: 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{texfiles/mech/updated/chassis/cad1.png}
+  \caption{Caption for the image.}
+  \label{fig:image1}
+\end{figure}
+
+
+
+Two Pictures next to each other: 
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Caption for the first image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/updated/chassis/technicaldrawing1.png}
+    \label{fig:sub1}
+  }
+  \subfloat[Caption for the second image.]{
+    \centering
+    \includegraphics[width=0.5\linewidth]{texfiles/mech/updated/chassis/technicaldrawing1.png}
+    \label{fig:sub2}
+  }
+  \caption{Caption for the whole figure.}
+  \label{fig:test}
+\end{figure}
+
