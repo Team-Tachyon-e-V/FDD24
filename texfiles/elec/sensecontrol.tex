@@ -30,20 +30,23 @@ In this section, the main components of the sensor network and software architec
 Example Thermal Parts list start:
 % Comprehensive list of all parts used in the thermal system, including specifications and suppliers.
 Parts List:
-\[
-\begin{array}{|c|c|c|c|c|c|c|}
-\hline
-\textbf{Amount} & \textbf{Name} & \textbf{Company, (Serial Number)} & \textbf{Dimensions [mm \times mm \times mm]} & \textbf{Weight [kg]} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
-\hline
-38 & \text{Additional Temperature Sensors (NTC, 10k Ohm)} & \text{Mouser} & 1000 \times 3 \times 3 & 200 \times 10^{-6} & - & - \\
-\hline
-1 & \text{Coolant Pump} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} \\
-\hline
-1 & \text{MOSFET Bridge} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} \\
-\hline
-\end{array}
-\]
-
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Amount} & \textbf{Name} & \textbf{Company (Serial Number)} & \textbf{Dimensions (mm x mm x mm)} & \textbf{Weight (kg)} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
+    \hline
+    38 & Additional Temperature Sensors (NTC, 10k Ohm) & Mouser & 1000 x 3 x 3 & $200 \times 10^{-6}$ & - & - \\
+    \hline
+    1 & Coolant Pump & Unknown & Unknown & Unknown & Unknown & Unknown \\
+    \hline
+    1 & MOSFET Bridge & Unknown & Unknown & Unknown & Unknown & Unknown \\
+    \hline
+    \end{tabular}
+    \caption{Description of Components}
+    \label{tab:components}
+\end{table}
+    
 
 \subsection{State Machine of the Vehicle}
 % Continue with the structured format from the second snippet, ensuring to merge relevant content from the first snippet into these sections.
