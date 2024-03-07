@@ -1,7 +1,4 @@
-\chapter{Safety}
-30 Pages maximum
-
-
+\chapter{Safety - 30 pages max}
 We have the following safety hazards:
 \begin{itemize}
     \item Pneumatic Braking Systems
@@ -9,19 +6,68 @@ We have the following safety hazards:
     \item Cooling and Thermal Systems 
     \item High voltage Batteries and protections
 \end{itemize}
+\section{FDD.25 Technical Description for Compliance}
+% Description of the system to ensure compliance with the rules and requirements for demonstration.
 
-\section{Technical Description for Compliance}
-FDD.25 
+\section{FDD.26 Preliminary Risk Assessment for Demonstration}
+% Preliminary risk assessment specifically focused on the demonstration aspects.
 
-\section{Preliminary Risk Assessment for Demonstration}
-FDD.26 
-
-\section{FMEA}
-FDD.27
+\section{FDD.27 (FMEA)}
 \subsection{Mechanical Systems FMEA}
 % FMEA details for Mechanical Systems.
 \subsection{Electrical Systems FMEA}
 % FMEA details for Electrical Systems.
+
+The following table details the Failure Mode and Effects Analysis for the Low Voltage Battery System used in the Tachyon Hyperloop prototype.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{>{\raggedright}p{2cm} >{\raggedright}p{2.5cm} >{\raggedright}p{2.5cm} >{\raggedright}p{2cm} >{\raggedright}p{1.5cm} >{\raggedright\arraybackslash}p{1.5cm}}
+\toprule
+\textbf{Failure Mode} & \textbf{Potential Effects} & \textbf{Potential Causes} & \textbf{Current Controls} & \textbf{Severity} & \textbf{RPN} \\
+\midrule
+Cell Degradation & Reduced system performance, possible system shutdown, capacity & Aging, overuse, use at overtemperature & Monitoring of cell health, thermal control. Limit range of use to 20 \% to 80 \% & Medium &  TBD\\
+\addlinespace
+Leakage & Short circuits, damage to other components & Mechanical stress, overcharging, manufacturing defects & Protective casing, visual inspection, BMS monitoring & Medium & TBD \\
+\addlinespace
+Overcharging & Reduced battery life, risk of fire & Faulty charging system, operator error & Overcharge protection & High & TBD \\
+\addlinespace
+Undercharging & reduced performance and life span & Faulty charging system, operator error & Monitoring system for charge level & Medium & TBD \\
+\addlinespace
+Internal Short Circuit & Explosive fire hazard, complete system failure & Manufacturing defect, physical damage & Internal insulation & Very High & TBD \\
+\bottomrule
+\end{tabular}
+\caption{FMEA for Low Voltage Battery System}
+\end{table}
+
+The following table details the Failure Mode and Effects Analysis for the High Voltage Battery System used in the Tachyon Hyperloop prototype.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{>{\raggedright}p{2cm} >{\raggedright}p{2.5cm} >{\raggedright}p{2.5cm} >{\raggedright}p{2cm} >{\raggedright\arraybackslash}p{1.5cm} >{\raggedright\arraybackslash}p{1cm} >{\raggedright\arraybackslash}p{1cm} >{\raggedright\arraybackslash}p{1.5cm}}
+\toprule
+\textbf{Failure Mode} & \textbf{Potential Effects} & \textbf{Potential Causes} & \textbf{Current Controls} & \textbf{Severity} & \textbf{Occurrence} & \textbf{Detection} & \textbf{RPN} \\
+\midrule
+Thermal Runaway & Fire, explosion, damage to system & Overcharging, internal short, manufacturing defect & BMS, thermal monitoring and control & 10 & 1 & 3 & 30 \\
+\addlinespace
+Overvoltage & Damage to electrical components, reduced battery life & Faulty BMS, charger malfunction & BMS, limit of charge & 8 & 2 & 4 & 64 \\
+\addlinespace
+Undervoltage & Reduced performance, reduced health, system shutdown & High load, BMS failure & Low voltage detection, overdimensioning of battery power, automatic shutdown & 6 & 3 & 5 & 90 \\
+\addlinespace
+Internal Short Circuit & Fire hazard, battery failure & Manufacturing defect, physical damage & Protective Device (Insulation Monitoring), Passive Insulation in Pack & 9 & 2 & 6 & 108 \\
+\bottomrule
+\end{tabular}
+\caption{FMEA for High Voltage Battery System}
+\end{table}
+
+
+
+\subsubsection{Mitigation Strategies}
+Detailed strategies to address, reduce, or eliminate the risks associated with each identified failure mode, including design improvements, preventive maintenance, and enhanced monitoring systems.
+
+\subsubsection{Implementation and Follow-Up}
+Action plan for implementing the mitigation strategies, along with a process for ongoing monitoring and updating the FMEA based on operational experience and system modifications.
+
 \subsection{Traction Systems FMEA}
 % FMEA details for Traction Systems.
 \subsection{Sense and Control Systems FMEA}
@@ -29,14 +75,11 @@ FDD.27
 \subsection{Risk Mitigation Measures}
 % General risk mitigation measures across all systems.
 
-\section{Energy Storage Types and Components}
-FDD.28
+\section{FDD.28 Energy Storage Types and Components}
 % Description of all energy storage types and components present in the system(s).
 
-\section{Transport, Storage, and Lifting Requirements}
-FDD.29 
-\subsection{Preliminary Risk Assessment for Transport and Lifting}
-FDD.26 
+\section{FDD.29 Transport, Storage, and Lifting Requirements}
+\subsection{FDD.26 Preliminary Risk Assessment for Transport and Lifting}
 % Preliminary risk assessment for transport and lifting procedures.
 \subsection{Transport and Storage Logistics}
 % Detailed requirements and logistics for transport, storage, and lifting, including TSL.1 to TSL.15 and FDD.30 to FDD.31.
@@ -44,5 +87,5 @@ FDD.26
 \newpage
 \newcounter{xSafety}
 \forloop{xSafety}{1}{\value{xSafety} < 20} {
-\newpage
+    \newpage
 }
