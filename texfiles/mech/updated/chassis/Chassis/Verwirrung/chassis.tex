@@ -1,0 +1,119 @@
+\documentclass{article}
+
+
+
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+\begin{document}
+
+\section{Chassis}
+
+
+\subsection{Overview}
+\subsubsection{Requirements and Constraints}
+.  Detail the main requirements and constraints driving the design.
+\subsubsection{Concept}
+.  Explain the concept of the subsystem and reasons for its selection.
+
+The chassis plays an important role in any moving structure, providing the structural foundation and support necessary to ensure safety, stability, and functionality for the entire vehicle and all the systems it holds. In this year's iteration, our pod utilises a two-track system, which not only allows for extra room to house subsystems but also lowers the pod's centre of mass, thereby enhancing stability. This design decision results in a wider and consequently shorter pod.
+\subsubsection{Size, Components, and Appearance}
+.  Include a table of materials, mass, dimensions, and other relevant factors.
+\begin{table}[ht]
+\centering
+
+\label{table:components}
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{|>{\bfseries}m{2.5cm}|m{1.4cm}|m{1.7cm}|m{2.1cm}|m{2.2cm}|m{2.6cm}|m{2.2cm}|}
+\hline
+Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/ outsourced \\
+\hline
+GP & x1 & 1 & 1480 x 882 x 20 & CF Sandwich & Waterjetcut & Outsourced \\
+CacP & x1 & 1 & 882 x 200 x 20 & CF Sandwich & Waterjetcut & Outsourced \\
+BacP & x2 & 0.1 & 882 x 200 x 20 & CF Sandwich & Waterjetcut & Outsourced \\
+BCalP & x2 & 0.2 & 883 x 200 x 20 & CF Sandwich & Waterjetcut & Outsourced \\
+AalP & x2 & WEIGHT & 270x200x20 & CF Sandwich & Waterjetcut & Outsourced \\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\caption{Components and Manufacturing Details}
+\end{table}
+
+
+\subsection{Theoretical concepts}
+.  Provide a detailed explanation of the theoretical and physical principles that form the foundation of the desired functionality.
+.  Use free body diagrams to define load cases for simulations.
+
+
+\subsection{Design Process and Appearance}
+\subsubsection{CAD Models and Technical Drawings}
+.  Present CAD models and technical drawings.
+\subsubsection{Materials}
+.  Present and justify the selection of materials used in the subsystem
+.  Provide relevant properties of the materials selected.
+\subsubsection{Design Rationale}
+.  Detail the design rationale behind the components of the infrastructure.
+.  Provide a rationale for why the specific configuration has been chosen
+\subsubsection{FEM Results}
+.  Present FEM results for worst-case scenarios, including images and values.
+\subsubsection{Calculations}
+.  Provide reasoning and the necessary calculations to justify the simulated loads.
+\subsubsection{Mesh and Boundary Conditions}
+.  Provide details on the type of mesh, boundary conditions, and Free Body Diagrams.
+
+
+\subsection{Manufacturing Process}
+.  Compile a parts list in tabular format, specifying in-house or outsourced production.
+.Describe what efforts have been made so that the designed part is realistically manufacturable.
+
+
+\subsection{Integration process}
+\subsubsection{Assembling}
+.  Describe how the parts will be assembled, including integration into subordinate structures/systems if applicable.
+\subsubsection{Assembly interaction}
+.  If applicable, explain in detail how the subsystem interacts with the other subsystems.
+
+
+
+\subsection{Safety Considerations}
+\subsubsection{Safety Factor}
+.  Discuss the safety factor applied to structural elements.
+\subsubsection{Worst-Case Scenarios}
+.  Discuss worst-case scenarios (e.g., worst-case braking deceleration) and what you plan to do to avoid or contain them.
+\subsubsection{Transport, Storage, and Lifting Requirements}
+.  Requirements as per Section 9.3, especially TS.4. of the R\&R.
+\subsubsection{Physical Stop and Roll-Over Calculations}
+.  Describe the physical stop and roll-over calculations.
+
+
+\subsection{FMEA Results Discussion}
+\subsubsection{Risk Assessment}
+.  Preliminary risk assessment for demonstration, transport, and lifting.
+\subsubsection{FMEA and Risk Mitigation}
+.  Detail FMEA and describe risk mitigation measures.
+\subsubsection{Simulation Evidence}
+.  Provide evidence of simulations validating theoretical assumptions.
+
+
+\subsection{Testing}
+\subsubsection{Safety Procedures Documentation}
+.  Describe testing procedures.
+\subsubsection{preliminary testing plan}
+.  Provide a preliminary testing plan, including methodology and expected results.
+
+
+\subsection{Demonstration}
+.  Outline how the system will be demonstrated if standalone. Rollover and springs.
+
+
+
+\end{document}
