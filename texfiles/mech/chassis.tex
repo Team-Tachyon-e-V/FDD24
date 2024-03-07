@@ -237,82 +237,101 @@ In order to ensure the accuracy and reliability of the Finite Element Method (FE
 \begin{itemize}
   \item \textbf{Braking Maneuver Simulation}
     \begin{itemize}
-      \item \textbf{Reasoning:} The braking maneuver simulation replicates the peak forces experienced 		by the chassis during braking events. This scenario is crucial to assess the chassis's ability 		to withstand dynamic loading conditions, particularly during sudden deceleration, and ensure 				structural stability and safety.
-
-	  \item \textbf{1.	Peak Braking Force:} 
-		The braking system applies forces to the chassis during braking maneuvers, primarily in the 				longitudinal direction, to decelerate the vehicle.
-
-	  \item \textbf{Peak Braking Force (Fbrake):}
-		(Insert calculation based on braking system specifications and vehicle weight)
-	\end{itemize}
+      \item \textbf{Reasoning:} The braking maneuver simulation replicates the peak forces experienced by the chassis during braking events. This scenario is crucial to assess the chassis's ability to withstand dynamic loading conditions, particularly during sudden deceleration, and ensure structural stability and safety.
+      \item \textbf{Peak Braking Force:} The braking system applies forces to the chassis during braking maneuvers, primarily in the longitudinal direction, to decelerate the vehicle.
+      \item \textbf{Peak Braking Force \(F_{\text{brake}}\):} (Insert calculation based on braking system specifications and vehicle weight)
+    \end{itemize}
 \end{itemize}
+
 	
 \begin{itemize}  
   \item \textbf{Worst-Case Scenario:}
-	\begin{itemize}
-	  \item \textbf{Reasoning:} The worst-case scenario involves doubling the forces encountered in 				the previous scenarios, representing an extreme operating condition. This scenario tests the 				limits of the chassis's structural resilience and provides insights into its performance under 		significantly elevated loading 
-		conditions.
-
-	  \item \textbf{1.	Double Suspension Forces:} The suspension forces are doubled to simulate 					extreme vertical loading conditions on the chassis.
--	Double Suspension Forces (2 * Fsus)
-
-	  \item \textbf{1.	Double Braking Forces:}The braking forces are doubled to simulate extreme 				braking maneuvers.
--	Double Braking Forces (2 * Fbrake)
-
-	  \item \textbf{Conclusion:} By providing rigorous justification and performing the necessary load 		calculations, we ensure that the simulated loads accurately represent real-world operating 				conditions. These simulations enable us to evaluate the structural performance of the chassis 				under various loading scenarios, guiding optimization efforts and ensuring the chassis meets 				stringent performance requirements.
-
-	\end{itemize}
+  \begin{itemize}
+    \item \textbf{Reasoning:} The worst-case scenario involves doubling the forces encountered in the previous scenarios, representing an extreme operating condition. This scenario tests the limits of the chassis's structural resilience and provides insights into its performance under significantly elevated loading conditions.
+    \item \textbf{Double Suspension Forces:} The suspension forces are doubled to simulate extreme vertical loading conditions on the chassis. \\
+    \textit{- Double Suspension Forces (2 $\times$ F\textsubscript{sus})}
+    \item \textbf{Double Braking Forces:} The braking forces are doubled to simulate extreme braking maneuvers. \\
+    \textit{- Double Braking Forces (2 $\times$ F\textsubscript{brake})}
+    \item \textbf{Conclusion:} By providing rigorous justification and performing the necessary load calculations, we ensure that the simulated loads accurately represent real-world operating conditions. These simulations enable us to evaluate the structural performance of the chassis under various loading scenarios, guiding optimization efforts and ensuring the chassis meets stringent performance requirements.
+  \end{itemize}
 \end{itemize}
 
 
--	Acceleration due to gravity: \(9.81\frac{m}{s^2}\)
--	Weight of the pod (W\_pod) = Mass of the pod × Acceleration due to gravity
 
-2.	Forces from Suspension:
--	Suspension force: [Replace with actual suspension force]
--	Total force from suspension (F\_suspension) = Suspension force × Number of suspension points
+\paragraph{Simulation Scenario 1: Static Simulation}
+\begin{enumerate}
+  \item Acceleration due to gravity: \(9.81 \, \text{m/s}^2\)
+  \item Weight of the pod \(W_{\text{pod}}\) = Mass of the pod \(\times\) Acceleration due to gravity
+\end{enumerate}
 
-3.	Total Static Load:
--	Total static load = Weight of the pod + Total force from suspension
+\begin{enumerate}
+  \item \textbf{Forces from Suspension:}
+  \begin{itemize}
+    \item Suspension force: [Replace with actual suspension force]
+    \item Total force from suspension \(F_{\text{suspension}}\) = Suspension force \(\times\) Number of suspension points
+  \end{itemize}
 
-Simulation Scenario 2: Braking Maneuver Simulation
+  \item \textbf{Total Static Load:}
+  \begin{itemize}
+    \item Total static load = Weight of the pod \(+ F_{\text{suspension}}\)
+  \end{itemize}
+\end{enumerate}
 
-1.	Peak Braking Force:
--	Maximum deceleration: [Replace with actual maximum deceleration]
--	Mass of the vehicle: [Replace with actual mass]
--	Peak braking force = Mass of the vehicle × Maximum deceleration
+\paragraph{Simulation Scenario 2: Braking Maneuver Simulation}
 
-Worst-Case Scenario:
+\begin{enumerate}
+  \item \textbf{Peak Braking Force:}
+  \begin{itemize}
+    \item Maximum deceleration: [Replace with actual maximum deceleration]
+    \item Mass of the vehicle: [Replace with actual mass]
+    \item Peak braking force = Mass of the vehicle \(\times\) Maximum deceleration
+  \end{itemize}
+\end{enumerate}
 
-1.	Double Forces:
--	Double weight of the pod: 2 × Weight of the pod
--	Double total
+\paragraph{Worst-Case Scenario:}
+
+\begin{enumerate}
+  \item \textbf{Double Forces:}
+  \begin{itemize}
+    \item Double weight of the pod: \(2 \times W_{\text{pod}}\)
+    \item Double total [incomplete information]
+  \end{itemize}
+\end{enumerate}
 
 
 \subsubsection{Mesh and Boundary Conditions}
 
 Mesh Type: For our Finite Element Method (FEM) simulations, we utilized a structured mesh approach, specifically employing a combination of hexahedral and tetrahedral elements. This mesh type offers several advantages, including improved computational efficiency, better accuracy in capturing complex geometries, and reduced numerical error.
+\paragraph{Boundary Conditions:}
 
-Boundary Conditions:
+\begin{enumerate}
+  \item \textbf{Fixed Constraints:}
+  \begin{itemize}
+    \item Suspension Mounting Points: The chassis is fixed at the suspension mounting points to simulate the rigid attachment of the suspension system to the chassis.
+    \item Ground Contact: The bottom surface of the chassis is fixed to simulate contact with the ground, ensuring realistic loading conditions.
+  \end{itemize}
 
-1.	Fixed Constraints:
--	Suspension Mounting Points: The chassis is fixed at the suspension mounting points to simulate the rigid attachment of the suspension system to the chassis.
--	Ground Contact: The bottom surface of the chassis is fixed to simulate contact with the ground, ensuring realistic loading conditions.
+  \item \textbf{Applied Loads:}
+  \begin{itemize}
+    \item Suspension Forces: Vertical forces are applied at the suspension mounting points to simulate the forces exerted by the suspension system on the chassis. These forces represent the weight of the vehicle and any additional loads imposed by the suspension system.
+    \item Braking Forces: Longitudinal forces are applied to simulate the braking forces exerted on the chassis during braking maneuvers. These forces are applied at the contact points between the braking system and the chassis.
+  \end{itemize}
 
-2.	Applied Loads:
--	Suspension Forces: Vertical forces are applied at the suspension mounting points to simulate the forces exerted by the suspension system on the chassis. These forces represent the weight of the vehicle and any additional loads imposed by the suspension system.
--	Braking Forces: Longitudinal forces are applied to simulate the braking forces exerted on the chassis during braking maneuvers. These forces are applied at the contact points between the braking system and the chassis.
+  \item \textbf{Symmetry and Constraints:}
+  \begin{itemize}
+    \item Symmetry: Symmetry boundary conditions are applied to exploit the symmetry of the chassis geometry, reducing computational complexity and improving efficiency.
+    \item Constraints: Constraints are imposed on certain degrees of freedom to enforce realistic behavior and prevent unrealistic deformations or displacements.
+  \end{itemize}
 
-3.	Symmetry and Constraints:
--	Symmetry: Symmetry boundary conditions are applied to exploit the symmetry of the chassis geometry, reducing computational complexity and improving efficiency.
--	Constraints: Constraints are imposed on certain degrees of freedom to enforce realistic behavior and prevent unrealistic deformations or displacements.
+  \item \textbf{Mesh Refinement:}
+  \begin{itemize}
+    \item Local Mesh Refinement: Mesh refinement techniques are applied in areas of geometric complexity or high stress concentration to ensure accurate representation of stress distribution and structural response.
+  \end{itemize}
+\end{enumerate}
 
-4.	Mesh Refinement:
--	Local Mesh Refinement: Mesh refinement techniques are applied in areas of geometric complexity or high stress concentration to ensure accurate representation of stress distribution and structural response.
 
-Conclusion: By employing a structured mesh approach and carefully defining boundary conditions, we ensure that our FEM simulations accurately capture the behavior of the chassis under various loading scenarios. These simulations provide valuable insights into the structural performance of the chassis, guiding optimization efforts and ensuring that the design meets stringent performance requirements.
+\paragraph{Conclusion} By employing a structured mesh approach and carefully defining boundary conditions, we ensure that our FEM simulations accurately capture the behavior of the chassis under various loading scenarios. These simulations provide valuable insights into the structural performance of the chassis, guiding optimization efforts and ensuring that the design meets stringent performance requirements.
 
-\textbf{WILL BE ADDED SOON}
 
 \begin{comment}
 \begin{figure}[ht]
@@ -413,27 +432,9 @@ Reaching a safety factor of n=… provides a significant margin of safety, offer
 
 
 \subsection{FMEA Results Discussion}
-
-
 \subsubsection{Risk Assessment}
-
-\textbf{WILL BE ADDED SOON}
-
-
 \subsubsection{FMEA and Risk Mitigation}
-\begin{comment}
-\textbf{WILL BE ADDED SOON}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\linewidth]{texfiles/mech/eimg/chassis/FMEA1.png}
-  \caption{Caption for the image.}
-  \label{fig:image1}
-\end{figure}
-\end{comment}
-
 \subsubsection{Simulation Evidence}
-
-\textbf{WILL BE ADDED SOON}
 
 
 
@@ -443,7 +444,7 @@ Reaching a safety factor of n=… provides a significant margin of safety, offer
 
 \subsubsection{Safety Procedures Documentation}
 
-The testing procedures for the hyperloop pod chassis are meticulously crafted to assess structural integrity, durability, and performance under conditions that closely simulate actual operation. The procedures outlined below provide a comprehensive approach to validating the chassis design.
+The testing procedures for the hyperloop pod chassis are crafted to assess structural integrity, durability, and performance under conditions that closely simulate actual operation. The procedures outlined below provide a comprehensive approach to validating the chassis design.
 
 \paragraph{Static Load Testing}
 \begin{itemize}
@@ -474,7 +475,7 @@ The testing procedures for the hyperloop pod chassis are meticulously crafted to
 \end{itemize}
 
 
-\subsubsection{preliminary testing plan}
+\subsubsection{Preliminary testing plan}
 
 This section outlines the testing plan for the chassis of the hyperloop pod, ensuring its structural integrity and stability under various loads and conditions.
 
@@ -513,3 +514,4 @@ This section outlines the testing plan for the chassis of the hyperloop pod, ens
 
 \paragraph{Expected Results}
 The chassis is expected to demonstrate stability and maintain structural integrity under static and dynamic loads. The bending stress test will confirm the material's properties, while vibration testing will validate damping capabilities. Through this comprehensive testing, the chassis will be proven to meet rigorous quality and safety standards, crucial for the hyperloop pod's performance.
+\newpage

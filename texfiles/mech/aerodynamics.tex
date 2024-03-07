@@ -10,7 +10,7 @@ The Hyperloop pod aeroshell is required to fulfill several critical functions to
 \subsubsection{Concept}
 The concept of the aeroshell subsystem revolves around maximizing aerodynamic efficiency while ensuring structural integrity and safety compliance. Inspired by proven aerodynamic principles, the aeroshell design prioritizes minimizing air resistance, enhancing stability, and facilitating controlled airflow. By incorporating features such as a streamlined front and rear configurations, the aeroshell optimizes performance while maintaining adherence to safety standards and regulatory requirements outlined in the Functional Design Description (FDD) for the Hyperloop competition.
 \subsubsection{Size, Components, and Appearance}
-.  Include a table of materials, mass, dimensions, and other relevant factors.
+
 \begin{table}[ht]
 \centering
 
@@ -20,17 +20,18 @@ The concept of the aeroshell subsystem revolves around maximizing aerodynamic ef
 \hline
 Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/ outsourced \\
 \hline
-Wheels & x8 & 1 & 100 x 50 & Polyurethane & Injection molding & Outsourced \\
-Axles & x8 & 0.2 & 10 x 90 & Duplex Steel & Lathing & In-house \\
-L-bracket 1 & x16 & 0.1 & 20x30x50 & Aluminium 7075 & Milling & In-house \\
-L-bracket 2 & x8 & 0.2 & 30x40x60 & Aluminium 7075 & CNC & Outsourced \\
-PART & AMOUNT & WEIGHT & SIZE & MATERIAL & PROCESS & SPONSORING \\
+Bed lift & x2 & 7 & - & steel & - & Outsourced \\
+Lamination bolt & x8 & 0,01 & M6 & stainless steel & - & Outsourced \\
+Nuts & x8 & 0,0012 & M6 & alloyed steel & - & Outsourced \\
+3D-Print & x1 & - & - & - & - & Outsourced \\
+Epoxidharz & x1 & - & - & - & -& Outsorced \\
 \hline
 
 \end{tabular}
 \end{adjustbox}
 \caption{Components and Manufacturing Details}
 \end{table}
+
 
 
 \subsection{Theoretical concepts}
@@ -130,7 +131,7 @@ For our Hyperloop pod design, the \(k-\omega\) SST turbulence model serves as a 
 
 \subsection{Design Process and Appearance}
 \subsubsection{CAD Models and Technical Drawings}
-.  Present CAD models and technical drawings.
+
 \begin{figure}[!ht]
   \centering
   \begin{minipage}[b]{0.45\linewidth}
@@ -178,51 +179,29 @@ For our Hyperloop pod design, the \(k-\omega\) SST turbulence model serves as a 
 \par %
 
 \subsubsection{Materials}
-.  Present and justify the selection of materials used in the subsystem
-.  Provide relevant properties of the materials selected.
+
+
 The Aeroshell is constructed sustainably with natural basalt fibre for biodegradability and superior tensile strenth. This iteration we used 3D printes molds, which enhance the design precision. Furthermore various safety features have been added to the Body, including using Polyester based Resins that are fire resistant.
 \par %
 
 \subsubsection{Design Rationale}
-.  Detail the design rationale behind the components of the infrastructure.
-.  Provide a rationale for why the specific configuration has been chosen
-\newline
+
+
 The Hyperloop shell was designed in Autodesk Fusion 360. First we collected several information about optimal aerodynamic shell designs.To fit the chassis we went with a rounded rectangular form. The shell has smooth and regular surfaces for laminar airflow. Originally doors were planned for easy access to the battery. Due to time constraints we decided to implement a quick release mechanism so one is able to “take off” the whole shell and have access to the whole chassis. Furthermore the rear end is flattened to reduce the drag force on our pod.
 \par %
 
 
 \subsubsection{FEM Results}
-.  Present FEM results for worst-case scenarios, including images and values.
+
 \paragraph{Calculations}
-.  Provide reasoning and the necessary calculations to justify the simulated loads.
+
 \subsubsection{Mesh and Boundary Conditions}
-.  Provide details on the type of mesh, boundary conditions, and Free Body Diagrams.
+
 
 
 \subsection{Manufacturing Process}
-.  Compile a parts list in tabular format, specifying in-house or outsourced production.
-.Describe what efforts have been made so that the designed part is realistically manufacturable.
-\begin{table}[ht]
-\centering
 
-\label{table:components}
-\begin{adjustbox}{width=\textwidth,center}
-\begin{tabular}{|>{\bfseries}m{2.5cm}|m{1.4cm}|m{1.7cm}|m{2.1cm}|m{2.2cm}|m{2.6cm}|m{2.2cm}|}
-\hline
-Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/ outsourced \\
-\hline
-Bed lift & x2 & 7 & - & steel & - & Outsourced \\
-Lamination bolt & x8 & 0,01 & M6 & stainless steel & - & Outsourced \\
-Nuts & x8 & 0,0012 & M6 & alloyed steel & - & Outsourced \\
-3D-Print & x1 & - & - & - & - & Outsourced \\
-Epoxidharz & x1 & - & - & - & -& Outsorced \\
-PART & AMOUNT & WEIGHT & SIZE & MATERIAL & PROCESS & SPONSORING \\
-\hline
 
-\end{tabular}
-\end{adjustbox}
-\caption{Components and Manufacturing Details}
-\end{table}
 
 \par %
 
@@ -279,24 +258,26 @@ In the event of a fire within the system, the aeroshell ist designed to withstan
 \par %
 \subsection{FMEA Results Discussion}
 \subsubsection{Risk Assessment}
-.  Preliminary risk assessment for demonstration, transport, and lifting.
+
 \subsubsection{FMEA and Risk Mitigation}
-.  Detail FMEA and describe risk mitigation measures.
+
 \subsubsection{Simulation Evidence}
-.  Provide evidence of simulations validating theoretical assumptions.
+
 
 
 \subsection{Testing}
 \subsubsection{Safety Procedures Documentation}
-.  Describe testing procedures.
+
 \subsubsection{preliminary testing plan}
-.  Provide a preliminary testing plan, including methodology and expected results.
+
 
 
 \subsection{Additional considerations}
-.  Additional considerations when writing the document for specific subsystems: Breaking, Pneumatic system, Aeroshell.
-i. 		Include CFD analyses for the conditions expected during the demonstration, and their
-		results, covering values such as lift, drag, or moment coefficient.
-ii. 		If you plan on demonstrating inside a tube, include it in the CFD simulations.
-iii. 	In case the system uses high voltage, indicate how will the MIDs be shut off when the
-		aeroshell is covering the pod
+\textbf{Additional considerations when writing the document for specific subsystems: Braking, Pneumatic system, Aeroshell:}
+\begin{enumerate}
+  \item Include CFD (Computational Fluid Dynamics) analyses for the conditions expected during the demonstration, and their results, covering values such as lift, drag, or moment coefficient.
+  \item If you plan on demonstrating inside a tube, include it in the CFD simulations to accurately model environmental interactions.
+  \item In case the system uses high voltage, clearly indicate the methods by which the MIDs (Magnetic Induction Devices) will be shut off when the aeroshell is covering the pod, ensuring safety and system integrity.
+\end{enumerate}
+\newpage
+
