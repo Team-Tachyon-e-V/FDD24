@@ -29,19 +29,20 @@ In this section, the main components of the sensor network and software architec
 \subsubsection{Parts Lists}
 Example Thermal Parts list start:
 % Comprehensive list of all parts used in the thermal system, including specifications and suppliers.
-Parts list:
-\begin{table}[h]
-    \centering
-    \caption{Parts List}
-        \begin{adjustbox}{width=\textwidth,center}
-    \begin{tabular}{|c|c|c|c|c|c|c|}
-        \hline
-        \textbf{Amount} & \textbf{Name} & \textbf{Company, (Serial Number)} & \textbf{Dimensions [mm x mm x mm]} & \textbf{Weight [kg]} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
-        \hline
-        38& Additional Temperature Sensors (NTC, 10k Ohm) & Mouser & 1000x3x3& 200*10^(-6)& - & - \\
-    \end{tabular}
-        \end{adjustbox}
-\end{table}
+Parts List:
+\[
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Amount} & \textbf{Name} & \textbf{Company, (Serial Number)} & \textbf{Dimensions [mm \times mm \times mm]} & \textbf{Weight [kg]} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
+\hline
+38 & \text{Additional Temperature Sensors (NTC, 10k Ohm)} & \text{Mouser} & 1000 \times 3 \times 3 & 200 \times 10^{-6} & - & - \\
+\hline
+1 & \text{Coolant Pump} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} \\
+\hline
+1 & \text{MOSFET Bridge} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} & \text{Unknown} \\
+\hline
+\end{array}
+\]
 
 
 \subsection{State Machine of the Vehicle}
@@ -71,16 +72,31 @@ The following hardware architecture is to be implemented:
 
 \begin{enumerate}
     \item Brakes Controller
+    Lacking. To be added.
 
     \item Thermal Controller
 The Thermal Management Controller is responsible for cooling the Traction Components, i.e., Motor and Traction Controller. The actuator is the coolant pump which is controlled  with the feedback of the temperature of coolant in the cooling loop.  The Pump Speed is controlled via PWM to the MOSFET Bridge. The PWM duty cycle is simply calculated from a lookup table that is referenced to the temperature difference between target and actual temperatures. The only safety feature to be developed is to issue an emergency stop signal to HV Systems in the event the coolant temperature exceeds a critical
-temperature
+temperature.
 
 \end{enumerate}
 
-\subsection{Communication and Navigation}
-% Insert content from the first snippet related to Communication and Navigation here.
-The Communication Protocol used consists of a CAN BUS
+\subsubsection{Parts List}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Part} & \textbf{Manufacturer} & \textbf{Description} \\ \hline
+Raspberry Pi Zero 2 W & Raspberry & Microcontroller for telemetry \\ \hline
+Raspberry Pi 4 B & Raspberry & Computer for telemetry \\ \hline
+MC3479 & Memsic & 3-Axis Accelerometer \\ \hline
+RS485 CAN HAT & Waveshare & CAN adapter for RPI4B \\ \hline
+\end{tabular}
+\caption{Telemetry System Parts List}
+\label{tab:my-table}
+\end{table}
+
+
 
 \subsection{Integration with other systems}
 The friction brakes, the cooling pump and the motor are controlled through our system.
@@ -91,7 +107,7 @@ The friction brakes, the cooling pump and the motor are controlled through our s
 % Continue merging additional sections and sub-sections from the first snippet into the structured format of the second snippet as needed.
 
 \subsection{Telemetry Device}
-
+For communication and navigation, we use our telemetry system, that consists of a CAN bus, a CAN2WLAN transmitter and a VCU.
 \subsubsection{Introduction}
 \begin{enumerate}
     \item Brief overview of Telemetry Components

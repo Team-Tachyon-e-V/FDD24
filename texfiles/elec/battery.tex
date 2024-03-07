@@ -1,38 +1,6 @@
 \subsection{Overview}
 %Electrical overview content here
 (a) Explain the main requirements and constraints that drive the design. \\
-\par Our general design of this season is inspired by conventional modes of transportation,
-as we have not had the capacity to start developing a levitation system by this season
-Thus, we focussed on an electrical system that drives our friction-based motor with
-excelling acceleration, which is a problem that railway systems frequently face.
-
-\par In between design and production phase, we received a sponsorship of Leadrive,
-a local startup for research on automotive power electronics.
-Furthermore, the institute for electrical systems (ISEA) of our home university offered us assistance in the production of battery cells.
-Therefore, our workload was eased, which turned out to be favorable
-because of our lack of team members in the electrical field. This has been a crucial
-constraint in the design and planning process of the electrical department
-since the last season. Only shortly before submitting the ITD, we were able to make an estimation of
-realistic goals for the new team.
-
-\par This year, we would like to set the path for magnetic levitation in the future, relying on an active system
-inside the vehicles. This was taken into consideration when designing the power dimensions,
-keeping plenty of overhead for the future, which aligns with our goal of sustainability.
-By having reusable modules, the design process of the upcoming years will be simplified.
-
-\par Our project has been significantly bolstered by the generous support and endorsement from leading industry giants, which has considerably alleviated our financial burdens and propelled our initiative towards groundbreaking achievements.
-
-Altium has been instrumental, providing us with cutting-edge PCB design software valued at approximately \euro 10,000. This invaluable resource has empowered our team to design highly complex and efficient circuit boards, essential for the intricate electronics that drive our hyperloop prototype.
-
-Festo, renowned for their pneumatic and automation solutions, contributed a suite of components and systems worth over \euro 15,000. Their support has enhanced our prototype's propulsion and control systems, enabling precise maneuverability and stability at high velocities.
-
-Mouser Electronics stepped in with a crucial contribution, supplying us with electronic components and parts worth about \euro 20,000. This vast array of high-quality components has been pivotal in assembling our prototype's electrical systems, ensuring reliability and performance.
-
-Würth Elektronik provided essential PCB materials and expertise, along with a donation of specialized components valued at \euro 12,000. Their contributions have significantly optimized our prototype's power distribution and structural integrity.
-
-Leadrive offered their advanced inverter technology, a contribution that not only included hardware valued at \euro 18,000 but also critical technical support. This has dramatically improved our prototype's efficiency and power management capabilities.
-
-Vector Informatik has generously supplied software licenses and technical support for vehicle communication systems, with a contribution valued at \euro 8,000. This support has been crucial in implementing robust and reliable communication systems within our prototype.
 
 
 \subsection{Electrical and mechanical design process}
@@ -175,7 +143,8 @@ By optimizing the operational parameters of the HV battery pack, the Orion BMS 2
 Conclusion
 
 The integration of the Orion BMS 2 with the HV battery pack in our hyperloop prototype represents a critical step towards ensuring the system's safety, efficiency, and reliability. Through its comprehensive monitoring and management capabilities, the Orion BMS 2 ensures that the HV battery pack operates within its optimal parameters, significantly contributing to the prototype's overall performance and safety profile. As we progress towards the final stages of the FDD, the detailed exploration of the Orion BMS 2's functionalities underscores our commitment to leveraging advanced technologies for the enhancement of hyperloop transportation systems.
-\subsubsection{}
+\subsubsection{Insulation Monitoring Device}
+The Insulation Monitoring Device that is mandatory for EHW participants, as well as Formula Students teams, is not built inhouse, after receiving the respective advice from the EHW technical jury. By reaching out to Bender, we received their device through their Formula Students policy. It is configured for ...
 
 
 \subsection{Manufacturing process}
@@ -183,14 +152,18 @@ The integration of the Orion BMS 2 with the HV battery pack in our hyperloop pro
 Our PCB Design
 \subsubsection{PCBs}
 \par Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab provides access to PCB manufacturing equipment and materials, enabling the rapid production of prototypes for initial testing and design validation.
-    Once the PCBs are fabricated, they are assembled manually by our team members. 
+    Once the PCBs are fabricated, they are assembled manually by our team members. Bigger PCBs are assembled in the facilities of the FabLab with the manual Pick and Place Machine and a reflow oven.
 \par Production: We ordered our final PCBs from JLCPCB, a leading PCB manufacturing service. In addition to JLCPCB, we also collaborate with Würth Elektronik who produce 
 PCBs in Germany, aligning with our goal of sustainability.
 \subsubsection{Batteries}
-We produced the battery packs in cooperation with the ISEA (Institute for Power Electronics and Electrical Drives) at RWTH, whose experience helped us to assemble
+The production of the low voltage battery pack is rather easy. We will use a 3d printer to print the casing
+We produced the battery packs in cooperation with the ISEA (Institute for Power Electronics and Electrical Drives) at RWTH, whose experience helped us to assemble and design the parts
 more efficienciently and more safely, as we had a considerable high voltage system.
 The casing will consist of polycarbonate. Polycarbonate is a material that is
-durable , lightweight nature, and impact resistance
+durable , lightweight, and impact resistant. The problems with
+material degradation through UV emissions does not impact us substantially, as we
+cover the battery pack inside the shell for most of the time. We will have safety measures preventing too much exposure to UV radiation.
+Also, the degradation is mainly of cosmetic nature (https://link.springer.com/article/10.1007/s11668-020-01002-9) .
 
 \subsection{Testing}
 %Testing content here

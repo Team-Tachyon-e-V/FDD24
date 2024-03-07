@@ -19,23 +19,45 @@ inside the vehicles. This was taken into consideration when designing the power 
 keeping plenty of overhead for the future, which aligns with our goal of sustainability.
 By having reusable modules, the design process of the upcoming years will be simplified.
 
-\par Our project has been significantly bolstered by the generous support and endorsement from leading industry giants, which has considerably alleviated our financial burdens and propelled our initiative towards groundbreaking achievements.
-
-Altium has been instrumental, providing us with cutting-edge PCB design software valued at approximately \euro 10,000. This invaluable resource has empowered our team to design highly complex and efficient circuit boards, essential for the intricate electronics that drive our hyperloop prototype.
-
-Festo, renowned for their pneumatic and automation solutions, contributed a suite of components and systems worth over \euro 15,000. Their support has enhanced our prototype's propulsion and control systems, enabling precise maneuverability and stability at high velocities.
-
-Mouser Electronics stepped in with a crucial contribution, supplying us with electronic components and parts worth about \euro 20,000. This vast array of high-quality components has been pivotal in assembling our prototype's electrical systems, ensuring reliability and performance.
-
-Würth Elektronik provided essential PCB materials and expertise, along with a donation of specialized components valued at \euro 12,000. Their contributions have significantly optimized our prototype's power distribution and structural integrity.
-
-Leadrive offered their advanced inverter technology, a contribution that not only included hardware valued at \euro 18,000 but also critical technical support. This has dramatically improved our prototype's efficiency and power management capabilities.
-
-Vector Informatik has generously supplied software licenses and technical support for vehicle communication systems, with a contribution valued at \euro 8,000. This support has been crucial in implementing robust and reliable communication systems within our prototype.
-
-
 \subsection{Electrical and mechanical design process}
 %Electrical and mechanical design process content here
+Our initial goal was to design our own traction inverter system, both the control and power stages. After receiving the sponsorship with 
+Leadrive, who also sponsors another student team
+in Aachen that we collaborate closely with,
+we decide to put our own, limited sources to other
+projects temporarily. \\
+This means that we have a automotive inverter,
+with slightly overdimensioned specifications,
+to work with. We do have...
+\\
+The DC link capacitor of the inverter ... \\
+The precharge circuit was based on an economic decision. Our pod is not made for a commercial purpose. Thus, fast pre-/discharge times are not highly prioritized. We designed with several different precharge resistors at levels from 50 Ohm to 10 kOhm, and simulated them. The results showed that the low-resistance circuits need very high-power components, which will dissipate a lot of heat and be a potential safety danger. However, we wanted to keep the charging times within reasonable times (<5 seconds). \\
+We simulated a test case with charging the capacitor to a stage where 99.5 \% is charged. Thus, the current flow when the main power line is switched on is well under 100A, which is the continuous rating of our system.
+\\
+Finally, we chose a resistor with a lot of headroom: We used 3k resistor with a 50 Watt maximum rating. \\
+This gives us the following specifications of our precharge circuit:
+\begin{itemize}
+\item Time Constant (\( \tau \)):
+\[ \tau = R \times C = 3000 \, \Omega \times 0.24 \times 10^{-3} \, \text{F} = 0.72 \, \text{s} \]
+
+\item **Voltage across the capacitor at \( t = 5 \) seconds**:
+\[ V(5) = 500 \times \left(1 - e^{-\frac{5}{0.72}}\right) = 499.52V \]
+
+\item **Rate of Charge at \( t = 5 \) seconds**:
+\[ \frac{dQ}{dt} \Bigg|_{t=5} = C \times \frac{dV(t)}{dt} \Bigg|_{t=5} = 0.24 \times 10^{-3} \, \text{F} \times \frac{500}{0.72} \times e^{-\frac{5}{0.72}} \]
+\end{itemize}
+
+Now, we'll compute the numerical value for \( \frac{dQ}{dt} \) at \( t = 5 \) seconds:
+
+\[ \frac{dQ}{dt} \Bigg|_{t=5} = 0.24 \times 10^{-3} \times \frac{500}{0.72} \times e^{-\frac{5}{0.72}} \approx 0.24 \times 10^{-3} \times 694.44 \times e^{-6.94} \]
+
+\[ \frac{dQ}{dt} \Bigg|_{t=5} \approx 0.16176 \, \text{mA} \]
+
+So, the rate of charge after 5 seconds is approximately 0.16176 mA.
+The power when switching to the main circuit is, thus, \(500V * 0.16176mA = 0.081 W\). \\
+We can accept this. Furthermore, our simulations show that the maximum power will not exceed 22 W, whilst the main peak (>5W) lasts 
+less than 2 seconds. The heat 
+
 \subsubsection{(a) Present Schematics or logic diagrams of the boards.}
 \subsubsection{(b) Present temperature simulations for vacuum conditions.}
 For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the
@@ -49,33 +71,7 @@ by discretizing through Finite-Element-Methods.
 We configure the BMS prior to the competition. \\
 
 
-\subsection{Electrical system characteristics}
-%Content of the electrical system characteristics here
-\begin{table}
-    \centering
-    \begin{adjustbox}{width=\textwidth,center}
-    \begin{tabular}{|c|c|}
-       \hline
-       \textbf{Column 1} & \textbf{Column 2}  \\
-       \hline
-       Battery Type & Lead-Acid(integrated)\\
-       \hline
-       Capacity[Ah] & 9 \\
-       \hline
-       Normial Voltage[V] & 12 \\
-       \hline
-       Cell configuration & 2s \\
-       \hline
-       Maximum discharge current (lower limit) [A] & 10 \\
-       \hline
-       Weight per cell [Kg] & 2,7 \\
-       \hline 
-       Dimensions per cell (L x W x H)[mm] & 151 x 65 x 94 \\
-       \hline 
-    \end{tabular}
-    \end{adjustbox}
-    \label{Low Voltage Battery Specs}
-\end{table}    
+\subsection{Electrical system characteristics}   
 
 \begin{table}[H]
     \centering
@@ -191,6 +187,14 @@ The data connection matrix is as following. All communication between boards are
 
 
 \subsection{Final system description}
+Our inverter:
+
+
+A precharge circuit:
+
+The MSD:
+
+
 
 
 \subsection{Manufacturing process}

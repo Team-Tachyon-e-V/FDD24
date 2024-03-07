@@ -10,10 +10,9 @@ power of pump, valves etc.
 \par Our Low Voltage system drives all electrical and digital control systems of the Fermion. As stated previously,
 reliability is crucial in this case. A failure of any component may lead to the shutdown of critical systems, such as the battery management system.
 Furthermore, an overvoltage may potentially damage these systems, causing safety hazards. We had the option between building a LV battery pack from spare LiPo cells we ordered for the HV battery pack, and using automotive-grade ventilated lead-acid batteries.
-After considering the safety problems of LiPo cells and the efforts of either building a second (smaller) LV BMS or taking the risk of having a singular point of failure by controlling both systems with the same BMS, powering the BMS with the cells it controls, we went for the approach with lead-acid batteries, that is widely used in automotive systems \\
+After considering the safety problems of LiPo cells and the efforts of either building a second (smaller) LV BMS or taking the risk of having a singular point of failure by controlling both systems with the same BMS, powering the BMS with the cells it controls, we went for the approach with lead-acid batteries, that is widely used in automotive systems. It is regarded as more reliable and robust compared to the Lithium-Ion pendants that we use for the High Voltage System. \\
 \subsubsection*{Power requirements}
-To calculate the power requirements, let's consider the power consumption of each component:
-
+We consider the power consumption of all components in the low voltage power line for the power requirements:
 
 ( Moussa: Bitte finde die einzelnen Daten heraus. Pumpe ist Pierburg CW150A. Valve ist bei den brakes controllern. Raspberry Pi und Microcontroller passen.)
 \begin{itemize}
@@ -65,8 +64,6 @@ by discretizing through Finite-Element-Methods.
     \begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{|c|c|}
        \hline
-       \textbf{Column 1} & \textbf{Column 2}  \\
-       \hline
        Battery Type & Lead-Acid(integrated)\\
        \hline
        Capacity[Ah] & 9 \\
@@ -83,12 +80,38 @@ by discretizing through Finite-Element-Methods.
        \hline 
     \end{tabular}
     \end{adjustbox}
+    \label{Low Voltage Cell Specs}
+    \caption{LV battery cell characteristics}
+\end{table}    
+
+\begin{table}
+    \centering
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|}
+       \hline
+       Battery Type & Lead-Acid(integrated)\\
+       \hline
+       Capacity[Ah] & 9 \\
+       \hline
+       Nominal Voltage[V] & 24 \\
+       \hline
+       Cell configuration & 2s \\
+       \hline
+       Max. discharge [A] & 10 \\
+       \hline
+       Weight [Kg] & 5.5 \\
+       \hline 
+       Dimensions (L x W x H)[mm] & 151 x 65 x 94 \\
+       \hline 
+    \end{tabular}
+    \end{adjustbox}
     \label{Low Voltage Battery Specs}
+    \caption{LV battery pack characteristics}
 \end{table}    
 
 \subsection{Interface with other system}
 %Interface with other system content here n
-(a) Briefly reference the communication protocols or control mechanisms of the boards, which should be explained in the respective Sense and Control subsection. \\
+Briefly reference the communication protocols or control mechanisms of the boards, which should be explained in the respective Sense and Control subsection. \\
 All the electric subsystems are located within the pod. \\
 It powers the entire sensing, control and telemetry system. 
 The LV battery itself does not communicate. Its sensor data is processed by the thermal control board.
@@ -101,7 +124,7 @@ The two lead-acid batteries, chained in series, provide a nominal voltage of 24V
 The 24 V power source gets transferred down to 12V (for the Thermal Pump) and 5V for the micro-controllers by buck converters, and drives the valves and several sensors at 24V simultaneously. It is being monitored by NTC thermistors for overheating, and by the thermal system for undervoltage. \\
 After reaching out to the EHW technical committee, we were able to clarify that a BMS, used by Lithium-Ion batteries, is not required for lead-acid batteries due to the inherently different chemical structure which makes over- and undercharging much less critical.
 
-For charging, we are using a battery charger specified for 12V and 24V lead acid cells from Würth  0510955908. The charging of lead-acid batteries in series is unproblematic, given that we regularly test for drifts and manually balance the cells.
+For charging, we are using a battery charger specified for 12V and 24V lead acid cells from Würth 0510955908. The charging of lead-acid batteries in series is unproblematic, given that we regularly test for drifts and manually balance the cells.
 
 \subsection{Manufacturing process}
 %Manufacturing process content here
