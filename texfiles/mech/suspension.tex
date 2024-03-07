@@ -58,6 +58,8 @@ The suspension system must meet stringent requirements to ensure optimal perform
 7. & \text{ AC:} & \text{Knuckle} \\
 \end{align*}
 
+
+\begin{comment}
 \begin{table}[H]
 \centering
 \caption{Variables}
@@ -74,6 +76,7 @@ AF & Lower Wishbone &\hline
 AC & Knuckle  \hline
 \end{tabular}
 \end{table}
+\end{comment}
 
 \subsection{Design Process and Appearance}
 \subsubsection{Presentation of CAD Models and Technical Drawings}
@@ -156,38 +159,8 @@ This study presents a Finite Element Analysis (FEA) conducted to evaluate the st
 
 
 
-\newpage
 \subsection{Manufacturing Process}
 \subsubsection{Compilation of Parts List}
-\begin{table}[H]
-\centering
-\caption{Component Specifications}
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline
-\textbf{Component} & \textbf{Number [-]} & \textbf{Mass [kg]} & \textbf{Size [mm x mm x mm]} & \textbf{Material} & \textbf{Manufacturing process} \\ \hline
-Rear Wheels & x2 & - & $\phi$ 200 x 155 & Aluminum Alloy 6061 & In-house \\ \hline
-Front Wheels & x2 & - & $\phi$ 200 x 50 & Galvanized Steel & Rollenplus.de (Outsourced) \\ \hline
-Rear Knuckle & x2 & 1.473 & $\phi$ 145 x 52 & Aluminum Alloy 6061 & In-house \\ \hline
-Cylindrical Roller Bearing Rear Knuckle & x4 & - & $\phi$ 85 x 18.6 & 100Cr6 & Outsourced \\ \hline
-Retaining Ring DIN 472 & x4 & - & $\phi$ 85 & Spring Steel & Mädler (Outsourced) \\ \hline
-Rear Upper Wishbone & x2 & 0.08896 & 119 x 102 x 6 & Aluminum Alloy 6061 & In-house \\ \hline
-Rear Lower Wishbone & x2 & 0.1255 & 224 x 102 x 6 & Aluminum Alloy 6061 & In-house \\ \hline
-Shock Absorber & x4 & - & $\phi$ 45 x 150 & - & XLC (Outsourced) \\ \hline
-Wishbone Wall Mount & x16 & 0.02441 & 36 x 30 x 18 & Aluminum Alloy 6061 & In-house \\ \hline
-Knuckle Wishbone Mount & x8 & 0.02055 & 37 x 25 x 18 & Aluminum Alloy 6061 & In-house \\ \hline
-Rear Shock Absorber Mounts & x4 & 0.05583 & 40 x 40 x 35 & Aluminum Alloy 6061 & In-house \\ \hline
-Linkage Mounts & x8 & 0.0135 & 31.75 x 22 x 18 & Aluminum Alloy 6061 & In-house \\ \hline
-Female Rod End Bearing & x8 & - & 47 x 16 x 14 & Stainless Steel 1.4301 & Mädler (Outsourced) \\ \hline
-Linkage Connecting Rod & x4 & 0.0032 & $\phi$ 7 x 43 & Aluminum Alloy 6061 & In-house \\ \hline
-Uni Ball Bearings & x24 & - & $\phi$ 16 x 9 & 100Cr6 & Mädler (Outsourced) \\ \hline
-Front Wheel Hub & x2 & 0.10959 & $\phi$ 40 x 115 & Aluminum Alloy 6061 & In-house \\ \hline
-Front Wishbones & x2 & 0.09553 & 224 x 102 x 6 & Aluminum Alloy 6061 & In-house \\ \hline
-Front Knuckle & x2 & 0.65721 & $\phi$ 160 x 15 & Aluminum Alloy 6061 & In-house \\ \hline
-Front Shock Absorber Mounts & x4 & 0.01952 & 36 x 32 x 28 & Aluminum Alloy 6061 & In-house \\ \hline
-Retaining Ring DIN 471 & x2 & - & $\phi$ 11 & Spring Steel & Mädler (Outsourced) \\ \hline
-\end{tabular}
-\end{table}
-
 
 \begin{table}[H]
 \centering
@@ -196,28 +169,28 @@ Retaining Ring DIN 471 & x2 & - & $\phi$ 11 & Spring Steel & Mädler (Outsourced
 \begin{adjustbox}{width=\textwidth,center}
 \begin{tabular}{|>{\bfseries}m{3cm}|m{2cm}|m{1.5cm}|m{3cm}|m{2cm}|m{3cm}|m{2.5cm}|}
 \hline
-Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/Outsourced \
+Component & Number & Mass [kg] & Size [mm] & Material & Manufacturing process & In-house/Outsourced \\
 \hline
-Rear Wheels & x2 & - & $\phi$ 200 x 155 & Aluminum Alloy 6061 & In-house & In-house \
-Front Wheels & x2 & - & $\phi$ 200 x 50 & Galvanized Steel & Rollenplus.de & Outsourced \
-Rear Knuckle & x2 & 1.473 & $\phi$ 145 x 52 & Aluminum Alloy 6061 & In-house & In-house \
-Cylindrical Roller Bearing Rear Knuckle & x4 & - & $\phi$ 85 x 18.6 & 100Cr6 & Outsourced & Outsourced \
-Retaining Ring DIN 472 & x4 & - & $\phi$ 85 & Spring Steel & Mädler & Outsourced \
-Rear Upper Wishbone & x2 & 0.08896 & 119 x 102 x 6 & Aluminum Alloy 6061 & In-house & In-house \
-Rear Lower Wishbone & x2 & 0.1255 & 224 x 102 x 6 & Aluminum Alloy 6061 & In-house & In-house \
-Shock Absorber & x4 & - & $\phi$ 45 x 150 & - & XLC & Outsourced \
-Wishbone Wall Mount & x16 & 0.02441 & 36 x 30 x 18 & Aluminum Alloy 6061 & In-house & In-house \
-Knuckle Wishbone Mount & x8 & 0.02055 & 37 x 25 x 18 & Aluminum Alloy 6061 & In-house & In-house \
-Rear Shock Absorber Mounts & x4 & 0.05583 & 40 x 40 x 35 & Aluminum Alloy 6061 & In-house & In-house \
-Linkage Mounts & x8 & 0.0135 & 31.75 x 22 x 18 & Aluminum Alloy 6061 & In-house & In-house \
-Female Rod End Bearing & x8 & - & 47 x 16 x 14 & Stainless Steel 1.4301 & Mädler & Outsourced \
-Linkage Connecting Rod & x4 & 0.0032 & $\phi$ 7 x 43 & Aluminum Alloy 6061 & In-house & In-house \
-Uni Ball Bearings & x24 & - & $\phi$ 16 x 9 & 100Cr6 & Mädler & Outsourced \
-Front Wheel Hub & x2 & 0.10959 & $\phi$ 40 x 115 & Aluminum Alloy 6061 & In-house & In-house \
-Front Wishbones & x2 & 0.09553 & 224 x 102 x 6 & Aluminum Alloy 6061 & In-house & In-house \
-Front Knuckle & x2 & 0.65721 & $\phi$ 160 x 15 & Aluminum Alloy 6061 & In-house & In-house \
-Front Shock Absorber Mounts & x4 & 0.01952 & 36 x 32 x 28 & Aluminum Alloy 6061 & In-house & In-house \
-Retaining Ring DIN 471 & x2 & - & $\phi$ 11 & Spring Steel & Mädler & Outsourced \
+Rear Wheels & x2 & - & $\phi$ 200 x 155 & Aluminum Alloy 6061 & In-house & In-house \\
+Front Wheels & x2 & - & $\phi$ 200 x 50 & Galvanized Steel & Rollenplus.de & Outsourced \\
+Rear Knuckle & x2 & 1.473 & $\phi$ 145 x 52 & Aluminum Alloy 6061 & In-house & In-house \\
+Cylindrical Roller Bearing Rear Knuckle & x4 & - & $\phi$ 85 x 18.6 & 100Cr6 & Outsourced & Outsourced \\
+Retaining Ring DIN 472 & x4 & - & $\phi$ 85 & Spring Steel & Mädler & Outsourced \\
+Rear Upper Wishbone & x2 & 0.08896 & 119 x 102 x 6 & Aluminum Alloy 6061 & In-house & In-house \\
+Rear Lower Wishbone & x2 & 0.1255 & 224 x 102 x 6 & Aluminum Alloy 6061 & In-house & In-house \\
+Shock Absorber & x4 & - & $\phi$ 45 x 150 & - & XLC & Outsourced \\
+Wishbone Wall Mount & x16 & 0.02441 & 36 x 30 x 18 & Aluminum Alloy 6061 & In-house & In-house \\
+Knuckle Wishbone Mount & x8 & 0.02055 & 37 x 25 x 18 & Aluminum Alloy 6061 & In-house & In-house \\
+Rear Shock Absorber Mounts & x4 & 0.05583 & 40 x 40 x 35 & Aluminum Alloy 6061 & In-house & In-house \\
+Linkage Mounts & x8 & 0.0135 & 31.75 x 22 x 18 & Aluminum Alloy 6061 & In-house & In-house \\
+Female Rod End Bearing & x8 & - & 47 x 16 x 14 & Stainless Steel 1.4301 & Mädler & Outsourced \\
+Linkage Connecting Rod & x4 & 0.0032 & $\phi$ 7 x 43 & Aluminum Alloy 6061 & In-house & In-house \\
+Uni Ball Bearings & x24 & - & $\phi$ 16 x 9 & 100Cr6 & Mädler & Outsourced \\
+Front Wheel Hub & x2 & 0.10959 & $\phi$ 40 x 115 & Aluminum Alloy 6061 & In-house & In-house \\
+Front Wishbones & x2 & 0.09553 & 224 x 102 x 6 & Aluminum Alloy 6061 & In-house & In-house \\
+Front Knuckle & x2 & 0.65721 & $\phi$ 160 x 15 & Aluminum Alloy 6061 & In-house & In-house \\
+Front Shock Absorber Mounts & x4 & 0.01952 & 36 x 32 x 28 & Aluminum Alloy 6061 & In-house & In-house \\
+Retaining Ring DIN 471 & x2 & - & $\phi$ 11 & Spring Steel & Mädler & Outsourced \\
 \hline
 \end{tabular}
 \end{adjustbox}
