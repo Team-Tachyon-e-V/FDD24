@@ -1,10 +1,10 @@
 \subsection{Overview}
 %Electrical overview content here
-(a) Explain the main requirements and constraints that drive the design. \\
+\subsubsection*{Main requirements and design constraints}
 \par Our general design of this season is inspired by conventional modes of transportation,
 as we have not had the capacity to start developing a levitation system by this season
 Thus, we focussed on an electrical system that drives our friction-based motor with
-excelling acceleration, which is a problem that railway systems frequently face.
+a high amount of acceleration, which is a problem that railway systems frequently face.
 
 \par In between design and production phase, we received a sponsorship of Leadrive,
 a local startup for research on automotive power electronics.
@@ -28,9 +28,7 @@ we decide to put our own, limited sources to other
 projects temporarily. \\
 This means that we have a automotive inverter,
 with slightly overdimensioned specifications,
-to work with. We do have...
-\\
-The DC link capacitor of the inverter ... \\
+to work with. The DC link capacitor of the inverter is charged externally. \\
 The precharge circuit was based on an economic decision. Our pod is not made for a commercial purpose. Thus, fast pre-/discharge times are not highly prioritized. We designed with several different precharge resistors at levels from 50 Ohm to 10 kOhm, and simulated them. The results showed that the low-resistance circuits need very high-power components, which will dissipate a lot of heat and be a potential safety danger. However, we wanted to keep the charging times within reasonable times (<5 seconds). \\
 We simulated a test case with charging the capacitor to a stage where 99.5 \% is charged. Thus, the current flow when the main power line is switched on is well under 100A, which is the continuous rating of our system.
 \\
