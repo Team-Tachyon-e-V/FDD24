@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2024.2.12)  7 MAR 2024 22:16
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2024.2.12)  8 MAR 2024 01:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1554,12 +1554,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--71
  []
 
 [29] [30]
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 142--144
+Underfull \hbox (badness 10000) in paragraph at lines 140--144
 
  []
 
@@ -1649,12 +1644,12 @@ Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=
 Missing character: There is no % in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no % in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 134--136
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
 
  []
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
@@ -1693,10 +1688,10 @@ Package rerunfilecheck Info: File `FDD.out' has not changed.
 Here is how much of TeX's memory you used:
  33525 strings out of 410532
  702485 string characters out of 2813299
- 1103518 words of memory out of 3000000
+ 1103517 words of memory out of 3000000
  54118 multiletter control sequences out of 15000+600000
  478453 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,15n,131p,1012b,648s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on FDD.xdv (43 pages, 765968 bytes).
+Output written on FDD.xdv (43 pages, 767080 bytes).

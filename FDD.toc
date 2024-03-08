@@ -112,7 +112,7 @@
 \contentsline {subsubsection}{Introduction}{39}{subsection.2.5.2}%
 \contentsline {subsubsection}{Parts Lists}{39}{Item.3}%
 \contentsline {subsection}{\numberline {2.5.3}State Machine of the Vehicle}{39}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Code Architecture and Class Diagram}{39}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.4}Code Architecture and Class Diagram}{40}{subsection.2.5.4}%
 \contentsline {subsubsection}{Brakes Controller}{40}{subsection.2.5.4}%
 \contentsline {subsubsection}{Thermal Controller}{41}{subsection.2.5.4}%
 \contentsline {subsection}{\numberline {2.5.5}Control Boards/Units in the Vehicle}{41}{subsection.2.5.5}%

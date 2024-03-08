@@ -137,12 +137,10 @@ When the voltage drops below a certain threshold, the complete system shuts down
 
 \subsection{Final system description}
 %Description of the system here
-The two lead-acid batteries, chained in series, provide a nominal voltage of 24V (12V each). When fully charged, the voltage can increase to up to 26V. The lead acid batteries have the problem of voltage drops while discharging. Hence, we monitor the voltage while using the LV battery system. Furthermore, we monitor the temperature through a thermistor to prevent usage under overtemperature . \\
-
-The 24 V power source gets transferred down to 12V (for the Thermal Pump) and 5V for the micro-controllers by buck converters, and drives the valves and several sensors at 24V simultaneously. It is being monitored by NTC thermistors for overheating, and by the thermal system for undervoltage. \\
+The two lead-acid batteries, chained in series, provide a nominal voltage of 24V (12V each). When fully charged, the voltage can increase up to 26 V. The lead acid batteries' voltage will drop while discharging. Hence, we monitor the voltage while using the LV battery system. Furthermore, we monitor the temperature through a NTC thermistor to prevent usage under overtemperature . \\
+The 24 V power source gets transferred down to 12V (for the Thermal Pump) and 5V for the micro-controllers by buck converters, and drives the valves and several sensors at 24V simultaneously. \\
 After reaching out to the EHW technical committee, we were able to clarify that a BMS, used by Lithium-Ion batteries, is not required for lead-acid batteries due to the inherently different chemical structure which makes over- and undercharging much less critical. \\
-
-For charging, we are using a battery charger specified for 12V and 24V lead acid cells from Würth 0510955908. The charging of lead-acid batteries in series is unproblematic, given that we regularly test for drifts and manually balance the cells.
+For charging, we are using a battery charger specified for 12V and 24V lead acid cells from Würth 0510955908. The charging of lead-acid batteries in series is unproblematic, given that we regularly test for drifts and manually balance the cells.\\
 
 \subsection{Manufacturing process}
 %Manufacturing process content here
@@ -150,6 +148,9 @@ As the cells come in hard-shell covers already, the manufacturing process is not
 
 \subsection{Testing}
 %Testing content here
-We will test whether the lead acid cells and the thermistors are accurate to their datasheet.
-%\subsection{FMEA}
+We will test whether the lead acid cells and the thermistors are accurate to their datasheet. This especially includes \begin{itemize}
+    \item the capacity of the packs at 9V discharge (according to real scenario)
+    \item the heat development while discharging
+\end{itemize}
+    %\subsection{FMEA}
 %FMEA content here
