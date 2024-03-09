@@ -18,10 +18,17 @@ realistic goals for the new team.
 inside the vehicles. This was taken into consideration when designing the power dimensions,
 keeping plenty of overhead for the future, which aligns with our goal of sustainability.
 By having reusable modules, the design process of the upcoming years will be simplified.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{texfiles/elec/eimg/HVSchematic}
+    \caption{Schematic of our power electronics system}
+    \label{fig:HVSchematic}
+\end{figure}
 
 \subsection{Electrical and mechanical design process}
 %Electrical and mechanical design process content here
-Our initial goal was to design our own traction inverter system, both the control and power stages. After receiving the sponsorship with 
+Our initial goal was to design our own traction inverter system, both the control and power stages. 
+After receiving the sponsorship with 
 Leadrive, who also sponsors another student team
 in Aachen that we collaborate closely with,
 we decide to put our own, limited sources to other
@@ -29,34 +36,55 @@ projects temporarily. \\
 This means that we have a automotive inverter,
 with slightly overdimensioned specifications,
 to work with. The DC link capacitor of the inverter is charged externally. \\
-The precharge circuit was based on an economic decision. Our pod is not made for a commercial purpose. Thus, fast pre-/discharge times are not highly prioritized. We designed with several different precharge resistors at levels from 50 Ohm to 10 kOhm, and simulated them. The results showed that the low-resistance circuits need very high-power components, which will dissipate a lot of heat and be a potential safety danger. However, we wanted to keep the charging times within reasonable times (<5 seconds). \\
-We simulated a test case with charging the capacitor to a stage where 99.5 \% is charged. Thus, the current flow when the main power line is switched on is well under 100A, which is the continuous rating of our system.
-\\
-Finally, we chose a resistor with a lot of headroom: We used 3k resistor with a 50 Watt maximum rating. \\
+\subsubsection*{Precharge Circuit}
+The precharge circuit was based on an economic decision. Our pod is not made for a commercial purpose. Thus, fast pre-/discharge times are not highly prioritized. We designed with several different precharge resistors at levels from 50 Ohm to 10 kOhm, and simulated them. The results showed that the low-resistance circuits need very high-power components, which will dissipate a lot of heat and be a potential safety danger. However, we wanted to keep the charging times within reasonable times (< 15 seconds), as well as the sizing. As the chassis-mounted precharge resistors rated at 50W were considerably smaller than at 100W, we chose to use them. \\
+Deriving from Ohm's law by using the formula for power \(P = U*I\), we get the equation \(R = \frac{U^2}{P} = \frac{500V*500V}{50W} = 5000 \Omega \). Simulating the circuit yielded favorable results. We simulated leaving both relays open for 2 seconds, then charging the capacitor with a 5k resistor for 8 seconds, then switching to the main power line by opening the respective relays. At all time, the power ratings were abided as seen in the chart.  \\
+The objects of the simulation are as follows: 
+\begin{itemize}
+    \item C1: DC Link Capacitor
+    \item R1: Precharge Resistor
+    \item V2: Battery
+    \item S1: Precharge Relay
+    \item n003: positive wire of capacitor
+    \item V(N003,N002)*I(R1): Power through the resistor
+    \item V(N003)*I(C1): Power through the capacitor
+    \item V(N002)*I(V2): Power through the battery
+\end{itemize}
+    
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{texfiles/elec/eimg/PrechargeCircuit}
+    \caption{Precharge Circuit Schematic with 5k Resistor}
+    \label{fig:PrechargeCircuit}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{texfiles/elec/eimg/PrechargeSim5k504V}
+    \caption{Precharge Circuit Simulation with 5k Resistor}
+    \label{fig:PrechargeSim5k504V}
+\end{figure}
+
 This gives us the following specifications of our precharge circuit:
 \begin{itemize}
 \item Time Constant (\( \tau \)):
-\[ \tau = R \times C = 3000 \, \Omega \times 0.24 \times 10^{-3} \, \text{F} = 0.72 \, \text{s} \]
+\[ \tau = R \times C = 5000 \, \Omega \times 0.24 \times 10^{-3} \, \text{F} = 1.2 \, \text{s} \]
 
-\item **Voltage across the capacitor at \( t = 5 \) seconds**:
-\[ V(5) = 500 \times \left(1 - e^{-\frac{5}{0.72}}\right) = 499.52V \]
-
-\item **Rate of Charge at \( t = 5 \) seconds**:
-\[ \frac{dQ}{dt} \Bigg|_{t=5} = C \times \frac{dV(t)}{dt} \Bigg|_{t=5} = 0.24 \times 10^{-3} \, \text{F} \times \frac{500}{0.72} \times e^{-\frac{5}{0.72}} \]
+\item **Voltage across the capacitor at \( t = 8 \) seconds**:
+\[ V(8) = 504 \times \left(1 - e^{-\frac{8}{1.2}}\right) = 503.36V, \Delta V = 0.64V \]
 \end{itemize}
+In our simulations, we see that the power through the circuit when switching to the main valve at t = 10s is not higher than 35 Watts, which is perfectly acceptable.
 
-Now, we'll compute the numerical value for \( \frac{dQ}{dt} \) at \( t = 5 \) seconds:
+\subsubsection*{Discharge Circuit}
+It is convenient and advantegeous to use a discharge circuit when shutting of the system, tackling the safety hazard of a charged HV DC Link capacitor. We use the same resistor to discharge the capacitor. The peak power through the resistor is \( \frac{504^2}{5000} = 50W \), . The time constant is \( \tau = 5k \Omega \times 0.24 \times 10^{-3} \, \text{F} = 1.2s \). This means that the capacitor is discharged to 1\% of its voltage after 12 seconds. This is acceptable and in accordance with the recommendation of the producing company, Leadrive, who suggests a minimum of 4 seconds.
 
-\[ \frac{dQ}{dt} \Bigg|_{t=5} = 0.24 \times 10^{-3} \times \frac{500}{0.72} \times e^{-\frac{5}{0.72}} \approx 0.24 \times 10^{-3} \times 694.44 \times e^{-6.94} \]
 
-\[ \frac{dQ}{dt} \Bigg|_{t=5} \approx 0.16176 \, \text{mA} \]
+\subsubsection{Present Schematics or logic diagrams of the boards.}
 
-So, the rate of charge after 5 seconds is approximately 0.16176 mA.
-The power when switching to the main circuit is, thus, \(500V * 0.16176mA = 0.081 W\). \\
-We can accept this. Furthermore, our simulations show that the maximum power will not exceed 22 W, whilst the main peak (>5W) lasts 
-less than 2 seconds. The heat 
 
-\subsubsection{(a) Present Schematics or logic diagrams of the boards.}
+
+We are not allowed to disclose information about the traction inverter, as it is an OEM product. We will treat it like a black box device. 
+The same goes for the insulation monitoring device.
 \subsubsection{(b) Present temperature simulations for vacuum conditions.}
 For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the
 lack of gas flow, which eliminates the cooling heat flow from winds. The simulation tool solves
@@ -66,7 +94,7 @@ by discretizing through Finite-Element-Methods.
 \subsection{Description of subsystem control}
 %Description of subsystem control content here
 \subsubsection{(a) Briefly reference the control systems of the boards, which should be explained in the levitation or propulsion subsection respectively.}
-We configure the BMS prior to the competition. \\
+We configure the BMS prior to the competition. 
 \subsection{Electrical system characteristics}   
 \begin{table}[H]
     \centering
@@ -187,7 +215,10 @@ Our inverter:
 
 A precharge circuit:
 
-The MSD: We buy the devices from Amphenol
+MSD: We buy the devices from Amphenol
+
+
+
 
 
 
