@@ -37,30 +37,43 @@ In this section, the main components of the sensor network and software architec
         The system uses the CAN bus for communication in the pod.
     \end{itemize}
   
-Our Sense\&Control system includes three main boards:
-For the Braking Managament System \textbf{TO BE ADDED}
-
-The Thermal Management Controller is responsible for cooling the Traction Components, i.e., Motor and Traction Controller. The actuator is the coolant pump which is controlled  with the feedback of the temperature of coolant in the cooling loop (Refer to Diagram for Visualisation).  The Pump Speed is controlled via PWM to the MOSFET Bridge. The PWM duty cycle is simply calculated from a lookup table that is referenced to the temperature difference between target and actual temperatures. The only safety feature to be developed is to issue an emergency stop signal to HV Systems in the event the coolant temperature exceeds a critical temperature.
+Our Sense\&Control system includes three main boards: \\
+For the Braking Managament System \textbf{TO BE ADDED} \\
+The Thermal Management Controller is responsible for cooling the Traction Components, i.e., Motor and Traction Controller. The actuator is the coolant pump which is controlled  with the feedback of the temperature of coolant in the cooling loop (Refer to Diagram for Visualisation).  The Pump Speed is controlled via PWM to the MOSFET Bridge. The PWM duty cycle is simply calculated from a lookup table that is referenced to the temperature difference between target and actual temperatures. The only safety feature to be developed is to issue an emergency stop signal to HV Systems in the event the coolant temperature exceeds a critical temperature. \\
 Finally, the Telemetry Unit is responsible for receiving commands from, and transmitting diagnostic and sensor information to the commanding PC. The Telemetry unit then receives and broadcasts information as well as commands on the CAN bus as a Master Controller to all the slave devices. 
     \item Diagram with the connection of all boards with NAP and control station:
-    Für Ian: Das ist als Netzwerkdiagramm gedacht. Einfach telemetrysystems.png nehmen, ggf. kennzeichnen was unser NAP und control station ist. Das unten kommt erst später-
 
-The implementation of the hardware architecture goes as follows FÜR IAN: habe hier aktuelle graphiken eingefügt, beschriftungen angepasst. musst du halt irgendwo an die richtige stelle schieben. schau mal was begin{figure}[h] macht.:
-    \begin{figure}
+%Für Ian: Das ist als Netzwerkdiagramm gedacht. Einfach telemetrysystems.png nehmen, ggf. kennzeichnen was unser NAP und control station ist. Das unten kommt erst später-
+%DINO: Check this information
+In relation to the overall system's NAP, a dedicated Router for wireless connection will be employed. On the other hand, the control station will be a team member's commanding PC (User Device)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{texfiles/elec/eimg/telemetrysystems.png}
+    \caption{Overall Structure of the Telemetry System}
+    \label{fig:enter-label}
+\end{figure}
+
+%DINO: Added (Networks) down there thought just hardware might be confusing. If it makes sense, erase the ()
+The implementaion of the (network's) hardware architecture goes as follows: 
+
+% FÜR IAN: habe hier aktuelle graphiken eingefügt, beschriftungen angepasst. musst du halt irgendwo an die richtige stelle schieben. schau mal was begin{figure}[h] macht.:
+%Done. Einfach H in alle gemacht. So sieht's gut genug 
+
+    \begin{figure}[H]
         \centering
-        \includegraphics[width=\linewidth]{texfiles/elec/eimg/Brakesystems}
+        \includegraphics[width=0.6\linewidth]{texfiles/elec/eimg/Brakesystems}
         \caption{Brakes Controller NAP Connections} 
         \label{fig:Brakes Controller NAP Connections}
     \end{figure}
- \begin{figure}
+ \begin{figure}[H]
         \centering
-        \includegraphics[width=\linewidth]{texfiles/elec/eimg/thermalsystems}
+        \includegraphics[width=0.6\linewidth]{texfiles/elec/eimg/thermalsystems}
         \caption{Thermal Controller NAP Connections}
         \label{fig:Thermal Controller NAP Connections}
     \end{figure}
- \begin{figure}
+ \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{texfiles/elec/eimg/telemetrysystems}
+        \includegraphics[width=0.7\textwidth]{texfiles/elec/eimg/telemetrysystems}
         \caption{Telemetry Unit Hardware Architecture}
         \label{fig:Telemetry Unit Hardware Architecture}
     \end{figure}
@@ -68,11 +81,14 @@ The implementation of the hardware architecture goes as follows FÜR IAN: habe h
     \item Communication protocols used: 
 \begin{enumerate}
     \item Control Area Network (CAN): CAN was implemented as the inter-board communication protocol. This decision is inspired by the automotive industry, where CAN has been used for decades as a robust and physically reliable protocol.
-    To add to that, many of our OEM devices (only) support CAN communication. Für IAN add Link to CAN Description online
+    To add to that, many of our OEM devices (only) support CAN communication\footnote{\href{https://www.ti.com/lit/an/sloa101b/sloa101b.pdf}{CAN Description}}.
+    %Für IAN add Link to CAN Description online}
+    % DINO: I think you mean reference. Check if Footnote done correctly. Also did the same for SPI 
     \item LAN: Used to transmit data between the Telemetry Unit and command PC.
+    \item Serial Peripheral Interface (SPI): Synchronous, full-duplex communication protocol used for connecting peripheral devices.The master device generates the clock signal on SCLK while transmitting data to the slave device via MOSI, and the slave device responds with data on MISO. Communication occurs simultaneously in both directions, what allows high-speed data transfer between devices\footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf?ts=1710046776474\&ref\_url=https\%253A\%252F\%252Fwww.google.com\%252F}{SPI Description}}.
 
-    \item Serial Peripheral Interface (SPI): Synchronous, full-duplex communication protocol used for connecting peripheral devices.The master device generates the clock signal on SCLK while transmitting data to the slave device via MOSI, and the slave device responds with data on MISO. Communication occurs simultaneously in both directions, what allows high-speed data transfer between devices. \\
-    Inter-Integrated Circuit (I2C): Multi-device communication protocol used for connecting sensors.
+
+    \item Inter-Integrated Circuit (I2C): Multi-device communication protocol used for connecting sensors.
 \end{enumerate}
 
 \end{enumerate}
@@ -87,19 +103,27 @@ Generally (and in the main control of the pod), we have the following structure:
 
 \subsection{Code Architecture and Class Diagram}
 % Insert content from the first snippet related to Code Architecture here.
-\subsubsection{Brakes Controller}
-The software follow a simple state:
-\includegraphics[width=\textwidth]{texfiles/elec/eimg/brakesoftware_ext}
-\subsubsection{Thermal Controller}
-Software goes along the following state diagram: \\
-\includegraphics[width=\textwidth]{texfiles/elec/eimg/thermalsystemsflowchartsoftware}
+For each system respectively was the following software architecture implemented
+\begin{figure}[H]
+        \centering
+       \includegraphics[width=0.7\textwidth]{texfiles/elec/eimg/brakesoftware_ext}
+        \caption{Brakes System Software Architecture}
+        \label{fig:Brakes System Software Architecture}
+    \end{figure}
 
-The following hardware architecture is to be implemented:
+\begin{figure}[H]
+        \centering
+       \includegraphics[width=0.4\textwidth]{texfiles/elec/eimg/thermalsystemsflowchartsoftware}
+        \caption{Thermal System Software Architecture}
+        \label{fig:Thermal System Software Architecture}
+    \end{figure}
 
-\subsubsection{Telemetry Device}
-The software adheres to this chart: \\
-To Ian: Include the state machines at Software Rationale.
-\includegraphics[width=\textwidth]{texfiles/elec/eimg/telemetrystate.png}
+\begin{figure}[H]
+        \centering
+       \includegraphics[width=0.4\textwidth]{texfiles/elec/eimg/telemetrystate.png}
+        \caption{Telemetry Unit Software Architecture}
+        \label{fig:Telemetry Unit Software Architecture}
+    \end{figure}
 
 \subsection{Control Boards/Units in the Vehicle}
 % Insert content from the first snippet related to Control Boards/Units in the Vehicle here.
@@ -109,6 +133,10 @@ To Ian: Include the state machines at Software Rationale.
     \begin{enumerate}
         \item Requirements of the board.
         Parts List:
+The complete part list can be found in \href{https://docs.google.com/spreadsheets/d/1GvvRlhKn8gMCE3rAxvrYHUjA288l9iqX/edit#gid=378650025}{this table}. 
+
+% DINO: This table should completely go away now that we have the hyperlink. Left it in case you thought we should still use itThis is a problematic URL\footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf?ts=1710046776474\&ref\_url=https\%253A\%252F\%252Fwww.google.com\%252F}{Click here to open}}.
+A collection of the most important ones is:
             \begin{table}[h]
                 \centering
                 \begin{adjustbox}{width=\textwidth,center}
@@ -130,9 +158,9 @@ To Ian: Include the state machines at Software Rationale.
         \item Hardware Rationale (HW design and concerns). \\
         Critical points: Safety. The brakes should engage by default, and only release when all safety criteria are met. The board should be designed to be fail-safe, and process information and requests quickly.
         Our brakes controller's \href{https://drive.google.com/file/d/1a7zaJbmfFdLdrrGtLt2_ySVTqbc168NL/}{hardware design documentation} is uploaded (non-publicly) online, to view for the reader. We show only the schematic here. 
-        \begin{figure}
+        \begin{figure}[H]
             \centering
-            \includegraphics[width=\linewidth]{texfiles/elec/eimg/Brakes_architecture}
+            \includegraphics[width=0.5\linewidth]{texfiles/elec/eimg/Brakes_architecture}
             \caption{Brakes Controller Hardware Schematic}
             \label{fig:Brakes Controller Hardware Schematic}
         \end{figure}
@@ -140,7 +168,17 @@ To Ian: Include the state machines at Software Rationale.
 
         \item Firmware Rationale (Internal State machine and design concerns).
         No stuck loops. Real-life transport scenario: Re-release of brakes is possible. 
-        Für Ian zum ausformulieren.
+        %Für Ian zum ausformulieren.
+        %DINO: ONly added int. machine. 
+
+
+        What concerns the state flow of the system, it can be described as follows:
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{texfiles/elec/eimg/BrakesStatechart.png}
+            \caption{Brakes Controller Internal State Machine}
+            \label{fig:Brakes stateflow}
+        \end{figure}
 
         \item Testing and validation plan.
 
@@ -152,6 +190,36 @@ To Ian: Include the state machines at Software Rationale.
             \item Requirements of the board.\\
             Should drive the coolant pump. The control algorithm, planned as a PID controller, is to be implemented, but not necessary. We can let the thermal system run on a on-off scheme, which is less effective, but easier.
 
+          \begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Quantity} & \textbf{Part} & \textbf{Manufacturer} & \textbf{Description} \\
+        \hline
+        1 & Step Down Regulator + LDO & Texas Instruments / Analog Devices Ltd / Mouser & To provide 5VDC and 3.3VDC supply from 24VDC to Logic Circuitry \\
+        \hline
+        1 & Microcontroller & Texas Instruments & Microcontroller running the software \\
+        \hline
+        1 & Quad OpAmps & Texas Instruments / Analog Devices Ltd / Mouser & For Filtering and Scaling \\
+        \hline
+        1 & N Channel MOSFET & Infineon & For Pump PWM Generation \\
+        \hline
+        3 & Hirschmann system mlk 1.2& -& Standard connector \\
+        \hline
+        4 & Multiplexer & Texas Instruments & For distributing ADC - Thermistor \\
+        \hline
+        38 & 10K NTC thermistors & Mouser& Measuring temperature\\
+        \hline
+        1& Pump& Alphacool & Flow management\\
+        \hline
+        2 & Heat Conductors Muster & Würth & Thermal Interface Solutions Kit Article No. 400001\\
+        \hline
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Parts for Realisation of Thermal System}
+    \label{tab:parts}
+\end{table}
             \item Hardware Rationale (HW design and concerns).
             Simplicity. The brakes controller design was big. The thermal controller is mainly gathering sensor data, such as temperature sensors, and flow rate, and controlling the pump. The pump is a simple on-off device, and the temperature control is not critical. 
             \item Firmware Rationale (Internal State machine and design concerns).
@@ -171,7 +239,7 @@ To Ian: Include the state machines at Software Rationale.
             Parts Lists
                 \begin{table}[H]
                     \centering
-                    \begin{tabular}{|l|l|l|}
+                    \begin{tabular}{|c|c|c|}
                     \hline
                     \textbf{Part} & \textbf{Manufacturer} & \textbf{Description} \\ \hline
                     Raspberry Pi Zero 2 W & Raspberry & Microcontroller for telemetry \\ \hline
@@ -185,6 +253,19 @@ To Ian: Include the state machines at Software Rationale.
             \item Hardware Rationale (HW design and concerns).
             
             \item Firmware Rationale (Internal State machine and design concerns).
+%To Ian: Include the state machines at Software Rationale.
+%Dino: check if correct. Mostly done with gpt. I think it did a great job doing the foundation though. 
+
+        Implementing real-time temperature feedback ensures precise control of the coolant pump, optimizing thermal management. The PWM control for pump speed enables accurate adjustment based on temperature differentials, enhancing energy efficiency. By including a safety feature that triggers an emergency stop signal, overheating is prevented, thereby safeguarding both the system's integrity and user safety. Prioritizing robustness and reliability through error handling mechanisms and fail-safe features safeguards against potential failures, maintaining system functionality. A focus on modularity and scalability was a mayor concern for the design. This allowed the creation of a flexible design, that can easily be expanded and enhanced in the future.
+
+        The state flow of the thermal system can be described as such:
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.7\linewidth]{texfiles/elec/eimg/ThermoStateflow.png}
+            \caption{Thermal Controller Internal State Machine}
+            \label{fig:Thermal stateflow}
+        \end{figure}
+
 
             \item Testing and validation plan.
         \end{enumerate}
@@ -192,7 +273,7 @@ To Ian: Include the state machines at Software Rationale.
 
 \subsection{Communication and Navigation}
 \subsubsection*{Communication}
-For communication, we use our telemetry system, transmitting bidirectionally telemetry data and commands to the pod. The telemetry system uses the CAN bus, which is a robust and reliable protocol which will not be explained further, presuming that the reader is already familiar with it. \\
+For communication, we use our telemetry system, transmitting bidirectionally telemetry data and commands to the pod. The telemetry system uses the CAN bus, which is a robust and reliable protocol that will not be explained further, presuming that the reader is already familiar with it. \\
 The VCU, in this sense, is a Raspberry Pi 4B, which is connected to the CAN bus via a RS485 CAN HAT. 
 Through its connectivity abilities, we can connect to a Wireless LAN system for (necessary) remote control. We use the Rocket M2 as a transmitter. A short estimation of scales of speed between electromagnetic fields and the speed of common ground transportation modes show that we have not reached the speed where the Doppler effect of the signals play any significant role, so we do not take that into consideration. We use the open-source GUI system of Swissloop and plan to develop our own data logging system as an addition. The addition we plan to add to the GUI system are the following:
 \begin{itemize}
@@ -211,56 +292,67 @@ Through its connectivity abilities, we can connect to a Wireless LAN system for 
 \subsubsection*{Navigation}
 Our navigation system does not incorporate railway-like switches, nor GPS due to the track's short length. Instead, the pod solely uses an accelerometer and speed sensors to measure the velocities of both the front (guiding) wheel and the back (propulsion) wheel,
 determining the pod's dynamics. This also includes vibrations.\\
-In this iteration, we have clearly defined competition rules, and hence stick to simple acceleration/velocity/distance curveds. In the future, we plan to implement a more complex navigation system, including a system that can compute the acceleration/speed automatically, which is a more realistic use case.
+In this iteration, we have clearly defined competition rules, and hence stick to simple acceleration/velocity/distance curved. In the future, we plan to implement a more complex navigation system, including a system that can compute the acceleration/speed automatically, which is a more realistic use case.
 \begin{enumerate}
     \item Design requirements
 The Telemetry Devices possesses the following properties and constraints
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
-    \begin{tabular}{|l|l|}
-        \toprule
-        \textbf{Constraint/Specification} & \textbf{Value} \\
-        \midrule
-        Operating Voltage & 24 V \\
-        Mass & $<200$ g \\
-        Budget & $<500$ € \\
-        Range & 0.2 Km LOS \\
-        Communication Frequency & 2.4GHz \\
-        \bottomrule
+    \begin{adjustbox}{width=0.5\textwidth,center}
+    \begin{tabular}{|c|c|}
+    \hline
+        \textbf{Constraint/Specification} & \textbf{Value} \\ \hline
+        Operating Voltage & 24 V \\ \hline
+        Mass & $<200$ g \\ \hline
+        Budget & $<500$ € \\ \hline
+        Range & 0.2 Km LOS \\ \hline
+        Communication Frequency & 2.4GHz \\ \hline
     \end{tabular}
+    \end{adjustbox}
      \caption{Specification of the Telemetry Unit Constraints}
 \label{tab:Telemetry Constraints}
 \end{table}
 
 To allow the correct transmission of information, the following CAN signals should be sent by the Telemetry unit to all the Slave devices:
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
-    \begin{tabular}{|l|l|}
-        \textbf{Device} & \textbf{Command} \\
-        \midrule
-        Traction Controller & Target Speed or Torque \\
-        Battery Pack & Emergency Disconnect \\
-        Thermal Management System & Target Temperature \\
-        Brakes Controller & Brake Engage Command \\
-        \bottomrule
+    \begin{adjustbox}{max width=0.5\textwidth,center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Device} & \textbf{Command} \\ 
+        \hline
+        Traction Controller & Target Speed or Torque \\ 
+        \hline
+        Battery Pack & Emergency Disconnect \\ 
+        \hline
+        Thermal Management System & Target Temperature \\ 
+        \hline
+        Brakes Controller & Brake Engage Command \\ 
+        \hline
     \end{tabular}
+    \end{adjustbox}
  \caption{Devices and their commands}
 \label{tab:Command devices.}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
-    \begin{tabular}{|l|l|}
-        \toprule
+    \begin{adjustbox}{max width=0.75\textwidth,center}
+    \begin{tabular}{|c|c|}
+        \hline
         \textbf{Device} & \textbf{Signal} \\
-        \midrule
+        \hline
         All & Emergency / Error Messages \\
+        \hline
         Traction Controller & Speed, Phase Currents, Inverter Module \& Motor Temperature \\
+        \hline
         Battery Pack & Pack Voltage, Pack Current, Cell Temperatures, SoC \\
+        \hline
         Thermal Systems & Temperatures \\
-        \bottomrule
+        \hline
     \end{tabular}
+    \end{adjustbox}
     \caption{CAN signals received by the devices}
 \label{tab:CAN signals.}
 \end{table}
@@ -269,12 +361,7 @@ All the above signals shall be transmitted to the command PC over Wireless commu
 
     \item Network Diagrams:
 The overall system can be described with the following chart:
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{texfiles/elec/eimg/telemetrysystems.png}
-    \caption{Overall Structure of the Telemetry Sytem}
-    \label{fig:enter-label}
-\end{figure}
+
 %I dont think we have
     \item Sub-networks Diagrams (Track, Vehicle and Spectators)
 
