@@ -1,25 +1,20 @@
 \subsection{Overview}
 \graphicspath{ {./texfiles/electrical/eimc/} }
 %Electrical overview content here
-(a) Explain the main requirements and constraints that drive the design. \\
-Strict EHW rules \\
-reliability \\
-reusability \\
-lightweight \\
-power of pump, valves etc. 
-
-\par Our Low Voltage system drives all electrical and digital control systems of the Fermion. As stated previously,
+\subsubsection*{Main requirements and constraints that drive the design}
+\par Our Low Voltage system drives all electrical and digital control systems of the Fermion, which 
+is equivalent to all electronic systems but the inverter for propulsion. As stated previously,
 reliability is crucial in this case. A failure of any component may lead to the shutdown of critical systems, such as the battery management system.
 Furthermore, an overvoltage may potentially damage these systems, causing safety hazards. We had the option between building a LV battery pack from spare LiPo cells we ordered for the HV battery pack, and using automotive-grade ventilated lead-acid batteries.
 After considering the safety problems of LiPo cells and the efforts of either building a second (smaller) LV BMS or taking the risk of having a singular point of failure by controlling both systems with the same BMS, powering the BMS with the cells it controls, we went for the approach with lead-acid batteries, that is widely used in automotive systems. It is regarded as more reliable and robust compared to the Lithium-Ion pendants that we use for the High Voltage System. \\
+Furthermore, the safety risks of lead-acid batteries are much lower than those of LiPo cells, for example in the case of
+crashes and overcharging/overdischarging.\\
 \subsubsection*{Power requirements}
 We consider the power consumption of all components in the low voltage power line for the power requirements:
-
-( Moussa: Bitte finde die einzelnen Daten heraus. Pumpe ist Pierburg CW150A. Valve ist bei den brakes controllern. Raspberry Pi und Microcontroller passen.)
 \begin{itemize}
     \item \textbf{Solenoid Valves:} According to the data sheet, the valves use 2.25 Watts à 4 valves = 9 Watts. While switching, which takes 3.5 ms, they use 8.5 Watts.
     Assuming that we switch all four valves 20 times, we have an additional consumption of \(0.595 J\), which is almost negleglible. We will assume a power consumption of 10 Watts for tolerance.
-    \item \textbf{Thermal Pump:} Given the water flow rate, we calculated a theoretical need of 34 Watts for the pump. As we do not have experimental data, we assume that 50 Watts are required at maximum.
+    \item \textbf{Thermal Pump:} Given the water flow rate, we calculated a theoretical need of 34 Watts for the pump. As we do not have experimental data, we assume that 75 Watts are required at maximum.
     
     \item \textbf{Raspberry Pi 4:} One Raspberry Pi 4B consumes \(10 \, \text{Watts}\).
     \item \textbf{Raspberry Pico W:}
@@ -33,13 +28,14 @@ We consider the power consumption of all components in the low voltage power lin
     \item \textbf{BMS (Orion BMS 2, 180 Cells):}
        Our BMS consumes up to 2 Watts, according to the datasheet.
 
-    \item \textbf{Leadrive Inverter:} Using the nominal power ratings of 3 A at 24 V, we have a power consumption of 72 Watts.
+    \item \textbf{Leadrive Inverter:} Using the nominal power ratings of 3 A at 24 V, we have a power consumption of 72 Watts. The producer informed us that the average consumption is significantly lower,
+    which we confirmed after testing the inverter with no load, which uses approximately 25 Watts.
     \item \textbf{IMD}: Our IMD consumes up to 2 Watts, according to the datasheet.
     \item Network transceiver: We use the Rocket M2, which consumes up to 6 Watt of energy, according to the datasheet.
     \item Precharge relay and contactors: Our precharge relay uses \(0.32 W \), our main contactors use \(2 * 12V * 1A\) in total. We will calculate with 25W.
 \end{itemize}
 
-Now, summing up all the power requirements, we have
+Now, summing up all the (excessively computated) power requirements, we have
 \(10W + 50W + 10W + 1W + 5W + 2W + 72W + 2W + 6W + 25W = 183W \) , which is roughly 7.7 A at 24V. \\
 Using the discharge chart of the data sheet of the LV Battery,
 \begin{wrapfigure}{r}{0.25\textwidth}
@@ -129,7 +125,6 @@ by discretizing through Finite-Element-Methods.
 
 \subsection{Interface with other system}
 %Interface with other system content here n
-Briefly reference the communication protocols or control mechanisms of the boards, which should be explained in the respective Sense and Control subsection. \\
 All the electric subsystems are located within the pod. \\
 It powers the entire sensing, control and telemetry system. 
 The LV battery itself does not communicate. Its sensor data is processed by the thermal control board.
@@ -144,12 +139,12 @@ For charging, we are using a battery charger specified for 12V and 24V lead acid
 
 \subsection{Manufacturing process}
 %Manufacturing process content here
-As the cells come in hard-shell covers already, the manufacturing process is not very complicated. We will 3D-print a casing.
+As the cells come in hard-shell covers already, the manufacturing process is not very complicated. We will 3D-print a case from Polycarbonate material which permits flow of air and prevents short circuits physically.
 
 \subsection{Testing}
 %Testing content here
 We will test whether the lead acid cells and the thermistors are accurate to their datasheet. This especially includes \begin{itemize}
-    \item the capacity of the packs at 9V discharge (according to real scenario)
+    \item the capacity of the packs at 9A discharge (according to real scenario)
     \item the heat development while discharging
 \end{itemize}
     %\subsection{FMEA}
