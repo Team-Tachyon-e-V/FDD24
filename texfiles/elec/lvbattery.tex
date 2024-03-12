@@ -38,9 +38,9 @@ We consider the power consumption of all components in the low voltage power lin
 Now, summing up all the (excessively computated) power requirements, we have
 \(10W + 50W + 10W + 1W + 5W + 2W + 72W + 2W + 6W + 25W = 183W \) , which is roughly 7.7 A at 24V. \\
 Using the discharge chart of the data sheet of the LV Battery,
-\begin{wrapfigure}{r}{0.25\textwidth}
+\begin{wrapfigure}{r}{0.4\textwidth}
     \centering
-    \includegraphics[width=0.25\textwidth]{texfiles/elec/eimg/LV_Battery_WP1236W}
+    \includegraphics[width=0.4\textwidth]{texfiles/elec/eimg/LV_Battery_WP1236W}
     \caption{Discharge chart of LV battery cell}
 \end{wrapfigure}
 it is evident that even at full power (9A - including some headroom for losses), we can run our low voltage system for 20 minutes. During the competition, we can rule out that we will use that much power over the whole 20 minutes. 
@@ -64,6 +64,13 @@ In conclusion, the capacity of 9Ah is a trade-off between the mass and the avail
 We did a rough estimation based on the internal resistance of the
 battery, which is around \(0.014 \Omega \) according to the datasheet. We will assume \(0.02 \Omega\). Using the equation of heat loss, we get \(P = I^2 * R = 8^2 * 0.02 * W = 1.28W\).\\
 The ... Bohdan \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/SimulationTemplate}
+    \caption{Simulation results}
+    \label{img: simresults_battery}
+\end{figure}
+
 
 
 For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the

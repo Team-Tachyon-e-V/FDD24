@@ -3,7 +3,7 @@
 %Electrical overview content here
 
 \subsubsection*{Main requirements and design constraints}
-Our high-voltage battery are required to 
+Our high-voltage battery is required to 
 \begin{itemize}
     \item power the EMRAX 188 MV motor, requiring a maximum of 120 A at 504 V for full power, through the traction inverter
     \item endure multiple runs 
@@ -21,15 +21,14 @@ Our high-voltage battery are required to
 The main design requirement was to satisfy the motor's needs, which are as follows:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{texfiles/mech/eimg/propulsion/table_motor}
+    \includegraphics[page=2,width=\textwidth]{texfiles/mech/eimg/propulsion/table_motor}
     \caption{Motor Specifications}
     \label{fig: Motor Specifications}
 \end{figure}
-The power ratings have been increased several times in the past two years, allowing for higher voltages. However, we stick to the initial data that we were given in the previous design. However the motor is tested at >800V DC maximum voltage. We will definitely not reach these levels.
-
+The maximum voltage ratings have been increased several times in the past two years by the manufacturer, allowing for higher voltages. However, we stick to the initial data that we were given in the previous design. We will not reach the level that the motor is tested at (>800V DC maximum voltage). \\
 \subsection{Electrical and mechanical design process}
 %Electrical and mechanical design process content here
-Our design followed these steps.
+Our design followed these steps.\\
 \begin{wrapfigure}{r}{0.25\textwidth}
     \centering
     \includegraphics[width=0.25\textwidth]{texfiles/elec/eimg/BatteryDesignProcess}
@@ -129,7 +128,7 @@ C_{\text{tot}} &= \frac{\text{energy\_bed\_wh}}{n_{\text{ser}} \times U_{\text{z
 n_{\text{par}} &= \left\lceil \frac{C_{\text{tot}}}{C_{\text{zell\_ah}} \times \left(\frac{\text{SoC\_max} - \text{SoC\_min}}{100}\right)} \right\rceil; % Add semicolon at the end
 \end{align*}
 The S-curves are simple, as follows:
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/battery_run_model}
     \caption{Run model}
@@ -138,36 +137,59 @@ The S-curves are simple, as follows:
 The results showed that we needed 117 x 1 cells in series, which can be explained because we assumed to be able to use the maximum voltage, not the nominal voltage of the battery cells. We are able to run 27.47 runs, even with keeping our state of charge between 40 and 80 percent, saving battery health \footnote{We follow general advice that the optimal SOC lay between 0.2 to 0.8, and exceeding this range is not per se damaging to the battery, but shortening its life span, which we try to avoid}.
 \subsubsection{Schematics and drawings.}
 The CAD models of the battery pack are shown in the following. We visually cut the box open to show the inside structure. For the environment, please refer to the \hyperref{sec:chassis}{Chassis section}. \\
-
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryCell}
     \caption{Battery cell}
     \label{img: Batterycell}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryAssemblyDiag}
-    \caption{Battery pack}
-    \label{img: Batterypack}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{texfiles/elec/eimg/BatteryAssemblyDiag}
+        \caption{Battery pack (cut open)}
+        \label{img: Batterypack}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \rotatebox{180}{\includegraphics[width=\textwidth]{texfiles/elec/eimg/BatteryAssemblySide}}
+        \caption{Battery pack from the side.}
+        \label{img: Battery pack from the side}
+    \end{subfigure}
+    
+    \vspace{1cm}
+    
+    \begin{subfigure}[b]{0.8\textwidth}
+        \centering
+        \rotatebox{90}{\includegraphics[width=\textwidth]{texfiles/elec/eimg/BatteryAssemblyTop}}
+        \caption{Battery pack from the top}
+        \label{img: Battery pack from the top}
+    \end{subfigure}
+    \caption{Battery pack schematics and drawings}
+    \label{img: Battery pack schematics}
 \end{figure}
-\begin{figure}[h]
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryAssemblySide}
-    \caption{Battery pack from the top}
-    \label{img: Battery pack from the side}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryAssemblyTop}
-    \caption{Battery pack from the top}
-    \label{img: Battery pack from the top}
+    \includegraphics[width=\textwidth]{texfiles/elec/eimg/BatteryCableScheme}
+    \caption{Schematic of battery pack}
+    \label{img: batterycabling}
 \end{figure}
 \subsubsection{Temperature simulations for vacuum conditions.}
 For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the
 lack of gas flow, which eliminates the cooling heat flow from winds. The simulation tool solves
 the heat transfer equation \( \frac{\partial T}{\partial t} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} + \frac{\partial^2 T}{\partial z^2} \right) \)
-by discretizing through Finite-Element-Methods.
+by discretizing through Finite-Element-Methods. \\
+Its results:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/SimulationTemplate}
+    \caption{Simulation results}
+    \label{img: simresults_battery}
+\end{figure}
+
 \subsection{Electrical system characteristics}
 %Content of the electrical system characteristics here
 \subsection{Interface with other system}
@@ -177,7 +199,7 @@ We configure the BMS prior to the competition, and do not plan to change any set
 All the electric subsystems are located within the pod. \\
 
 The physical connection matrix is as following:
-\begin{table}
+\begin{table}[H]
     \centering
     \begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -203,7 +225,7 @@ The physical connection matrix is as following:
 
 The data connection matrix is as following. All communication between boards are via CAN, if not specified otherwise:
 
-\begin{table}
+\begin{table}[H]
     \centering
     \begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
@@ -228,7 +250,7 @@ The data connection matrix is as following. All communication between boards are
 
 \subsection{Final system description}
 %Description of the system here
-\subsubsection{Battery Cells}
+\subsubsection{Battery Cells} 
 
 High Voltage Network: \\
 Our high voltage battery will make use of lithium-ion polymer technology. We use 120 pouch-format cells from Shenzhen GrePow Battery Co. Ltd rated at 45C maximum discharge that we plan to connect in series. 
@@ -238,6 +260,140 @@ which provides sufficient electricity to power the motor.
 The battery pack will provide up to ~350 Amps of DC current available to the inverter. However, neither the inverter nor the motor is not rated for such high currents nominally, and we are not trying to use the full power of the battery pack.
 \newline
 Therefore, the maximum output current of the HV Battery will be rated at 120 A maximum (peak) and 74 A continuous. As the peak duration is at 120s, and our runs are at most 10s, we will set the limit of the inverter to 120A for the competition.
+
+\begin{table}[h]
+    \centering
+    %\begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|}
+       \hline
+       Battery Type & Lithium Polymer Pouch Cell\\
+       \hline
+       Capacity[Ah] & 6.1 \\
+       \hline
+       Nominal Voltage[V] & 12 \\
+       \hline
+       Cell configuration & 1s \\
+       \hline
+       Max. discharge [A] & 360 \\
+       \hline
+       Max. discharge w/o cooling [A] & 200 \\
+       Weight per cell [Kg] & 0.16 \\
+       \hline 
+       Dimensions per cell (L x W x H)[mm] & 141 x 116 x 5 \\
+       \hline 
+    \end{tabular}
+    %\end{adjustbox}
+    \label{High Voltage Cell Specs}
+    \caption{High battery cell specifications}
+\end{table}    
+
+\subsubsection*{Battery Pack}
+The battery pack consists of two lines of 60 battery cells each that are connected in series, giving \(120 * 3.7 V = 444 V \) nominal voltage. They are placed into a rigid rectangular container, with outputs being the power output, 120 wiring taps to the cells, and 40 thermistors (8 to the BMS, 32 to the telemetry device). \\
+Therefore, we measure one third of all cell temperatures, which is above the EHW requirements.
+We use the thermistors NTCLE413E2103F102L from Vishay/BC.
+The thermistors are approximately equally spread across the box, with a slight focus on both ends and the middle of the pack, where we expect the highest heat transients.
+The external thermistors will be connected to the thermal (cooling) controller via the circuit that the manufacturer of the microcontroller, Texas Instruments, has proposed.\footnote{\href{https://www.ti.com/lit/an/sboa323a/sboa323a.pdf}{Reference Design for Temperature Sensing with NTC Circuit, published by Texas Instruments, 2021. Visited on 12th March 2024}} We will adapt the components of the circuit, providing an almost linear output voltage with temperature, to a higher temperature range (from 25-50 C to 0-60C).
+\begin{table}[ht]
+    \centering
+    \caption{Thermistor parameters}
+    \label{thermistor1-parameters}
+    \begin{tabular}{|l|c|}
+        \toprule
+        Parameter & Value \\
+        \midrule
+        Resistance at 25°C & 10 k$\Omega$ \\
+        Tolerance & $\pm$1\% \\
+        B-value (B25/85) & 3435 K \\
+        Tolerance on B-value & $\pm$1\% \\
+        Operating Temperature Range & -40 to 105°C \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \caption{Resistance Values of Thermistor}
+    \label{resistance-values-thermistor1}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \toprule
+        Temperature (°C) & RT (Ω) & R-TOL. (± \%) & T-TOL. (± °C) & RMIN. (Ω) & RMAX. (Ω) \\
+        \midrule
+        0.0 & 27,348 & 2.7348 & -4.31 & 26,783 & 27,913 \\
+        5.0 & 22,108 & 2.2108 & -4.19 & 21,702 & 22,515 \\
+        10.0 & 17,979 & 1.7979 & -4.08 & 17,689 & 18,270 \\
+        15.0 & 14,706 & 1.4706 & -3.96 & 14,499 & 14,912 \\
+        20.0 & 12,094 & 1.2094 & -3.86 & 11,949 & 12,239 \\
+        25.0 & 10,000 & 1.0000 & -3.75 & 9,900.0 & 10,100 \\
+        30.0 & 8,310.8 & 0.83108 & -3.65 & 8,211.7 & 8,409.8 \\
+        35.0 & 6,941.1 & 0.69411 & -3.55 & 6,845.5 & 7,036.7 \\
+        40.0 & 5,824.9 & 0.58249 & -3.46 & 5,734.1 & 5,915.6 \\
+        45.0 & 4,910.6 & 0.49106 & -3.37 & 4,825.6 & 4,995.7 \\
+        50.0 & 4,158.3 & 0.41583 & -3.28 & 4,079.2 & 4,237.3 \\
+        55.0 & 3,536.2 & 0.35362 & -3.20 & 3,463.2 & 3,609.2 \\
+        60.0 & 3,019.7 & 0.30197 & -3.12 & 2,952.5 & 3,086.8 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+We add 4 holes to connect the cell taps and thermistors to the cells. They are marked in the layout of the battery box \ref{img: batterycabling}, and are visually shown in the following CAD image:
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth, angle=90]{texfiles/elec/eimg/BatteryPackHoles}
+    \caption{Openings for BMS cabling}
+\end{figure}
+\newline
+
+\subsubsection{Material Selection:}
+\begin{itemize}
+
+\item Battery Case: It will be made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) because of its light weight and impact resistance. 
+
+\item Vibration Protection Material: Neoprene foam will be used to damp against vibration that might damage the battery otherwise. It is chemically and thermodynamically robust.
+
+\item Cell Holder: Polypropylene (PP) will be used for pouch cell holders due to its lightweight, chemical resistance, and ease of molding. It provides good structural support and can be designed with features such as tabs or grooves to securely hold the cells in place.
+
+\item Thermal Interface Material: We are going to use aluminum foil, as well as materials from Würth Elektronik to increase the heat flow of the cells.
+
+\item Compression Protection Element: We will use Silicone Rubber due to its flexibility, durability, and robustness. It will provide cushioning against mechanical shocks and vibrations and hold the cells in place.
+
+\item Busbar: Busbar will be made of pure copper as it needs to transfer a high rate of discharge due to its low resistance.
+
+\item Thermal Protection Material: As we are depending on passive cooling of the battery, we will not use any thermal protection material to ensure the air passing through the cells maintains the operating temperature.
+
+\item Fire Retardant Material: A plate will be placed over the connections made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) to ensure the slow propagation of flame.
+
+\item Housing Sealing: Housing sealing will be made of the same grade of ABS as the casing to stop the ingress of air, water, and dust particles. The washer will be put between the joints to ensure complete sealing.
+\end{itemize}
+
+In conclusion, this is the specification of our high voltage battery pack. Table \ref{high-voltage-specs}:
+
+\begin{table}[h]
+    \centering
+    %\begin{adjustbox}{width=\textwidth,center}
+    \begin{tabular}{|c|c|}
+       \hline
+       Battery Type & Lithium Polymer Pouch Cells\\
+       \hline
+       Capacity[Ah] & 6.1 \\
+       \hline
+       Nominal Voltage[V] & 444 \\
+       \hline
+       Maximum Voltage[V] & 504 \\
+       Cell configuration & 1p120s \\
+       \hline
+       Max. discharge [A] & 360 \\
+       \hline
+       Max. discharge w/o cooling [A] & 200 \\
+       \hline
+       Weight [Kg] & 23 \\
+       \hline 
+       Dimensions per cell (L x W x H)[mm] & 500 x 285 x 210 \\
+       \hline 
+    \end{tabular}
+    %\end{adjustbox}
+    \caption{High Voltage Pack specifications}
+    \label{high-voltage-specs}
+\end{table}
 \subsubsection{BMS}
 Our centralized battery management system, the Orion BMS 2, connected to the HV battery, protects it and improves its health and efficiency.
 It is an OEM product. \\
@@ -252,61 +408,45 @@ It acts by: \begin{itemize}
     \item Controls discharging and charging
     \item Retains lifetime data about battery history
 \end{itemize}
+We include the relevant sections of the data sheet below: \begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+    \toprule
+    Specification Item & Min & Typ & Max & Units \\
+    \midrule
+    Input Supply Voltage & 8 & & 30 & Vdc \\
+    Supply Current—Active (at 25°C) & & < 2 & & Watts \\
+    Supply Current—Sleep (at 25°C, 12vDC) & & 450 & & µA \\
+    Operating Temperature & -40 & & 80 & °C \\
+    Sampling Rate for Current Sensor & & 8 & & mS \\
+    Sampling Rate for Cell Voltages & & 25 & 40 & mS \\
+    Isolation Between Cell Tap \#1 and Chassis / Input Supply & 1.5 & & & kVrms \\
+    Isolation Between Cell Taps \#2+ and Chassis / Input Supply & 2.5 & & & kVrms \\
+    Isolation Between Cell Tap Connectors & 2.5 & & & kVrms \\
+    Digital Output Switching Voltage (Open Drain) & & & 30 & V \\
+    Digital Output Sink Continuous Current & & & 175 & mA \\
+    Cell Voltage Measurement Range & 0.5 & & 5 & V \\
+    Cell Voltage Measurement Error (over 1-5v range) & & & 0.25 & \% \\
+    Cell Balancing Current & & & 200 & mA \\
+    Cell Current (Operating) & & 0.5 & & mA \\
+    Cell Current (Low Power Sleep) & & 50 & & µA \\
+    Thermistor Accuracy & & 1 & & °C \\
+    Cell Voltage Reporting Resolution & & 0.1 & & mV \\
+    \bottomrule
+    \end{tabular}
+    \caption{BMS specifications}
+    \label{tab:bms-specification-table}
+\end{table}
+The input connections (cell taps) from the battery poles are grouped in 5 sections à 3 Groups à 12 cells, up to 180 cells in total. We will only use 4 sections, and 3 fully. Additionally, there are 8 thermistors measuring the temperature. As the Rules and Regulations of EHW require more, we added more thermistors that do not output to the BMS, but to the Sense and Control system.Refer to the wiring of the battery box for that (\ref{img: batterycabling}). \\
 
-The Orion BMS 2 facilitates real-time monitoring and management of each cell within the HV battery pack, 
-which consists of 120 lithium-ion polymer cells arranged in a series configuration to achieve a nominal voltage of 504V. 
-This arrangement necessitates precise control and monitoring to prevent overcharging, deep discharging, and to ensure balanced 
-cell voltages, all of which are within the Orion BMS 2's capabilities.
 
-1. **Cell Voltage Monitoring and Balancing:** The BMS continuously monitors the voltage of each cell, ensuring 
-that all cells operate within their safe voltage range. Cell balancing is performed to equalize the charge across all cells,
-thereby enhancing the battery pack's overall efficiency and lifespan.
-
-2. **Temperature Monitoring:** 
-Given the high energy density of the HV battery pack, 
-thermal management is paramount. The Orion BMS 2 monitors the temperature of individual cells 
-and the battery pack as a whole, activating cooling measures when necessary and preventing operation 
-under extreme temperatures that could damage the battery or compromise safety.
-The Orion BMS 2 itself tracks the temperature of 8 individual cells. 28 other cells are measured by the Thermal Controller.
-
-3. **State of Charge (SoC) and State of Health (SoH) Estimation:** 
-SoC and SoH estimations are important for optimal battery utilization and health maintenance. 
-The Orion BMS 2 employs advanced algorithms to provide these estimates, 
-ensuring that the battery's capacity is used efficiently.
-
-
-The integration of the Orion BMS 2 encompasses several safety mechanisms designed to protect the battery pack, the hyperloop pod, and its occupants:
-
-1. **Overcurrent and Short Circuit Protection:** By monitoring the current flowing in and out of the battery pack, the Orion BMS 2 can detect overcurrent conditions and short circuits, initiating immediate shutdown procedures to prevent damage and ensure safety.
-
-2. **High and Low Voltage Protection:** The BMS prevents the battery from exceeding its maximum voltage during charging and dropping below its minimum voltage during discharge, thereby avoiding scenarios that could lead to reduced battery life or safety hazards.
-
-3. **Thermal Runaway Prevention:** Through its temperature monitoring capabilities, the Orion BMS 2 can detect the onset of thermal runaway—a dangerous condition where one cell's failure can lead to a cascading failure of adjacent cells—and take corrective actions to isolate the problem and mitigate potential damage.
-
-Efficiency Enhancements
-
-By optimizing the operational parameters of the HV battery pack, the Orion BMS 2 contributes significantly to the efficiency and performance of the hyperloop prototype:
-
-1. **Energy Optimization:** By ensuring that all cells are balanced and operate within their optimal voltage and temperature ranges, the BMS maximizes the energy extracted from the battery pack, contributing to the hyperloop's range and speed capabilities.
-
-2. **Lifecycle Extension:** Through diligent monitoring and management, the Orion BMS 2 extends the useful life of the HV battery pack, reducing the environmental impact and operational costs associated with battery replacement.
-
-3. **Predictive Maintenance:** By providing detailed data on the SoC and SoH, the Orion BMS 2 enables predictive maintenance, allowing for timely interventions that prevent unscheduled downtimes and extend the battery's lifespan.
-
-Conclusion
-
-The integration of the Orion BMS 2 with the HV battery pack in our hyperloop prototype represents a critical step towards ensuring the system's safety, efficiency, and reliability. Through its comprehensive monitoring and management capabilities, the Orion BMS 2 ensures that the HV battery pack operates within its optimal parameters, significantly contributing to the prototype's overall performance and safety profile. As we progress towards the final stages of the FDD, the detailed exploration of the Orion BMS 2's functionalities underscores our commitment to leveraging advanced technologies for the enhancement of hyperloop transportation systems.
-\subsubsection{Insulation Monitoring Device}
-The Insulation Monitoring Device that is mandatory for EHW participants, as well as Formula Students teams, is not built inhouse, after receiving the respective advice from the EHW technical jury. By reaching out to Bender, we received their device through their Formula Students policy. It is configured for ...
 
 
 \subsection{Manufacturing process}
 %Manufacturing process content here
-Our PCB Design
 
 \subsubsection{PCBs}
-Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab provides access to PCB manufacturing equipment and materials, enabling the rapid production of prototypes for initial testing and design validation. Once the PCBs are fabricated, they are assembled manually by our team members. Bigger PCBs are assembled in the facilities of the FabLab with the manual Pick and Place Machine and a reflow oven.
-
+Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab grants access to PCB manufacturing equipment and materials for the rapid production of prototypes for initial testing and design validation. Once the PCBs are fabricated, they are assembled manually by our team members. Bigger PCBs are assembled in the facilities of the FabLab with the manual Pick and Place Machine and a reflow oven. \\
 Production: We ordered our final PCBs from JLCPCB, a leading PCB manufacturing service. In addition to JLCPCB, we also collaborate with Würth Elektronik who produce PCBs in Germany, aligning with our goal of sustainability.
 
 \subsubsection{Batteries}
@@ -322,39 +462,26 @@ We produced the battery packs in cooperation with the ISEA (Institute for Power 
 
 The casing will consist of polycarbonate. Polycarbonate is a material that is durable, lightweight, and impact resistant. The problems with material degradation through UV emissions do not impact us substantially, as we cover the battery pack inside the shell for most of the time. We will have safety measures preventing too much exposure to UV radiation. Also, the degradation is mainly of cosmetic nature (https://link.springer.com/article/10.1007/s11668-020-01002-9).
 
-\subsubsection{Material Selection:}
-Battery Case: It will be made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) because of its lightweight, impact-resistant, and easy molding into complex shapes.
-
-Vibration Protection Material: Neoprene foam will be used to protect against vibration because of its durability and resilience. It provides effective vibration damping and is resistant to oils, chemicals, and temperature variations.
-
-Cell Holder: Polypropylene (PP) will be used for pouch cell holders due to its lightweight, chemical resistance, and ease of molding. It provides good structural support and can be designed with features such as tabs or grooves to securely hold the cells in place.
-
-Thermal Interface Material: We are going to use aluminum foil to increase the heat flow of the cells.
-
-Compression Protection Element: We will use Silicone Rubber due to its flexibility, durability, and resistance to heat and chemicals. It will provide cushioning against mechanical shocks and vibrations while securely holding the cells in place.
-
-Busbar: Busbar will be made of pure copper as it needs to transfer a high rate of discharge due to its low resistance.
-
-Thermal Protection Material: As we are depending on passive cooling of the battery, we will not use any thermal protection material to ensure the air passing through the cells maintains the operating temperature.
-
-Fire Retardant Material: A plate will be placed over the connections made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) to ensure the slow propagation of flame.
-
-Housing Sealing: Housing sealing will be made of the same grade of ABS as the casing to stop the ingress of air, water, and dust particles. The washer will be put between the joints to ensure complete sealing.
-
 \subsubsection*{Assembly}
-Stacking the cells: Insertion of the pouch cells into a holder/frame element, which brings the cells into a defined distance from each other, minimizes volume expansion during respiration, and protects the flexible cell housing from damage. We are stacking 60 cells in series in one stack and using 2 of these stacks in series.
-
-Connecting the cells: The cells are connected to each other in a series manner with the help of a busbar. Ultrasonic welding will be done to connect the cell tabs to the busbar.
-
-Connecting the BMS: The wiring diagram of the battery to BMS is given below:
-
+\begin{itemize}
+    \item Stacking the cells: Insertion of the pouch cells into a holder/frame element, which brings the cells into a defined distance from each other, minimizes volume expansion during respiration, and protects the flexible cell housing from damage. We are stacking 60 cells in series in one stack and using 2 of these stacks in series.
+    \item Connecting the cells: The cells are connected to each other in a series manner with the help of a busbar. Ultrasonic welding will be done to connect the cell tabs to the busbar.
+    \item Connecting the BMS: The wiring diagram of the battery to BMS is given below:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BMSWiring}
+        \caption{Example Connection Wiring of Battery to BMS with 108 Cells}
+        \label{img: bmswiring}
+    \end{figure}
+    We will have 4 round cuts on top of the battery pack to connect the BMS, which is mounted above the pack (but not to the pack! Refer to mechanical design), to the battery pack. 
+    \item Tensioning the Battery Cage Structure:
+    We will use the stretch bands to tension the whole stack structure to reduce the expansion during the manufacturing process.    
+\end{itemize}
 
 
 \subsection{Testing}
 %Testing content here
-We started testing the BMS.
-
-We will test the cells: This includes 
+We started testing the BMS and we will test the cells: This includes 
 \begin{itemize}
     \item Capacity Testing: Measuring the total amount of charge a battery. We will identify outliers and not use them for the battery pack, but as spare ones.
     \item Voltage Testing: Measuring the voltage under load and no-load conditions, in comparison to the state of charge.
