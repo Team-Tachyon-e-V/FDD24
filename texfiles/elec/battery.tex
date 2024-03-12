@@ -1,34 +1,182 @@
 \subsection{Overview}
+\graphicspath{ {./texfiles/electrical/eimc/} }
 %Electrical overview content here
-(a) Explain the main requirements and constraints that drive the design. \\
 
+\subsubsection*{Main requirements and design constraints}
+Our high-voltage battery are required to 
+\begin{itemize}
+    \item power the EMRAX 188 MV motor, requiring a maximum of 120 A at 504 V for full power, through the traction inverter
+    \item endure multiple runs 
+    \item fit into the chassis appropriately
+    \item do not exceed a weight limit of 30kg, also considering the efforts to remove it. Therefore, high energy (and power) density were important, removing the option of lead-acid batteries that are used in the railway sector. The high current ratings made specialized Lithium-Polymer cells one of the few, and the cheapest option available, which was to consider given the limited funds we had.
+    \item be reliable and tested: The team designing the batteries originally come from a diverse background, having experience with manufacturing lithium battery packs. However, experimental innovative designs like supercapacitors or sodium ion cells were not feasible in the time. 
+    \item be easily removable for maintenance
+    \item be controlled by a battery management system, due to obvious safety reasons
+    \item life cycle of at least 3 years for financial and environmental sustainability.
+    \item have power headroom for future designs, being able to be reused. We therefore also ordered a surplus of 30 cells.
+    \item cost less than 5000€, as a fund of a local bank is sponsoring us with 5000€ for the battery system (including BMS).
+    \item charge at a rate of approximately 1C for time constraints.
+    \item not heat up excessively, as we only opted for passive cooling.
+\end{itemize}
+The main design requirement was to satisfy the motor's needs, which are as follows:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/mech/eimg/propulsion/table_motor}
+    \caption{Motor Specifications}
+    \label{fig: Motor Specifications}
+\end{figure}
+The power ratings have been increased several times in the past two years, allowing for higher voltages. However, we stick to the initial data that we were given in the previous design. However the motor is tested at >800V DC maximum voltage. We will definitely not reach these levels.
 
 \subsection{Electrical and mechanical design process}
 %Electrical and mechanical design process content here
-\subsubsection{(a) Present Schematics or logic diagrams of the boards.}
-\subsubsection{(b) Present temperature simulations for vacuum conditions.}
+Our design followed these steps.
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{texfiles/elec/eimg/BatteryDesignProcess}
+    \caption{Heuristic for Finding Battery Parameter}
+\end{wrapfigure}
+For easier simulations, we used a matlab script with different parameters, which is publicly accessible via Github \footnote{\href{https://github.com/Team-Tachyon-e-V/battery_model}{Link to our battery model estimation}}:
+\subsubsection*{Pod Characteristics} 
+Some constant mechanical coefficients for the pod's movement that we assumed in our calculations:
+
+\begin{align*}
+m_{\text{fzg}} &= 250 \, \text{kg} & \text{(Vehicle Mass)} \\
+m_{\text{zul}} &= 50 \, \text{kg} & \text{(Payload)} \\
+c_L &= 0.8 & \text{(Drag Coefficient)} \\
+\rho_L &= 1.2 \, \text{kg/m}^3 & \text{(Air Density)} \\
+f_r &= 0.02 & \text{(Kinetic Friction Coefficient)} \\
+g &= 9.81 \, \text{m/s}^2 & \text{(Gravitational Acceleration)} \\
+A &= 1.5 \times 0.3 \, \text{m}^2 & \text{(Frontal Area)} \\
+e_{i1} &= 1.2 & \text{(Mass Factor for Rotating Part)} \\
+\text{Gradient} &= 5\% & \text{(Inclination Gradient Percentage)} \\
+\alpha &= \arctan\left(\frac{\text{Gradient}}{100}\right) & \text{(Inclination Gradient Angle)}
+\end{align*}
+
+\subsubsection*{Mass Calculation}
+
+Effective mass that will be accelerated:
+
+\begin{align*}
+m_{\text{acc}} =  e_{i1} \times m_{\text{fzg}} + m_{\text{zul}} = 1.2 \times 300 \, \text{kg} = 360 \, \text{kg}
+\end{align*}
+
+\subsubsection*{Vehicle Dynamics Parameters}
+
+Parameters related to the pod's movement:
+
+\begin{align*}
+v_{\text{init}} &= 0 \, \text{m/s} & \text{(Starting Velocity)} \\
+v_{\text{max}} &= \frac{60}{3.6} \, \text{m/s} \approx 16.67 \, \text{m/s} & \text{(Maximum Velocity)} \\
+s_f &= 150 \, \text{m} & \text{(Pod Distance)} \\
+R_d &= 0.1 \, \text{m} & \text{(Radius of Driving Wheel)} %should be diameter
+\end{align*}
+
+\subsubsection*{Motor Parameters}
+
+Motor's specifications:
+
+\begin{align*}
+P_{\text{peak}} &= 37 \times 1000 \, \text{W} & \text{(Power at 7000 rpm)} \\
+\text{eff} &= 0.96 & \text{(Efficiency)} \\
+P_{\text{motor}} &= 0.96 \times 37000 \, \text{W} = 35520 \, \text{W}
+\end{align*}
+
+\subsubsection*{Resistance Calculation for Continuous Power}
+
+We add all resistive forces against the pod's motion, taking into account that we drive in a non-vacuum environment:
+
+\begin{align*}
+F_{\text{roll}} &= 0.02 \times 300 \times 9.81 \times \cos\left(\arctan\left(\frac{5}{100}\right)\right) \\
+F_{\text{luft}} &= 0.5 \times 0.8 \times 1.2 \times (1.5 \times 0.3) \times (16.67^2) \\
+F_{\text{st}} &= 300 \times 9.81 \times \sin\left(\arctan\left(\frac{5}{100}\right)\right)
+\end{align*}
+
+\subsubsection*{Maximum Acceleration Calculation}
+
+Pod's maximum acceleration:
+
+\begin{align*}
+a_{\text{max}} = \frac{\left(\frac{35520}{16.67}\right) - F_{\text{roll}} - F_{\text{luft}} - F_{\text{st}}}{360}
+\end{align*}
+
+\subsubsection*{S-Curve Generation}
+
+Timing for acceleration and deceleration phases:
+
+\begin{align*}
+T &= \left(\frac{a_{\text{max}}}{j_{\text{max}}}\right) + \left(\frac{16.67}{a_{\text{max}}}\right) + \left(\frac{150}{16.67}\right)
+\end{align*}
+
+\subsubsection*{Energy Demand}
+
+Energy demand for the journey: \text{energy\_bed\_wh} = \text{Energy demand in Wh}
+
+\subsubsection*{Battery Parameters}
+%% Voltage and Current Need(from data sheet)
+
+\begin{align*}
+V_{\text{bed}} &= 490 \, \text{V}; \\
+I_{\text{bed}} &= 100 \, \text{A}; \\
+%% Battery Parameters
+U_{\text{zell}} &= 4.2 \, \text{V}; \\
+C_{\text{zell\_ah}} &= 6.1 \, \text{Ah}; \\
+C_{\text{rate}} &= 35; \\
+\text{SoC\_max} &= 80\%; \\
+\text{SoC\_min} &= 40\%; \\
+\textbf{Required battery configuration:}; \\
+n_{\text{ser}} &= \left\lceil \frac{V_{\text{bed}}}{U_{\text{zell}}} \right\rceil; \\
+C_{\text{tot}} &= \frac{\text{energy\_bed\_wh}}{n_{\text{ser}} \times U_{\text{zell}} \times \text{eff\_mech}}; \\
+n_{\text{par}} &= \left\lceil \frac{C_{\text{tot}}}{C_{\text{zell\_ah}} \times \left(\frac{\text{SoC\_max} - \text{SoC\_min}}{100}\right)} \right\rceil; % Add semicolon at the end
+\end{align*}
+The S-curves are simple, as follows:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/battery_run_model}
+    \caption{Run model}
+    \label{img: runmodel}
+\end{figure}
+The results showed that we needed 117 x 1 cells in series, which can be explained because we assumed to be able to use the maximum voltage, not the nominal voltage of the battery cells. We are able to run 27.47 runs, even with keeping our state of charge between 40 and 80 percent, saving battery health \footnote{We follow general advice that the optimal SOC lay between 0.2 to 0.8, and exceeding this range is not per se damaging to the battery, but shortening its life span, which we try to avoid}.
+\subsubsection{Schematics and drawings.}
+The CAD models of the battery pack are shown in the following. We visually cut the box open to show the inside structure. For the environment, please refer to the \hyperref{sec:chassis}{Chassis section}. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryCell}
+    \caption{Battery cell}
+    \label{img: Batterycell}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryAssemblyDiag}
+    \caption{Battery pack}
+    \label{img: Batterypack}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryAssemblySide}
+    \caption{Battery pack from the top}
+    \label{img: Battery pack from the side}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryAssemblyTop}
+    \caption{Battery pack from the top}
+    \label{img: Battery pack from the top}
+\end{figure}
+\subsubsection{Temperature simulations for vacuum conditions.}
 For our heat simulations, we used the software of ANSYS. By vacuum conditions, we assumed the
 lack of gas flow, which eliminates the cooling heat flow from winds. The simulation tool solves
 the heat transfer equation \( \frac{\partial T}{\partial t} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} + \frac{\partial^2 T}{\partial z^2} \right) \)
 by discretizing through Finite-Element-Methods.
-
-\subsection{Description of subsystem control}
-%Description of subsystem control content here
-\subsubsection{(a) Briefly reference the control systems of the boards, which should be explained in the levitation or propulsion subsection respectively.}
-We configure the BMS prior to the competition. \\
-
-
 \subsection{Electrical system characteristics}
 %Content of the electrical system characteristics here
-   
-
-
 \subsection{Interface with other system}
 %Interface with other system content here n
-(a) Briefly reference the communication protocols or control mechanisms of the boards, which should be explained in the respective Sense and Control subsection. \\
+\subsubsection{Control systems of the boards}
+We configure the BMS prior to the competition, and do not plan to change any settings during the competition. It sends telemetry data over CAN. \\
 All the electric subsystems are located within the pod. \\
 
-The phsyical connection matrix is as following:
+The physical connection matrix is as following:
 \begin{table}
     \centering
     \begin{adjustbox}{width=\textwidth,center}
@@ -82,23 +230,28 @@ The data connection matrix is as following. All communication between boards are
 %Description of the system here
 \subsubsection{Battery Cells}
 
-High Voltage Network:
-
+High Voltage Network: \\
 Our high voltage battery will make use of lithium-ion polymer technology. We use 120 pouch-format cells from Shenzhen GrePow Battery Co. Ltd rated at 45C maximum discharge that we plan to connect in series. 
-The finished package (main battery pack) will be assembled by the team.
+The finished package (main battery pack) will be assembled by the team, helped by the ISEA institute of RWTH Aachen University.
 We are going to connect the 120 cells connected in series and that will have 1 parallel line. This will roughly have 504 Volt at max (using \(120 * 4.2V = 504 V \) ) 
 which provides sufficient electricity to power the motor.
-The battery pack will provide up to ~350 Amps of DC current available to the inverter. However, neither the inverter nor the motor is not rated for such high currents nominally. 
+The battery pack will provide up to ~350 Amps of DC current available to the inverter. However, neither the inverter nor the motor is not rated for such high currents nominally, and we are not trying to use the full power of the battery pack.
 \newline
-Therefore, the maximum output current of the HV Battery will be rated at 200 A maximum (peak) and 100 A continuous. 
-
-We will stack 30 cells in series per pack and then stack 4 of them to get the full battery pack. No we won't.
-\newline
+Therefore, the maximum output current of the HV Battery will be rated at 120 A maximum (peak) and 74 A continuous. As the peak duration is at 120s, and our runs are at most 10s, we will set the limit of the inverter to 120A for the competition.
 \subsubsection{BMS}
-Our battery management system 
-
-The Orion BMS 2, connected to the HV battery, protects it and improves its life, efficiency. 
-Operational Mechanics
+Our centralized battery management system, the Orion BMS 2, connected to the HV battery, protects it and improves its health and efficiency.
+It is an OEM product. \\
+It acts by: \begin{itemize}
+    \item Monitors every cell voltage in series
+    \item Intelligent cell balancing (efficient passive
+    balancing)
+    \item Enforces min. and max. cell voltages
+    \item Enforces maximum current limits
+    \item Enforces temperature limits
+    \item Monitors state-of-charge and pack health, internal resistance
+    \item Controls discharging and charging
+    \item Retains lifetime data about battery history
+\end{itemize}
 
 The Orion BMS 2 facilitates real-time monitoring and management of each cell within the HV battery pack, 
 which consists of 120 lithium-ion polymer cells arranged in a series configuration to achieve a nominal voltage of 504V. 
@@ -150,24 +303,65 @@ The Insulation Monitoring Device that is mandatory for EHW participants, as well
 \subsection{Manufacturing process}
 %Manufacturing process content here
 Our PCB Design
+
 \subsubsection{PCBs}
-\par Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab provides access to PCB manufacturing equipment and materials, enabling the rapid production of prototypes for initial testing and design validation.
-    Once the PCBs are fabricated, they are assembled manually by our team members. Bigger PCBs are assembled in the facilities of the FabLab with the manual Pick and Place Machine and a reflow oven.
-\par Production: We ordered our final PCBs from JLCPCB, a leading PCB manufacturing service. In addition to JLCPCB, we also collaborate with Würth Elektronik who produce 
-PCBs in Germany, aligning with our goal of sustainability.
+Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab provides access to PCB manufacturing equipment and materials, enabling the rapid production of prototypes for initial testing and design validation. Once the PCBs are fabricated, they are assembled manually by our team members. Bigger PCBs are assembled in the facilities of the FabLab with the manual Pick and Place Machine and a reflow oven.
+
+Production: We ordered our final PCBs from JLCPCB, a leading PCB manufacturing service. In addition to JLCPCB, we also collaborate with Würth Elektronik who produce PCBs in Germany, aligning with our goal of sustainability.
+
 \subsubsection{Batteries}
-The production of the low voltage battery pack is rather easy. We will use a 3d printer to print the casing
-We produced the battery packs in cooperation with the ISEA (Institute for Power Electronics and Electrical Drives) at RWTH, whose experience helped us to assemble and design the parts
-more efficienciently and more safely, as we had a considerable high voltage system.
-The casing will consist of polycarbonate. Polycarbonate is a material that is
-durable , lightweight, and impact resistant. The problems with
-material degradation through UV emissions does not impact us substantially, as we
-cover the battery pack inside the shell for most of the time. We will have safety measures preventing too much exposure to UV radiation.
-Also, the degradation is mainly of cosmetic nature (https://link.springer.com/article/10.1007/s11668-020-01002-9) .
+Our phases of production followed this structure:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryProduction}
+    \caption{Stages of Production of Battery Pack}
+    \label{img: batteryproduction}
+\end{figure}
+
+We produced the battery packs in cooperation with the ISEA (Institute for Power Electronics and Electrical Drives) at RWTH, whose experience helped us to assemble and design the parts more efficiently and more safely, as we had a considerable high voltage system.
+
+The casing will consist of polycarbonate. Polycarbonate is a material that is durable, lightweight, and impact resistant. The problems with material degradation through UV emissions do not impact us substantially, as we cover the battery pack inside the shell for most of the time. We will have safety measures preventing too much exposure to UV radiation. Also, the degradation is mainly of cosmetic nature (https://link.springer.com/article/10.1007/s11668-020-01002-9).
+
+\subsubsection{Material Selection:}
+Battery Case: It will be made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) because of its lightweight, impact-resistant, and easy molding into complex shapes.
+
+Vibration Protection Material: Neoprene foam will be used to protect against vibration because of its durability and resilience. It provides effective vibration damping and is resistant to oils, chemicals, and temperature variations.
+
+Cell Holder: Polypropylene (PP) will be used for pouch cell holders due to its lightweight, chemical resistance, and ease of molding. It provides good structural support and can be designed with features such as tabs or grooves to securely hold the cells in place.
+
+Thermal Interface Material: We are going to use aluminum foil to increase the heat flow of the cells.
+
+Compression Protection Element: We will use Silicone Rubber due to its flexibility, durability, and resistance to heat and chemicals. It will provide cushioning against mechanical shocks and vibrations while securely holding the cells in place.
+
+Busbar: Busbar will be made of pure copper as it needs to transfer a high rate of discharge due to its low resistance.
+
+Thermal Protection Material: As we are depending on passive cooling of the battery, we will not use any thermal protection material to ensure the air passing through the cells maintains the operating temperature.
+
+Fire Retardant Material: A plate will be placed over the connections made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) to ensure the slow propagation of flame.
+
+Housing Sealing: Housing sealing will be made of the same grade of ABS as the casing to stop the ingress of air, water, and dust particles. The washer will be put between the joints to ensure complete sealing.
+
+\subsubsection*{Assembly}
+Stacking the cells: Insertion of the pouch cells into a holder/frame element, which brings the cells into a defined distance from each other, minimizes volume expansion during respiration, and protects the flexible cell housing from damage. We are stacking 60 cells in series in one stack and using 2 of these stacks in series.
+
+Connecting the cells: The cells are connected to each other in a series manner with the help of a busbar. Ultrasonic welding will be done to connect the cell tabs to the busbar.
+
+Connecting the BMS: The wiring diagram of the battery to BMS is given below:
+
+
 
 \subsection{Testing}
 %Testing content here
-We started testing software.
+We started testing the BMS.
+
+We will test the cells: This includes 
+\begin{itemize}
+    \item Capacity Testing: Measuring the total amount of charge a battery. We will identify outliers and not use them for the battery pack, but as spare ones.
+    \item Voltage Testing: Measuring the voltage under load and no-load conditions, in comparison to the state of charge.
+    \item Internal Resistance Testing: 
+    Measuring the resistance within the battery cells, observing high internal resistances that may indicate degradation or defects.
+    \item Temperature Testing: Evaluating the battery's performance under different temperature conditions. We will include high temperature situations in this (<50C). Also, we will validate the temperature graphs we received from the manufacturer for the heat dissipation at 200A discharge, as well as our own simulations.
+\end{itemize}
 
 %\subsection{FMEA}
 %FMEA content here

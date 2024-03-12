@@ -26,7 +26,8 @@ Component & Number & Mass [kg] & Size [mm] &  In-house/ outsourced \\
 \hline
 Motor & x1 & 7 & \(188 \times 188 \times 112\) &   Bought \\
 Motorshaft & x1 & 0.4 & \(170 \times 83\times 83\) &Outsourced \\
-Resolver & 1 & 1 & TS2620N21E11 &  Bought \\
+Resolver & x1 & 1 & - &  Bought \\
+Inverter & x1 & 9 & \(400 \times 400 \times 100\) &  Outsourced \\
 Bevelgear z=20 & x1 & 3 & \(10 \times 90\) &  Bought \\
 Bevelgear z=40 & x1 & 9.6 & \(20 \times 30 \times 50\) &Bought \\
 Gearshaft Pressfitted & x1 & 0.3 & \(103 \times 40 \times 40\) & Outsourced \\
@@ -476,6 +477,32 @@ The result of simulating the bearingbracket gives a maximum stress of \(XX \, \t
 \subsubsection{Mesh and Boundary Conditions}
 For meshing and specify all required parameters for a successful simulation, we used the standardsettings of Solidworks.
 
+\subsection{Control section}
+Control architecture: The pod only uses a Permanent Magnet Synchronous Motor (PMSM) to move. The traction inverter that we use transforms DC power from the batteries to AC 3-phase power in the motor. Due to the device we use being an OEM product, we cannot give information about the underlying control theory, besides of that it uses field-oriented control. \\
+Our motor is equipped with a resolver measuring the rotor position and speed, the Tamagawa TS2620N21E11 Brushless Pancake resolver which outputs to the inverter. It also has a temperature sensor.
+The interface with the electric system is both physical and informational, through the HV line and the CAN Bus, respectively, with the inverter acting as the coordinating device, having power and data inputs. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{texfiles/mech/eimg/propulsion/telemetrysystems}
+  \caption{CAN Bus}
+  \label{fig:canbus}
+\end{figure}
+Our inverter is connected to the LV power source for control and to the HV power source for the motor. It has 
+several control inputs to start, or end operating.
+All of the commands, especially the ones of the user, are processed over CAN. We have the option to either 
+control speed, or torque, while setting a speed, torque, and current maximum limit. We decided to use the speed control only for ensuring additional safety in case of electronics failure. The current limit is set according to the current limit of the motor. \\
+The inverter, used for automotive applications, is rated for ASIL-C level according to ISO 26262, after
+adapting it to our target application by setting up the inverter correctly with the specifications of our motor. \\
+The inverter is able to give negative torque, which enables regenerative braking. However, due to our technical constraints this year, and the short length of track, we decided not to implement this feature, while we are fully Acknowledging that regenerative braking significantly helps to reduce the energy consumption, as experiences from the railway sector have shown, along with an efficient U-shaped tunnel design around stations, decelerating through an ascent before stations, and further accelerating through a slight descent after stations \footnote{These tunnel construction methods are not part of the research work of the team working on traction systems.}. \\
+Our procedure at EHW will consist of \begin{itemize}
+  \item Setup/Initialize
+  \item Accelerating
+  \item (Cruising)
+  \item Braking
+  \item Shutoff
+\end{itemize}
+We will not decelerate through the traction system, but through our friction brakes.
+
 \subsection{Manufacturing Process}
 \begin{table}[H]
 \centering
@@ -509,6 +536,8 @@ Bearingbracket & x2 & lasercutting, welding \\
 \end{table}
 
 \subsection{Integration process}
+
+At Yash: Please add information here.
 
 \subsubsection{Assembling}
 Describe how the parts will be assembled, including integration into subordinate structures/systems if applicable.
@@ -545,9 +574,13 @@ Outline which factors are critical to success and how they will be validated.
 
 
 \subsection{Full-scale adaptation}
-- Funktioniert wie herkömmliche Eisenbahn
-- Für die Beschleunigung im Full scale möglich
-- Sobald der Pod mit levitation anfängt, werden die Reifen angehoben, und das derzeitige propulsion system abgeschaltet
+\begin{itemize}
+  \item Functions like a conventional railway system
+  \item Full-scale acceleration is possible
+  \item The inverter is designed for the dimensions of an electric car
+  \item Once the pod starts levitating, the wheels are lifted, and the current friction-based propulsion system is deactivated
+  \item Levitation on two guides is also built in the real world \footnote{https://www.maglevboard.net/en/visuals/photos/271-linimo-urban-maglev-cn}
+\end{itemize}
 
 \subsection{References}
 
