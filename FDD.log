@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2024.2.12)  8 MAR 2024 01:58
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2024.2.12)  12 MAR 2024 19:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -477,7 +477,30 @@ File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@expandcount=\count307
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
+))) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries/circuits\tikzlibrarycircuits.ee.IEC.code.tex (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\arrowsize=\dimen271
+)) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries/circuits\tikzlibrarycircuits.ee.code.tex (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries/circuits\tikzlibrarycircuits.code.tex (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.markings.code.tex (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen272
+\pgfdecoratedremainingdistance=\dimen273
+\pgfdecoratedinputsegmentcompleteddistance=\dimen274
+\pgfdecoratedinputsegmentremainingdistance=\dimen275
+\pgf@decorate@distancetomove=\dimen276
+\pgf@decorate@repeatstate=\count308
+\pgfdecorationsegmentamplitude=\dimen277
+\pgfdecorationsegmentlength=\dimen278
+)
+\tikz@lib@dec@box=\box65
+) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.markings.code.tex))
+\tikz@lib@circ@count=\count309
+\tikzcircuitssizeunit=\dimen279
+) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes/circuits\pgflibraryshapes.gates.ee.code.tex)) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes/circuits\pgflibraryshapes.gates.ee.IEC.code.tex)) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
 \CommentStream=\write4
  Excluding comment 'comment') (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
@@ -497,11 +520,11 @@ LaTeX Warning: Command \underline  has changed.
 
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count308
+\c@float@type=\count310
 \float@exts=\toks39
-\float@box=\box65
+\float@box=\box66
 \@float@everytoks=\toks40
-\@floatcapt=\box66
+\@floatcapt=\box67
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip53
@@ -512,30 +535,30 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count309
-\c@Blindtext=\count310
-\c@blind@countparstart=\count311
-\blind@countxx=\count312
-\blindtext@numBlindtext=\count313
-\blind@countyy=\count314
-\c@blindlist=\count315
-\c@blindlistlevel=\count316
-\c@blindlist@level=\count317
-\blind@listitem=\count318
-\c@blind@listcount=\count319
-\c@blind@levelcount=\count320
-\blind@mathformula=\count321
-\blind@Mathformula=\count322
-\c@blind@randomcount=\count323
-\c@blind@randommax=\count324
-\c@blind@pangramcount=\count325
-\c@blind@pangrammax=\count326
+\c@blindtext=\count311
+\c@Blindtext=\count312
+\c@blind@countparstart=\count313
+\blind@countxx=\count314
+\blindtext@numBlindtext=\count315
+\blind@countyy=\count316
+\c@blindlist=\count317
+\c@blindlistlevel=\count318
+\c@blindlist@level=\count319
+\blind@listitem=\count320
+\c@blind@listcount=\count321
+\c@blind@levelcount=\count322
+\blind@mathformula=\count323
+\blind@Mathformula=\count324
+\c@blind@randomcount=\count325
+\c@blind@randommax=\count326
+\c@blind@pangramcount=\count327
+\c@blind@pangrammax=\count328
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip56
 \bibsep=\skip57
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count327
+\c@NAT@ctr=\count329
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/todonotes\todonotes.sty
 Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
 Package: todonotes 2024/01/05
@@ -547,132 +570,130 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks41
 \XKV@tempa@toks=\toks42
 )
-\XKV@depth=\count328
+\XKV@depth=\count330
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+)) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count329
-\calc@Bcount=\count330
-\calc@Adimen=\dimen271
-\calc@Bdimen=\dimen272
+\calc@Acount=\count331
+\calc@Bcount=\count332
+\calc@Adimen=\dimen280
+\calc@Bdimen=\dimen281
 \calc@Askip=\skip58
 \calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count331
+\calc@Ccount=\count333
 \calc@Cskip=\skip60
 )
-\c@@todonotes@numberoftodonotes=\count332
+\c@@todonotes@numberoftodonotes=\count334
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip61
-\enit@outerparindent=\dimen273
+\enit@outerparindent=\dimen282
 \enit@toks=\toks43
-\enit@inbox=\box67
-\enit@count@id=\count333
-\enitdp@description=\count334
+\enit@inbox=\box68
+\enit@count@id=\count335
+\enitdp@description=\count336
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/tabularray\tabularray.sty (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2022-09-28 L3 programming layer (loader) 
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xetex.def
 File: l3backend-xetex.def 2022-09-28 L3 backend support: XeTeX
-\g__graphics_track_int=\count335
-\l__pdf_internal_box=\box68
-\g__pdf_backend_object_int=\count336
-\g__pdf_backend_annotation_int=\count337
-\g__pdf_backend_link_int=\count338
+\g__graphics_track_int=\count337
+\l__pdf_internal_box=\box69
+\g__pdf_backend_object_int=\count338
+\g__pdf_backend_annotation_int=\count339
+\g__pdf_backend_link_int=\count340
 ))
 Package: tabularray 2023-03-01 v2023A Typeset tabulars and arrays with LaTeX3
-\l__tblr_a_int=\count339
-\l__tblr_c_int=\count340
-\l__tblr_r_int=\count341
-\l__tblr_d_dim=\dimen274
-\l__tblr_h_dim=\dimen275
-\l__tblr_o_dim=\dimen276
-\l__tblr_p_dim=\dimen277
-\l__tblr_q_dim=\dimen278
-\l__tblr_r_dim=\dimen279
-\l__tblr_s_dim=\dimen280
-\l__tblr_t_dim=\dimen281
-\l__tblr_v_dim=\dimen282
-\l__tblr_w_dim=\dimen283
-\l__tblr_a_box=\box69
-\l__tblr_b_box=\box70
-\l__tblr_c_box=\box71
-\l__tblr_d_box=\box72
-\g__tblr_table_count_int=\count342
-\c@rownum=\count343
-\c@colnum=\count344
-\c@rowcount=\count345
-\c@colcount=\count346
-\abovesep=\dimen284
-\belowsep=\dimen285
-\leftsep=\dimen286
-\rightsep=\dimen287
-\g_tblr_level_int=\count347
-\g__tblr_data_row_key_count_int=\count348
-\g__tblr_data_column_key_count_int=\count349
-\g__tblr_data_cell_key_count_int=\count350
-\g__tblr_array_int=\count351
-\l__tblr_key_count_int=\count352
-\l__tblr_key_quotient_int=\count353
-\l__tblr_key_quotient_two_int=\count354
-\l__tblr_key_remainder_int=\count355
-\g__tblr_data_str_value_count_int=\count356
-\rulewidth=\dimen288
-\l__tblr_strut_dp_dim=\dimen289
-\l__tblr_strut_ht_dim=\dimen290
-\g__tblr_cell_wd_dim=\dimen291
-\g__tblr_cell_ht_dim=\dimen292
-\g__tblr_cell_head_dim=\dimen293
-\g__tblr_cell_foot_dim=\dimen294
-\l__column_target_dim=\dimen295
-\l__tblr_caption_box=\box73
-\l__tblr_caption_left_box=\box74
-\l__tblr_row_head_box=\box75
-\l__tblr_row_foot_box=\box76
-\l__tblr_row_head_foot_dim=\dimen296
-\tablewidth=\dimen297
-\l__tblr_table_firsthead_box=\box77
-\l__tblr_table_middlehead_box=\box78
-\l__tblr_table_lasthead_box=\box79
-\l__tblr_table_firstfoot_box=\box80
-\l__tblr_table_middlefoot_box=\box81
-\l__tblr_table_lastfoot_box=\box82
-\l__tblr_remain_height_dim=\dimen298
-\l__tblr_long_from_int=\count357
-\l__tblr_long_to_int=\count358
-\l__tblr_curr_i_int=\count359
-\l__tblr_prev_i_int=\count360
-\l__tblr_table_page_int=\count361
-\l__tblr_table_head_box=\box83
-\l__tblr_table_foot_box=\box84
-\l__tblr_table_head_foot_dim=\dimen299
-\l__tblr_table_head_body_foot_dim=\dimen300
-\l__tblr_table_box=\box85
-\l__tblr_table_hlines_box=\box86
-\l__tblr_hline_box=\box87
-\l__tblr_row_box=\box88
-\l__tblr_col_o_wd_dim=\dimen301
-\l__tblr_col_b_wd_dim=\dimen302
-\l__tblr_hline_leftskip_dim=\dimen303
-\l__tblr_hline_rightskip_dim=\dimen304
-\l__tblr_row_ht_dim=\dimen305
-\l__tblr_row_dp_dim=\dimen306
-\l__tblr_row_abovesep_dim=\dimen307
-\l__tblr_row_belowsep_dim=\dimen308
-\l__tblr_row_vlines_box=\box89
-\l__tblr_vline_box=\box90
-\l__tblr_cell_box=\box91
-\l__row_upper_dim=\dimen309
-\l__row_lower_dim=\dimen310
-\l__row_vpace_dim=\dimen311
-\l__tblr_vline_aboveskip_dim=\dimen312
-\l__tblr_vline_belowskip_dim=\dimen313
-\l__tblr_cell_wd_dim=\dimen314
-\l__tblr_cell_ht_dim=\dimen315
-\l__tblr_diag_box=\box92
+\l__tblr_a_int=\count341
+\l__tblr_c_int=\count342
+\l__tblr_r_int=\count343
+\l__tblr_d_dim=\dimen283
+\l__tblr_h_dim=\dimen284
+\l__tblr_o_dim=\dimen285
+\l__tblr_p_dim=\dimen286
+\l__tblr_q_dim=\dimen287
+\l__tblr_r_dim=\dimen288
+\l__tblr_s_dim=\dimen289
+\l__tblr_t_dim=\dimen290
+\l__tblr_v_dim=\dimen291
+\l__tblr_w_dim=\dimen292
+\l__tblr_a_box=\box70
+\l__tblr_b_box=\box71
+\l__tblr_c_box=\box72
+\l__tblr_d_box=\box73
+\g__tblr_table_count_int=\count344
+\c@rownum=\count345
+\c@colnum=\count346
+\c@rowcount=\count347
+\c@colcount=\count348
+\abovesep=\dimen293
+\belowsep=\dimen294
+\leftsep=\dimen295
+\rightsep=\dimen296
+\g_tblr_level_int=\count349
+\g__tblr_data_row_key_count_int=\count350
+\g__tblr_data_column_key_count_int=\count351
+\g__tblr_data_cell_key_count_int=\count352
+\g__tblr_array_int=\count353
+\l__tblr_key_count_int=\count354
+\l__tblr_key_quotient_int=\count355
+\l__tblr_key_quotient_two_int=\count356
+\l__tblr_key_remainder_int=\count357
+\g__tblr_data_str_value_count_int=\count358
+\rulewidth=\dimen297
+\l__tblr_strut_dp_dim=\dimen298
+\l__tblr_strut_ht_dim=\dimen299
+\g__tblr_cell_wd_dim=\dimen300
+\g__tblr_cell_ht_dim=\dimen301
+\g__tblr_cell_head_dim=\dimen302
+\g__tblr_cell_foot_dim=\dimen303
+\l__column_target_dim=\dimen304
+\l__tblr_caption_box=\box74
+\l__tblr_caption_left_box=\box75
+\l__tblr_row_head_box=\box76
+\l__tblr_row_foot_box=\box77
+\l__tblr_row_head_foot_dim=\dimen305
+\tablewidth=\dimen306
+\l__tblr_table_firsthead_box=\box78
+\l__tblr_table_middlehead_box=\box79
+\l__tblr_table_lasthead_box=\box80
+\l__tblr_table_firstfoot_box=\box81
+\l__tblr_table_middlefoot_box=\box82
+\l__tblr_table_lastfoot_box=\box83
+\l__tblr_remain_height_dim=\dimen307
+\l__tblr_long_from_int=\count359
+\l__tblr_long_to_int=\count360
+\l__tblr_curr_i_int=\count361
+\l__tblr_prev_i_int=\count362
+\l__tblr_table_page_int=\count363
+\l__tblr_table_head_box=\box84
+\l__tblr_table_foot_box=\box85
+\l__tblr_table_head_foot_dim=\dimen308
+\l__tblr_table_head_body_foot_dim=\dimen309
+\l__tblr_table_box=\box86
+\l__tblr_table_hlines_box=\box87
+\l__tblr_hline_box=\box88
+\l__tblr_row_box=\box89
+\l__tblr_col_o_wd_dim=\dimen310
+\l__tblr_col_b_wd_dim=\dimen311
+\l__tblr_hline_leftskip_dim=\dimen312
+\l__tblr_hline_rightskip_dim=\dimen313
+\l__tblr_row_ht_dim=\dimen314
+\l__tblr_row_dp_dim=\dimen315
+\l__tblr_row_abovesep_dim=\dimen316
+\l__tblr_row_belowsep_dim=\dimen317
+\l__tblr_row_vlines_box=\box90
+\l__tblr_vline_box=\box91
+\l__tblr_cell_box=\box92
+\l__row_upper_dim=\dimen318
+\l__row_lower_dim=\dimen319
+\l__row_vpace_dim=\dimen320
+\l__tblr_vline_aboveskip_dim=\dimen321
+\l__tblr_vline_belowskip_dim=\dimen322
+\l__tblr_cell_wd_dim=\dimen323
+\l__tblr_cell_ht_dim=\dimen324
+\l__tblr_diag_box=\box93
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/gensymb\gensymb.sty
@@ -681,8 +702,8 @@ Package: gensymb 2022/10/17 v1.0.2 (KJH)
 Package: wallpaper 2005/01/18, v1.01 easy wallpaper formatting (MHFW)
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen316
-\ESO@tempdimb=\dimen317
+\ESO@tempdima=\dimen325
+\ESO@tempdimb=\dimen326
 )
 \wpXoffset=\skip62
 \wpYoffset=\skip63
@@ -695,30 +716,30 @@ Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks44
-\AP@partial=\box93
-\AP@footins=\box94
+\AP@partial=\box94
+\AP@footins=\box95
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box95
+\ttl@box=\box96
 \beforetitleunit=\skip70
 \aftertitleunit=\skip71
-\ttl@plus=\dimen318
-\ttl@minus=\dimen319
+\ttl@plus=\dimen327
+\ttl@minus=\dimen328
 \ttl@toksa=\toks45
-\titlewidth=\dimen320
-\titlewidthlast=\dimen321
-\titlewidthfirst=\dimen322
+\titlewidth=\dimen329
+\titlewidthlast=\dimen330
+\titlewidthfirst=\dimen331
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen323
-\ar@mcellbox=\box96
-\extrarowheight=\dimen324
+\col@sep=\dimen332
+\ar@mcellbox=\box97
+\extrarowheight=\dimen333
 \NC@list=\toks46
 \extratabsurround=\skip72
 \backup@length=\skip73
-\ar@cellbox=\box97
+\ar@cellbox=\box98
 )
 \everycr=\toks47
 \minrowclearance=\skip74
@@ -728,27 +749,27 @@ Package: xparse 2022-06-22 L3 Experimental document command parser
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex.sty
 Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count362
-\l__fontspec_language_int=\count363
-\l__fontspec_strnum_int=\count364
-\l__fontspec_tmp_int=\count365
-\l__fontspec_tmpa_int=\count366
-\l__fontspec_tmpb_int=\count367
-\l__fontspec_tmpc_int=\count368
-\l__fontspec_em_int=\count369
-\l__fontspec_emdef_int=\count370
-\l__fontspec_strong_int=\count371
-\l__fontspec_strongdef_int=\count372
-\l__fontspec_tmpa_dim=\dimen325
-\l__fontspec_tmpb_dim=\dimen326
-\l__fontspec_tmpc_dim=\dimen327
+\l__fontspec_script_int=\count364
+\l__fontspec_language_int=\count365
+\l__fontspec_strnum_int=\count366
+\l__fontspec_tmp_int=\count367
+\l__fontspec_tmpa_int=\count368
+\l__fontspec_tmpb_int=\count369
+\l__fontspec_tmpc_int=\count370
+\l__fontspec_em_int=\count371
+\l__fontspec_emdef_int=\count372
+\l__fontspec_strong_int=\count373
+\l__fontspec_strongdef_int=\count374
+\l__fontspec_tmpa_dim=\dimen334
+\l__fontspec_tmpb_dim=\dimen335
+\l__fontspec_tmpc_dim=\dimen336
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
-\wrapoverhang=\dimen328
-\WF@size=\dimen329
-\c@WF@wrappedlines=\count373
-\WF@box=\box98
+\wrapoverhang=\dimen337
+\WF@size=\dimen338
+\c@WF@wrappedlines=\count375
+\WF@box=\box99
 \WF@everypar=\toks48
 Package: wrapfig 2003/01/31  v 3.6
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/forloop\forloop.sty
@@ -757,7 +778,7 @@ Package: forloop 2023/05/03 v3.0 For Loops for LaTeX
 Package: mfirstuc 2022/10/14 v2.08 (NLCT)
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count374
+\etb@tempcnta=\count376
 )
 \@glsmfirst=\toks49
 \@glsmrest=\toks50
@@ -767,17 +788,17 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTright=\skip76
 \LTpre=\skip77
 \LTpost=\skip78
-\LTchunksize=\count375
-\LTcapwidth=\dimen330
-\LT@head=\box99
-\LT@firsthead=\box100
-\LT@foot=\box101
-\LT@lastfoot=\box102
-\LT@gbox=\box103
-\LT@cols=\count376
-\LT@rows=\count377
-\c@LT@tables=\count378
-\c@LT@chunks=\count379
+\LTchunksize=\count377
+\LTcapwidth=\dimen339
+\LT@head=\box100
+\LT@firsthead=\box101
+\LT@foot=\box102
+\LT@lastfoot=\box103
+\LT@gbox=\box104
+\LT@cols=\count378
+\LT@rows=\count379
+\c@LT@tables=\count380
+\c@LT@chunks=\count381
 \LT@p@ftn=\toks51
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
 Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
@@ -787,42 +808,42 @@ Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-
 Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
-\collectedbox=\box104
+\collectedbox=\box105
 )
-\tc@llx=\dimen331
-\tc@lly=\dimen332
-\tc@urx=\dimen333
-\tc@ury=\dimen334
+\tc@llx=\dimen340
+\tc@lly=\dimen341
+\tc@urx=\dimen342
+\tc@ury=\dimen343
 Package trimclip Info: Using driver 'tc-xetex.def'.
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-xetex.def
 File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
 ))
-\adjbox@Width=\dimen335
-\adjbox@Height=\dimen336
-\adjbox@Depth=\dimen337
-\adjbox@Totalheight=\dimen338
-\adjbox@pwidth=\dimen339
-\adjbox@pheight=\dimen340
-\adjbox@pdepth=\dimen341
-\adjbox@ptotalheight=\dimen342
+\adjbox@Width=\dimen344
+\adjbox@Height=\dimen345
+\adjbox@Depth=\dimen346
+\adjbox@Totalheight=\dimen347
+\adjbox@pwidth=\dimen348
+\adjbox@pheight=\dimen349
+\adjbox@pdepth=\dimen350
+\adjbox@ptotalheight=\dimen351
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count380
+\c@checkoddpage=\count382
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box105
-\sift@deathcycles=\count381
-\@vwid@loff=\dimen343
-\@vwid@roff=\dimen344
+\@vwid@box=\box106
+\sift@deathcycles=\count383
+\@vwid@loff=\dimen352
+\@vwid@roff=\dimen353
 )) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip79
-\multirow@cntb=\count382
+\multirow@cntb=\count384
 \multirow@dima=\skip80
-\bigstrutjot=\dimen345
+\bigstrutjot=\dimen354
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/eurosym\eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box106
+\@eurobox=\box107
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
@@ -844,18 +865,18 @@ Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package: caption 2023/07/31 v3.6n Customizing captions (AR)
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen346
-\captionmargin=\dimen347
-\caption@leftmargin=\dimen348
-\caption@rightmargin=\dimen349
-\caption@width=\dimen350
-\caption@indent=\dimen351
-\caption@parindent=\dimen352
-\caption@hangindent=\dimen353
+\caption@tempdima=\dimen355
+\captionmargin=\dimen356
+\caption@leftmargin=\dimen357
+\caption@rightmargin=\dimen358
+\caption@width=\dimen359
+\caption@indent=\dimen360
+\caption@parindent=\dimen361
+\caption@hangindent=\dimen362
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count383
-\c@continuedfloat=\count384
+\c@caption@flags=\count385
+\c@continuedfloat=\count386
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
@@ -865,64 +886,181 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: wrapfig package is loaded.
 )
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count385
+\c@subfigure=\count387
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count386
+\c@subtable=\count388
 ) (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen354
-\lightrulewidth=\dimen355
-\cmidrulewidth=\dimen356
-\belowrulesep=\dimen357
-\belowbottomsep=\dimen358
-\aboverulesep=\dimen359
-\abovetopsep=\dimen360
-\cmidrulesep=\dimen361
-\cmidrulekern=\dimen362
-\defaultaddspace=\dimen363
-\@cmidla=\count387
-\@cmidlb=\count388
-\@aboverulesep=\dimen364
-\@belowrulesep=\dimen365
-\@thisruleclass=\count389
-\@lastruleclass=\count390
-\@thisrulewidth=\dimen366
+\heavyrulewidth=\dimen363
+\lightrulewidth=\dimen364
+\cmidrulewidth=\dimen365
+\belowrulesep=\dimen366
+\belowbottomsep=\dimen367
+\aboverulesep=\dimen368
+\abovetopsep=\dimen369
+\cmidrulesep=\dimen370
+\cmidrulekern=\dimen371
+\defaultaddspace=\dimen372
+\@cmidla=\count389
+\@cmidlb=\count390
+\@aboverulesep=\dimen373
+\@belowrulesep=\dimen374
+\@thisruleclass=\count391
+\@lastruleclass=\count392
+\@thisrulewidth=\dimen375
 )
 
-Package fontspec Info: Font family 'Regular.ttf(0)' created for font
-(fontspec)             'Regular.ttf' with options [Ligatures=TeX].
+Package fontspec Info: Font family 'LightCondensed.ttf(0)' created for font
+(fontspec)             'Light Condensed.ttf' with options [].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-
-Package fontspec Info: Font family 'Light.ttf(0)' created for font 'Light.ttf'
-(fontspec)             with options [].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[Light.ttf]/OT:script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-
-Package fontspec Info: Font family 'lightCondensed.ttf(0)' created for font
-(fontspec)             'light Condensed.ttf' with options [].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[light
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[Light
 (fontspec)             Condensed.ttf]/OT:script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-\c@checkboxcount=\count391
- (FDD.aux (texfiles/general/coverpageEHW.aux) (texfiles/mech/traction.aux
+\c@checkboxcount=\count393
+ (FDD.aux (texfiles/general/coverpageEHW.aux) (texfiles/general/introduction.aux) (texfiles/mech/mechanical.aux
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:test' multiply defined.
+
+
+LaTeX Warning: Label `fig:test@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:image1@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:test' multiply defined.
+
+
+LaTeX Warning: Label `fig:test@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:image1@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:image1' multiply defined.
+
+
+LaTeX Warning: Label `fig:image1@cref' multiply defined.
+
+
+LaTeX Warning: Label `table:components' multiply defined.
+
+
+LaTeX Warning: Label `table:components@cref' multiply defined.
+
+
+LaTeX Warning: Label `table:components' multiply defined.
+
+
+LaTeX Warning: Label `table:components@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:guiding_front_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:guiding_front_2@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:guiding_rear_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:guiding_rear_2@cref' multiply defined.
+
+
+LaTeX Warning: Label `table:components' multiply defined.
+
+
+LaTeX Warning: Label `table:components@cref' multiply defined.
+
+) (texfiles/mech/traction.aux
+
+LaTeX Warning: Label `table:components' multiply defined.
+
+
+LaTeX Warning: Label `table:components@cref' multiply defined.
+
 
 LaTeX Warning: Label `' multiply defined.
 
@@ -1087,44 +1225,44 @@ LaTeX Warning: Label `table:components@cref' multiply defined.
 
 ) (texfiles/elec/electrical.aux
 
-LaTeX Warning: Label `Physical connection matrix' multiply defined.
+LaTeX Warning: Label `img: simresults_battery' multiply defined.
 
 
-LaTeX Warning: Label `Physical connection matrix@cref' multiply defined.
+LaTeX Warning: Label `img: simresults_battery@cref' multiply defined.
 
 
-LaTeX Warning: Label `data-connectivity-matrix' multiply defined.
+LaTeX Warning: Label `img: simresults_battery' multiply defined.
 
 
-LaTeX Warning: Label `data-connectivity-matrix@cref' multiply defined.
+LaTeX Warning: Label `img: simresults_battery@cref' multiply defined.
 
-))
+) (texfiles/general/safety.aux) (texfiles/general/testing.aux))
 \openout1 = `FDD.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 158.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 158.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 166.
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 158.
-LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1160,7 +1298,7 @@ LaTeX Font Info:    ... okay on input line 158.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 158.
+Package hyperref Info: Link coloring ON on input line 166.
 (FDD.out) (FDD.out)
 \@outlinefile=\write5
 \openout5 = `FDD.out'.
@@ -1170,70 +1308,70 @@ Package: ninecolors 2022-02-13 vv2022D Select colors with proper color contrast
 )
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/Regular.ttf(0)/m/n --> TS1/Regular.ttf(0)/b/n on input line 158.
-Package gensymb Info: Math companion symbols declared on input line 158.
-LaTeX Info: Redefining \degree on input line 158.
-LaTeX Info: Redefining \celsius on input line 158.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 158.
-LaTeX Info: Redefining \ohm on input line 158.
-Package gensymb Info: Using \textohm for \ohm on input line 158.
-Package gensymb Info: Using \textmu for \micro on input line 158.
+(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 166.
+Package gensymb Info: Math companion symbols declared on input line 166.
+LaTeX Info: Redefining \degree on input line 166.
+LaTeX Info: Redefining \celsius on input line 166.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 166.
+LaTeX Info: Redefining \ohm on input line 166.
+Package gensymb Info: Using \textohm for \ohm on input line 166.
+Package gensymb Info: Using \textmu for \micro on input line 166.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 158.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 158.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 158.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 158.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 158.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 158.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 158.
-LaTeX Font Info:    Redeclaring math accent \check on input line 158.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 158.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 158.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 158.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 158.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 158.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 166.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 166.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 166.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 166.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 166.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 166.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 166.
+LaTeX Font Info:    Redeclaring math accent \check on input line 166.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 166.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 166.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 166.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 166.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 158.
+(Font)              `operators' in the math version `normal' on input line 166.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Regular.ttf(0)/m/n on input line 158.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 166.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 158.
+(Font)              `operators' in the math version `bold' on input line 166.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Regular.ttf(0)/m/n on input line 158.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 166.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/Regular.ttf(0)/m/n --> TU/Regular.ttf(0)/m/n on input line 158.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 166.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Regular.ttf(0)/m/it on input line 158.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 166.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Regular.ttf(0)/b/n on input line 158.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 166.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 158.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 166.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 158.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 166.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/Regular.ttf(0)/m/n --> TU/Regular.ttf(0)/b/n on input line 158.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 166.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Regular.ttf(0)/b/it on input line 158.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 166.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 158.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 166.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 158.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 166.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \openout2 = `texfiles/general/coverpageEHW.aux'.
@@ -1241,18 +1379,9 @@ Package caption Info: End \AtBeginDocument code.
  (texfiles/general/coverpageEHW.tex
 File: backgroundimages/ZurichImage.png Graphic file (type bmp)
 <backgroundimages/ZurichImage.png>
-
-
-LaTeX Font Warning: Font shape `TU/Regular.ttf(0)/b/n' undefined
-(Font)              using `TU/Regular.ttf(0)/m/n' instead on input line 12.
-
-
-LaTeX Font Warning: Font shape `TU/Regular.ttf(0)/m/sc' undefined
-(Font)              using `TU/Regular.ttf(0)/m/n' instead on input line 14.
-
 File: backgroundimages/LogoBlue.png Graphic file (type bmp)
 <backgroundimages/LogoBlue.png>
-[1
+ [1
 
 
 ]) (FDD.toc
@@ -1263,15 +1392,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
  (C:\Users\smffc\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for TS1+Regular.ttf(0) on input line 3.
-LaTeX Font Info:    No file TS1Regular.ttf(0).fd. on input line 3.
-
-
-LaTeX Font Warning: Font shape `TS1/Regular.ttf(0)/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead on input line 3.
-
-)
+))
 \tf@toc=\write6
 \openout6 = `FDD.toc'.
 
@@ -1280,53 +1401,604 @@ LaTeX Font Warning: Font shape `TS1/Regular.ttf(0)/m/n' undefined
 
 
 ]
-\openout2 = `texfiles/mech/traction.aux'.
+\openout2 = `texfiles/general/introduction.aux'.
 
- (texfiles/mech/traction.tex
+ (texfiles/general/introduction.tex
 Chapter 1.
-(texfiles/mech/propulsion.tex [2
+[2
 
 
 ]
-Overfull \hbox (1.00232pt too wide) in paragraph at lines 25--25
-[]|\TU/Regular.ttf(0)/b/n/12 Number| 
+Overfull \hbox (25.40987pt too wide) in paragraph at lines 12--32
+ [][] 
+ []
+
+
+Overfull \hbox (71.9699pt too wide) in paragraph at lines 38--61
+ [][] 
+ []
+
+[3]) [4]
+\openout2 = `texfiles/mech/mechanical.aux'.
+
+ (texfiles/mech/mechanical.tex
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--15
+
+ []
+
+(texfiles/mech/chassis.tex [5
+
+
+
+
+]
+Overfull \hbox (1.61432pt too wide) in paragraph at lines 47--47
+[]|\TU/lmr/m/n/12 Number| 
+ []
+
+
+Overfull \hbox (1.43068pt too wide) in paragraph at lines 47--47
+[]|\TU/lmr/m/n/12 Manufacturing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+[]|\TU/lmr/m/n/12 In-house/
+ []
+
+
+Overfull \hbox (5.57706pt too wide) in paragraph at lines 49--49
+[]|\TU/lmr/m/n/12 1480x882x20| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
+[]|\TU/lmr/m/n/12 CF Sand-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]|\TU/lmr/m/n/12 CF Sand-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+[]|\TU/lmr/m/n/12 CF Sand-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\TU/lmr/m/n/12 CF Sand-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
+[]|\TU/lmr/m/n/12 CF Sand-
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 54--54
+[]|\TU/lmr/bx/n/12 Seam Type
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 55--55
+[]|\TU/lmr/bx/n/12 Seam Type
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 56--56
+[]|\TU/lmr/bx/n/12 Seam Type
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 57--57
+[]|\TU/lmr/bx/n/12 Seam Type
+ []
+
+[6]
+File: texfiles/mech/eimg/chassis/cad1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/cad1.png>
+File: texfiles/mech/eimg/chassis/technicaldrawing1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/technicaldrawing1.png>
+File: texfiles/mech/eimg/chassis/technicaldrawing1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/technicaldrawing1.png>
+
+Overfull \hbox (23.47202pt too wide) in paragraph at lines 95--101
+ [][][] 
+ []
+
+File: texfiles/mech/eimg/chassis/technicaldrawing1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/technicaldrawing1.png>
+File: texfiles/mech/eimg/chassis/technicaldrawing1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/technicaldrawing1.png>
+
+Overfull \hbox (23.47202pt too wide) in paragraph at lines 111--117
+ [][][] 
+ []
+
+[7] [8] [9]
+File: texfiles/mech/eimg/chassis/fem1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/fem1.png>
+File: texfiles/mech/eimg/chassis/fem1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/fem1.png>
+File: texfiles/mech/eimg/chassis/fem1.png Graphic file (type bmp)
+<texfiles/mech/eimg/chassis/fem1.png>
+
+Overfull \hbox (23.47202pt too wide) in paragraph at lines 200--206
+ [][][] 
+ []
+
+[10] [11] [12] [13] [14] [15] [16] [17] [18]) (texfiles/mech/suspension.tex [19]
+File: texfiles/mech/eimg/suspension/fbd.png Graphic file (type bmp)
+<texfiles/mech/eimg/suspension/fbd.png>
+ [20]
+File: texfiles/mech/eimg/suspension/CAD_Deign of Rear Suspension.png Graphic file (type bmp)
+<texfiles/mech/eimg/suspension/CAD_Deign of Rear Suspension.png>
+File: texfiles/mech/eimg/suspension/CAD Design Front wishbone Assembly.png Graphic file (type bmp)
+<texfiles/mech/eimg/suspension/CAD Design Front wishbone Assembly.png>
+ [21] [22]
+File: texfiles/mech/eimg/suspension/Mounting FEM results.png Graphic file (type bmp)
+<texfiles/mech/eimg/suspension/Mounting FEM results.png>
+ [23]
+
+LaTeX Warning: Reference `fig:figure1' on page 24 undefined on input line 159.
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]|\TU/lmr/m/n/12 Mass
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]|\TU/lmr/m/n/12 Manufacturing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+[]|\TU/lmr/m/n/12 In-
+ []
+
+
+Overfull \hbox (22.36012pt too wide) in paragraph at lines 173--174
+\TU/lmr/m/n/12 house/Outsourced| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]|\TU/lmr/m/n/12 Galvanized
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+[]|\TU/lmr/bx/n/12 Cylindrical
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+\TU/lmr/bx/n/12 Roller Bear-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+\TU/lmr/bx/n/12 ing Rear
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+[]|\TU/lmr/bx/n/12 Retaining
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+[]|\TU/lmr/m/n/12 Spring
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--180
+[]|\TU/lmr/bx/n/12 Rear Upper
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--180
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+[]|\TU/lmr/bx/n/12 Rear Lower
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+[]|\TU/lmr/bx/n/12 Shock Ab-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
+[]|\TU/lmr/bx/n/12 Wishbone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
+[]|\TU/lmr/bx/n/12 Knuckle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
+\TU/lmr/bx/n/12 Wishbone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+[]|\TU/lmr/bx/n/12 Rear Shock
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+\TU/lmr/bx/n/12 Absorber
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
+[]|\TU/lmr/bx/n/12 Linkage
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+[]|\TU/lmr/bx/n/12 Female Rod
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+[]|\TU/lmr/m/n/12 Stainless
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+\TU/lmr/m/n/12 Steel
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 188--188
+[]|\TU/lmr/bx/n/12 Linkage Con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--190
+[]|\TU/lmr/bx/n/12 Front Wheel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--190
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
+[]|\TU/lmr/bx/n/12 Front Wish-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\TU/lmr/bx/n/12 Front Shock
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\TU/lmr/bx/n/12 Absorber
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
+[]|\TU/lmr/bx/n/12 Retaining
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
+[]|\TU/lmr/m/n/12 Spring
+ []
+
+[25] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 230--236
+
+ []
+
+[28]) (texfiles/mech/friction_braking.tex
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+[29] [30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+File: texfiles/mech/eimg/braking/guiding_front_1.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/braking/guiding_front_1.jpg>
+File: texfiles/mech/eimg/braking/guiding_front_2.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/braking/guiding_front_2.jpg>
+File: texfiles/mech/eimg/braking/guiding_tech_rear.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/braking/guiding_tech_rear.jpg>
+File: texfiles/mech/eimg/braking/guiding_tech_rear.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/braking/guiding_tech_rear.jpg>
+File: texfiles/mech/eimg/braking/guiding_rear_1.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/braking/guiding_rear_1.jpg>
+File: texfiles/mech/eimg/braking/guiding_rear_2.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/braking/guiding_rear_2.jpg>
+[32]
+Overfull \hbox (14.7616pt too wide) in paragraph at lines 159--160
+[]\TU/lmr/m/n/12 Finding the ideal mix between strength, the lifespan, ease of manufacture, and cost-effectiveness
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+ []
+
+[34] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--354
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--393
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+[38]
+File: texfiles/mech/eimg/braking/guiding_rear_1.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/braking/guiding_rear_1.jpg>
+ [39]) (texfiles/mech/magnetic_braking.tex [40]) (texfiles/mech/aerodynamics.tex
+Overfull \hbox (1.61432pt too wide) in paragraph at lines 21--21
+[]|\TU/lmr/m/n/12 Number| 
+ []
+
+
+Overfull \hbox (1.43068pt too wide) in paragraph at lines 21--21
+[]|\TU/lmr/m/n/12 Manufacturing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+[]|\TU/lmr/m/n/12 In-house/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/lmr/bx/n/12 Lamination
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/lmr/m/n/12 stainless
+ []
+
+[41] [42] [43]
+File: texfiles/mech/eimg/aerodynamics/shell_frontview.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/aerodynamics/shell_frontview.jpg>
+File: texfiles/mech/eimg/aerodynamics/shell_side.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/aerodynamics/shell_side.jpg>
+File: texfiles/mech/eimg/aerodynamics/shell_rear.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/aerodynamics/shell_rear.jpg>
+File: texfiles/mech/eimg/aerodynamics/shell_topview.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/aerodynamics/shell_topview.jpg>
+File: texfiles/mech/eimg/aerodynamics/shell_drawing.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/aerodynamics/shell_drawing.jpg>
+File: texfiles/mech/eimg/aerodynamics/shell_bottom.jpg Graphic file (type bmp)
+<texfiles/mech/eimg/aerodynamics/shell_bottom.jpg>
+ [44] [45]
+Underfull \hbox (badness 10000) in paragraph at lines 208--212
+
+ []
+
+[46] [47]
+Overfull \hbox (3.64114pt too wide) in paragraph at lines 276--278
+\TU/lmr/bx/n/12 Additional considerations when writing the document for specific subsystems: Brak-
+ []
+
+[48]))
+\openout2 = `texfiles/mech/traction.aux'.
+
+ (texfiles/mech/traction.tex
+Chapter 3.
+(texfiles/mech/propulsion.tex [49
+
+
+
+
+]
+Overfull \hbox (1.61432pt too wide) in paragraph at lines 25--25
+[]|\TU/lmr/m/n/12 Number| 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
-[]|\TU/Regular.ttf(0)/b/n/12 In-house/
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
-[]|\TU/Regular.ttf(0)/b/n/12 Bevelgear
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]|\TU/Regular.ttf(0)/b/n/12 Bevelgear
+[]|\TU/lmr/m/n/12 In-house/
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]|\TU/Regular.ttf(0)/b/n/12 Gearshaft
+[]|\TU/lmr/bx/n/12 Bevelgear
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\TU/Regular.ttf(0)/b/n/12 Gearshaft
+[]|\TU/lmr/bx/n/12 Bevelgear
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--33
+[]|\TU/lmr/bx/n/12 Gearshaft
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+[]|\TU/lmr/bx/n/12 Gearshaft
+ []
+
+[50]
 File: texfiles/mech/eimg/propulsion/picture_motor.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_motor.png>
-[3]
 File: texfiles/mech/eimg/propulsion/picture_motorshaft.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_motorshaft.png>
 File: texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf Graphic file (type pdf)
 <use texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf>
 File: texfiles/mech/eimg/propulsion/picture_forces_motorshaft.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_forces_motorshaft.png>
- [4]
+ [51]
 File: texfiles/mech/eimg/propulsion/picture_gearshafts.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_gearshafts.png>
 File: texfiles/mech/eimg/propulsion/picture_gearshaft_right.png Graphic file (type bmp)
@@ -1335,17 +2007,17 @@ File: texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf Graphic fi
 <use texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf>
 File: texfiles/mech/eimg/propulsion/picture_forces_gearshaft_right.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_forces_gearshaft_right.png>
- [5]
+ [52]
 File: texfiles/mech/eimg/propulsion/picture_gearshaft_left.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_gearshaft_left.png>
 File: texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf Graphic file (type pdf)
 <use texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf>
 File: texfiles/mech/eimg/propulsion/picture_forces_gearshaft_left.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_forces_gearshaft_left.png>
- [6]
+ [53]
 File: texfiles/mech/eimg/propulsion/picture_shaft_joint.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_shaft_joint.png>
- [7]
+ [54]
 File: texfiles/mech/eimg/propulsion/picture_wheelshaft.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_wheelshaft.png>
 File: texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf Graphic file (type pdf)
@@ -1358,7 +2030,7 @@ File: texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf Graphic fi
 <use texfiles/mech/eimg/propulsion/spaceholder_technical_drawing.pdf>
 File: texfiles/mech/eimg/propulsion/picture_forces_wheel.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_forces_wheel.png>
- [8] [9]
+ [55] [56]
 File: texfiles/mech/eimg/propulsion/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/placeholder.png>
 File: texfiles/mech/eimg/propulsion/placeholder.png Graphic file (type bmp)
@@ -1367,97 +2039,130 @@ File: texfiles/mech/eimg/propulsion/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/placeholder.png>
 File: texfiles/mech/eimg/propulsion/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/placeholder.png>
- [10]
+ [57]
 File: texfiles/mech/eimg/propulsion/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/placeholder.png>
- [11]
-Underfull \hbox (badness 10000) in paragraph at lines 359--359
-[]|\TU/Regular.ttf(0)/b/n/12 Total Mass
+ [58]
+Underfull \hbox (badness 10000) in paragraph at lines 361--361
+[]|\TU/lmr/m/n/12 Total Mass
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--378
-[]|\TU/Regular.ttf(0)/b/n/12 Aluminum
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
+[]|\TU/lmr/bx/n/12 Bevelgear
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
+[]|\TU/lmr/bx/n/12 Bevelgear
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]|\TU/lmr/bx/n/12 Gearshaft
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--373
+[]|\TU/lmr/bx/n/12 Gearshaft
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 379--380
-[]|\TU/Regular.ttf(0)/b/n/12 Aluminum
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 381--381
-[]|\TU/Regular.ttf(0)/b/n/12 Motorshaft-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 381--381
-\TU/Regular.ttf(0)/b/n/12 bracket and
+[]|\TU/lmr/m/n/12 Aluminum
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 381--382
-[]|\TU/Regular.ttf(0)/b/n/12 Aluminum
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+[]|\TU/lmr/bx/n/12 Motorshaft-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+\TU/lmr/bx/n/12 bracket and
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 383--384
-[]|\TU/Regular.ttf(0)/b/n/12 Aluminum
+[]|\TU/lmr/m/n/12 Aluminum
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 385--386
-[]|\TU/Regular.ttf(0)/b/n/12 Aluminum
+[]|\TU/lmr/m/n/12 Aluminum
+ []
+
+
+Overfull \hbox (3.87375pt too wide) in paragraph at lines 387--387
+[]|\TU/lmr/bx/n/12 Bearingbracket| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+[]|\TU/lmr/m/n/12 Aluminum
  []
 
 File: texfiles/mech/eimg/propulsion/picture_simulation_motorshaft.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_simulation_motorshaft.png>
-[12]
+[59]
 File: texfiles/mech/eimg/propulsion/picture_simulation_gearshaft_right.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_simulation_gearshaft_right.png>
 File: texfiles/mech/eimg/propulsion/picture_simulation_gearshaft_left.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_simulation_gearshaft_left.png>
 File: texfiles/mech/eimg/propulsion/picture_simulation_wheelshaft.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_simulation_wheelshaft.png>
- [13]
+ [60]
 File: texfiles/mech/eimg/propulsion/picture_simulation_wheel.png Graphic file (type bmp)
 <texfiles/mech/eimg/propulsion/picture_simulation_wheel.png>
- [14]
-Overfull \hbox (6.0089pt too wide) in paragraph at lines 513--514
-\TU/Regular.ttf(0)/b/n/12 Describe how the parts will be assembled, including integration into subordinate structures/systems
+ [61]
+File: texfiles/mech/eimg/propulsion/telemetrysystems.png Graphic file (type bmp)
+<texfiles/mech/eimg/propulsion/telemetrysystems.png>
+ [62]
+Overfull \hbox (17.092pt too wide) in paragraph at lines 543--544
+\TU/lmr/m/n/12 Describe how the parts will be assembled, including integration into subordinate structures/systems
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--527
+Underfull \hbox (badness 10000) in paragraph at lines 551--557
 
  []
 
-[15]
+[63]
 File: texfiles/mech/eimg/propulsion/table_motor.pdf Graphic file (type pdf)
 <use texfiles/mech/eimg/propulsion/table_motor.pdf>
- [16] [17]) (texfiles/mech/cooling.tex
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|\TU/Regular.ttf(0)/b/n/12 Manufacturing
+ [64] [65]) (texfiles/mech/cooling.tex
+Overfull \hbox (1.43068pt too wide) in paragraph at lines 19--19
+[]|\TU/lmr/m/n/12 Manufacturing
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
-[]|\TU/Regular.ttf(0)/b/n/12 In-house/
+[]|\TU/lmr/m/n/12 In-house/
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--21
-[]|\TU/Regular.ttf(0)/b/n/12 100 x120
+[]|\TU/lmr/bx/n/12 Heat Ex-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--27
-[]|\TU/Regular.ttf(0)/b/n/12 Coolant Tem-
+Underfull \hbox (badness 7451) in paragraph at lines 21--21
+[]|\TU/lmr/m/n/12 LPBF Print-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]|\TU/Regular.ttf(0)/b/n/12 Surface Tem-
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/lmr/bx/n/12 Deionized
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\TU/lmr/bx/n/12 Coolant
  []
 
 File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
@@ -1465,233 +2170,316 @@ File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
 File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/cooling/placeholder.png>
 
-Overfull \hbox (15.26404pt too wide) in paragraph at lines 50--56
+Overfull \hbox (23.47202pt too wide) in paragraph at lines 50--56
  [][][] 
  []
 
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no % in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-[18]
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Overfull \hbox (0.76494pt too wide) in paragraph at lines 73--74
-\TU/Regular.ttf(0)/b/n/12 High temperatures can accelerate the degradation of battery components, including the electrolyte
- []
-
-[19]
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-[20]
+[66] [67] [68]
 File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/cooling/placeholder.png>
 File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/cooling/placeholder.png>
- [21]
+ [69]
 File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/cooling/placeholder.png>
 File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/cooling/placeholder.png>
 
-Overfull \hbox (15.26404pt too wide) in paragraph at lines 133--139
+Overfull \hbox (23.47202pt too wide) in paragraph at lines 133--139
  [][][] 
  []
 
-[22] [23]
-Overfull \hbox (3.27528pt too wide) in paragraph at lines 208--209
-[]\TU/Regular.ttf(0)/b/n/12 Risk Mitigation Strategy: Introduce filters in the piping system and conduct regular clean-
- []
-
-[24]
+[70] [71] [72]
 File: texfiles/mech/eimg/cooling/placeholder.png Graphic file (type bmp)
 <texfiles/mech/eimg/cooling/placeholder.png>
-) [25])
+) [73])
 \openout2 = `texfiles/elec/electrical.aux'.
 
  (texfiles/elec/electrical.tex
-Chapter 2.
+Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--28
 
  []
 
-[26
+[74
 
 
 
 
 ] (texfiles/elec/lvbattery.tex
-Underfull \hbox (badness 10000) in paragraph at lines 11--15
+Underfull \hbox (badness 10000) in paragraph at lines 5--12
 
  []
 
-[27]
+[75]
 File: texfiles/elec/eimg/LV_Battery_WP1236W.png Graphic file (type bmp)
 <texfiles/elec/eimg/LV_Battery_WP1236W.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
-[]\TU/Regular.ttf(0)/b/n/12 Figure 2.1: |Discharge
+Underfull \hbox (badness 10000) in paragraph at lines 38--45
+\TU/lmr/m/n/12 Using the discharge chart of the data sheet of the LV Battery,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--49
-\TU/Regular.ttf(0)/b/n/12 Using the discharge chart of the data sheet of the LV Battery,
- []
-
-[28]
+[76]
 File: texfiles/elec/eimg/LV_Diagram.png Graphic file (type bmp)
 <texfiles/elec/eimg/LV_Diagram.png>
 File: texfiles/elec/eimg/LVCircuit.jpg Graphic file (type bmp)
 <texfiles/elec/eimg/LVCircuit.jpg>
+File: texfiles/elec/eimg/SimulationTemplate.png Graphic file (type bmp)
+<texfiles/elec/eimg/SimulationTemplate.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--71
-
- []
-
-[29] [30]
-Underfull \hbox (badness 10000) in paragraph at lines 140--144
+Underfull \hbox (badness 10000) in paragraph at lines 64--72
 
  []
 
-) (texfiles/elec/battery.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+[77]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
 
  []
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+[78]) (texfiles/elec/battery.tex [79]
+File: texfiles/mech/eimg/propulsion/table_motor.pdf Graphic file (type pdf)
+<use texfiles/mech/eimg/propulsion/table_motor.pdf, page 2>
+ [80]
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+[81]
+File: texfiles/elec/eimg/BatteryDesignProcess.png Graphic file (type bmp)
+<texfiles/elec/eimg/BatteryDesignProcess.png>
+
+Underfull \hbox (badness 1442) in paragraph at lines 35--35
+[]\TU/lmr/m/n/12 Figure 4.6: |Heuristic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--36
+
+ []
+
+[82] [83]
+File: texfiles/elec/eimg/battery_run_model.eps Graphic file (type eps)
+<texfiles/elec/eimg/battery_run_model.eps>
+File: texfiles/elec/eimg/BatteryCell.png Graphic file (type bmp)
+<texfiles/elec/eimg/BatteryCell.png>
+File: texfiles/elec/eimg/BatteryAssemblyDiag.png Graphic file (type bmp)
+<texfiles/elec/eimg/BatteryAssemblyDiag.png>
+File: texfiles/elec/eimg/BatteryAssemblySide.png Graphic file (type bmp)
+<texfiles/elec/eimg/BatteryAssemblySide.png>
+File: texfiles/elec/eimg/BatteryAssemblyTop.png Graphic file (type bmp)
+<texfiles/elec/eimg/BatteryAssemblyTop.png>
+ [84] [85]
+File: texfiles/elec/eimg/BatteryCableScheme.pdf Graphic file (type pdf)
+<use texfiles/elec/eimg/BatteryCableScheme.pdf>
+ [86] [87]
+File: texfiles/elec/eimg/SimulationTemplate.png Graphic file (type bmp)
+<texfiles/elec/eimg/SimulationTemplate.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
+
+ []
+
+[88] [89]
+File: texfiles/elec/eimg/BatteryPackHoles.png Graphic file (type bmp)
+<texfiles/elec/eimg/BatteryPackHoles.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--345
+
+ []
+
+[90]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[91]
+Underfull \hbox (badness 10000) in paragraph at lines 411--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--30
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[92]
+File: texfiles/elec/eimg/BatteryProduction.png Graphic file (type bmp)
+<texfiles/elec/eimg/BatteryProduction.png>
+ [93]
+File: texfiles/elec/eimg/BMSWiring.png Graphic file (type bmp)
+<texfiles/elec/eimg/BMSWiring.png>
+ [94]) (texfiles/elec/power.tex
+File: texfiles/elec/eimg/HVSchematic.png Graphic file (type bmp)
+<texfiles/elec/eimg/HVSchematic.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--47
 
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+[95]
+File: texfiles/elec/eimg/PrechargeCircuit.pdf Graphic file (type pdf)
+<use texfiles/elec/eimg/PrechargeCircuit.pdf>
+File: texfiles/elec/eimg/PrechargeSimulation4.7k.pdf Graphic file (type pdf)
+<use texfiles/elec/eimg/PrechargeSimulation4.7k.pdf>
+ [96]
+File: texfiles/elec/eimg/SimulationTemplate.png Graphic file (type bmp)
+<texfiles/elec/eimg/SimulationTemplate.png>
+ [97] [98] [99]
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
 
  []
 
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
 
-Overfull \hbox (1.34622pt too wide) in paragraph at lines 131--132
-[]\TU/Regular.ttf(0)/b/n/12 3. **Thermal Runaway Prevention:** Through its temperature monitoring capabilities, the Orion
- []
-
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-[33]
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-) [34] (texfiles/elec/power.tex
-Missing character: There is no % in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no * in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no % in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ° in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no % in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no % in font [Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;!
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+[100]
+Missing character: There is no ≥ in font [lmroman12-regular]:mapping=tex-text;!
+[101]
+Missing character: There is no ≤ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ≤ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ≤ in font [lmroman12-regular]:mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--324
 
  []
 
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+[102]
+Underfull \hbox (badness 10000) in paragraph at lines 327--329
 
  []
 
-) (texfiles/elec/sensecontrol.tex [38]
-Overfull \hbox (422.32318pt too wide) in paragraph at lines 35--46
+[103]
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+) (texfiles/elec/sensecontrol.tex [104]
+File: texfiles/elec/eimg/telemetrysystems.png Graphic file (type bmp)
+<texfiles/elec/eimg/telemetrysystems.png>
+File: texfiles/elec/eimg/Brakesystems.png Graphic file (type bmp)
+<texfiles/elec/eimg/Brakesystems.png>
+ [105]
+File: texfiles/elec/eimg/thermalsystems.png Graphic file (type bmp)
+<texfiles/elec/eimg/thermalsystems.png>
+File: texfiles/elec/eimg/telemetrysystems.png Graphic file (type bmp)
+<texfiles/elec/eimg/telemetrysystems.png>
+ [106]
+File: texfiles/elec/eimg/brakesoftware_ext.png Graphic file (type bmp)
+<texfiles/elec/eimg/brakesoftware_ext.png>
+ [107]
+File: texfiles/elec/eimg/thermalsystemsflowchartsoftware.png Graphic file (type bmp)
+<texfiles/elec/eimg/thermalsystemsflowchartsoftware.png>
+File: texfiles/elec/eimg/telemetrystate.png Graphic file (type bmp)
+<texfiles/elec/eimg/telemetrystate.png>
+ [108]
+File: texfiles/elec/eimg/Brakes_architecture.png Graphic file (type bmp)
+<texfiles/elec/eimg/Brakes_architecture.png>
+File: texfiles/elec/eimg/BrakesStatechart.png Graphic file (type bmp)
+<texfiles/elec/eimg/BrakesStatechart.png>
+ [109] [110]
+File: texfiles/elec/eimg/ThermoStateflow.png Graphic file (type bmp)
+<texfiles/elec/eimg/ThermoStateflow.png>
+ [111]) [112] [113])
+\openout2 = `texfiles/general/safety.aux'.
+
+ (texfiles/general/safety.tex
+Chapter 5.
+
+Overfull \hbox (5.17688pt too wide) in paragraph at lines 28--28
+[]|\TU/lmr/bx/n/12 Severity|  
+ []
+
+
+Overfull \hbox (11.3385pt too wide) in paragraph at lines 34--34
+[]|\TU/lmr/m/n/12 Overcharging|  
+ []
+
+
+Overfull \hbox (0.8865pt too wide) in paragraph at lines 34--34
+[]|\TU/lmr/m/n/12 Overcharge 
+ []
+
+
+Overfull \hbox (18.1785pt too wide) in paragraph at lines 36--36
+[]|\TU/lmr/m/n/12 Undercharging|  
+ []
+
+
+Overfull \hbox (4.27612pt too wide) in paragraph at lines 38--38
+[]|\TU/lmr/m/n/12 Manufacturing 
+ []
+
+
+Overfull \hbox (5.17688pt too wide) in paragraph at lines 50--50
+[]|\TU/lmr/bx/n/12 Severity|  
+ []
+
+
+Overfull \hbox (38.03926pt too wide) in paragraph at lines 50--50
+[]|\TU/lmr/bx/n/12 Occurrence|  
+ []
+
+
+Overfull \hbox (28.72726pt too wide) in paragraph at lines 50--50
+[]|\TU/lmr/bx/n/12 Detection|  
+ []
+
+
+Overfull \hbox (4.4865pt too wide) in paragraph at lines 54--54
+[]|\TU/lmr/m/n/12 Overvoltage|  
+ []
+
+
+Overfull \hbox (11.3265pt too wide) in paragraph at lines 56--56
+[]|\TU/lmr/m/n/12 Undervoltage|  
+ []
+
+
+Overfull \hbox (4.27612pt too wide) in paragraph at lines 58--58
+[]|\TU/lmr/m/n/12 Manufacturing 
+ []
+
+
+Overfull \hbox (10.64163pt too wide) in paragraph at lines 48--61
  [][] 
  []
 
-File: texfiles/elec/eimg/brakesoftware_ext.png Graphic file (type bmp)
-<texfiles/elec/eimg/brakesoftware_ext.png>
-File: texfiles/elec/eimg/Brakes_architecture.png Graphic file (type bmp)
-<texfiles/elec/eimg/Brakes_architecture.png>
+[114
 
-Overfull \hbox (323.22012pt too wide) in paragraph at lines 60--64
-\TU/Regular.ttf(0)/b/n/12 The implementation of the hardware architecture goes as follows: [] 
- []
 
-[39] [40]
-File: texfiles/elec/eimg/Thermal_architecture.png Graphic file (type bmp)
-<texfiles/elec/eimg/Thermal_architecture.png>
 
-Overfull \hbox (304.58011pt too wide) in paragraph at lines 70--72
-[]\TU/Regular.ttf(0)/b/n/12 The following hardware architecture is to be implemented: [] 
- []
 
-[41]) [42]) (FDD.aux (texfiles/general/coverpageEHW.aux) (texfiles/mech/traction.aux) (texfiles/elec/electrical.aux))
+] [115]) [116] [117]
+\openout2 = `texfiles/general/testing.aux'.
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+ (texfiles/general/testing.tex
+Chapter 6.
+) [118
+
+
+
+
+] (FDD.aux (texfiles/general/coverpageEHW.aux) (texfiles/general/introduction.aux) (texfiles/mech/mechanical.aux) (texfiles/mech/traction.aux) (texfiles/elec/electrical.aux) (texfiles/general/safety.aux) (texfiles/general/testing.aux))
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `FDD.out' has not changed.
-(rerunfilecheck)             Checksum: AD9301CDD3257097745DF0FE5EBEFCB2;1763.
+(rerunfilecheck)             Checksum: A2E1472F9989B89922D2C0B0324AB84E;5221.
  ) 
 Here is how much of TeX's memory you used:
- 33525 strings out of 410532
- 702485 string characters out of 2813299
- 1103517 words of memory out of 3000000
- 54118 multiletter control sequences out of 15000+600000
- 478453 words of font info for 73 fonts, out of 8000000 for 9000
+ 36106 strings out of 410532
+ 790856 string characters out of 2813299
+ 1183415 words of memory out of 3000000
+ 56542 multiletter control sequences out of 15000+600000
+ 481427 words of font info for 93 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,15n,131p,1012b,648s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,15n,131p,1162b,689s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on FDD.xdv (43 pages, 767080 bytes).
+Output written on FDD.xdv (119 pages, 2105328 bytes).
