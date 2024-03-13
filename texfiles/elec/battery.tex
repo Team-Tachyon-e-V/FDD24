@@ -25,6 +25,7 @@ The main design requirement was to satisfy the motor's needs, which are as follo
     \caption{Motor Specifications}
     \label{fig: Motor Specifications}
 \end{figure}
+
 The maximum voltage ratings have been increased several times in the past two years by the manufacturer, allowing for higher voltages. However, we stick to the initial data that we were given in the previous design. We will not reach the level that the motor is tested at (>800V DC maximum voltage). \\
 \subsection{Electrical and mechanical design process}
 %Electrical and mechanical design process content here
@@ -135,14 +136,18 @@ The S-curves are simple, as follows:
     \label{img: runmodel}
 \end{figure}
 The results showed that we needed 117 x 1 cells in series, which can be explained because we assumed to be able to use the maximum voltage, not the nominal voltage of the battery cells. We are able to run 27.47 runs, even with keeping our state of charge between 40 and 80 percent, saving battery health \footnote{We follow general advice that the optimal SOC lay between 0.2 to 0.8, and exceeding this range is not per se damaging to the battery, but shortening its life span, which we try to avoid}.
+
 \subsubsection{Schematics and drawings.}
-The CAD models of the battery pack are shown in the following. We visually cut the box open to show the inside structure. For the environment, please refer to the \hyperref{sec:chassis}{Chassis section}. \\
+The battery cell is in a standard pouch format. It has bigger tabs, presumably because of the high currents.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/BatteryCell}
     \caption{Battery cell}
     \label{img: Batterycell}
 \end{figure}
+
+The CAD models of the battery pack are shown in the following. We visually cut the box open to show the inside structure. For the embedding of the battery pack in its surrounding, please refer to the \ref{sec:chassis}. \\
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -186,16 +191,17 @@ Its results:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/SimulationTemplate}
-    \caption{Simulation results}
+    \caption{Simulation results (MUSTER)}
     \label{img: simresults_battery}
 \end{figure}
 
 \subsection{Electrical system characteristics}
 %Content of the electrical system characteristics here
+
 \subsection{Interface with other system}
 %Interface with other system content here n
 \subsubsection{Control systems of the boards}
-We configure the BMS prior to the competition, and do not plan to change any settings during the competition. It sends telemetry data over CAN. \\
+We configure the BMS prior to the competition, and do not plan to change any settings during the competition. It sends telemetry data over CAN and permits charging/discharging of the battery. \\
 All the electric subsystems are located within the pod. \\
 
 The physical connection matrix is as following:
@@ -266,9 +272,14 @@ Therefore, the maximum output current of the HV Battery will be rated at 120 A m
     %\begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{|c|c|}
        \hline
+       Company & Shenzhen GrePow Battery Co. Ltd\\
+         \hline
+        Model & GRP50B5140\\
        Battery Type & Lithium Polymer Pouch Cell\\
        \hline
        Capacity[Ah] & 6.1 \\
+       \hline
+       Maximum voltage[V] & 4.2 \\
        \hline
        Nominal Voltage[V] & 12 \\
        \hline
@@ -338,7 +349,7 @@ The external thermistors will be connected to the thermal (cooling) controller v
 We add 4 holes to connect the cell taps and thermistors to the cells. They are marked in the layout of the battery box \ref{img: batterycabling}, and are visually shown in the following CAD image:
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth, angle=90]{texfiles/elec/eimg/BatteryPackHoles}
+    \includegraphics[width=\textwidth, angle=90]{texfiles/elec/eimg/BatteryPackHoles}
     \caption{Openings for BMS cabling}
 \end{figure}
 \newline
@@ -352,17 +363,20 @@ We add 4 holes to connect the cell taps and thermistors to the cells. They are m
 
 \item Cell Holder: Polypropylene (PP) will be used for pouch cell holders due to its lightweight, chemical resistance, and ease of molding. It provides good structural support and can be designed with features such as tabs or grooves to securely hold the cells in place.
 
-\item Thermal Interface Material: We are going to use aluminum foil, as well as materials from Würth Elektronik to increase the heat flow of the cells.
+\item Heat Transfer Material: We are going to use aluminum foil, as well as heat transfer foils from Würth Elektronik to increase the heat dissipation of the cells.
 
 \item Compression Protection Element: We will use Silicone Rubber due to its flexibility, durability, and robustness. It will provide cushioning against mechanical shocks and vibrations and hold the cells in place.
+\item Connectors: We receive reusable battery connectors from WZL, another institute of RWTH Aachen University. 
 
 \item Busbar: Busbar will be made of pure copper as it needs to transfer a high rate of discharge due to its low resistance.
 
 \item Thermal Protection Material: As we are depending on passive cooling of the battery, we will not use any thermal protection material to ensure the air passing through the cells maintains the operating temperature.
 
-\item Fire Retardant Material: A plate will be placed over the connections made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) to ensure the slow propagation of flame.
+\item Fire Retardant Material: A plate will be placed over the connections made of flame-retardant grades of ABS (Acrylonitrile Butadiene Styrene) to ensure the slow propagation of flame. Für ISEA: Ist das sinnvoll?
 
 \item Housing Sealing: Housing sealing will be made of the same grade of ABS as the casing to stop the ingress of air, water, and dust particles. The washer will be put between the joints to ensure complete sealing.
+
+
 \end{itemize}
 
 In conclusion, this is the specification of our high voltage battery pack. Table \ref{high-voltage-specs}:
@@ -444,6 +458,23 @@ The input connections (cell taps) from the battery poles are grouped in 5 sectio
 
 \subsection{Manufacturing process}
 %Manufacturing process content here
+Parts List: \\
+\begin{table}[ht]
+    \centering
+    \begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{|>{\bfseries}m{2cm}|m{4cm}|m{1.5cm}|m{1.5cm}|m{2cm}|m{2cm}|m{2cm}|}
+    \hline
+    Component & Company/Product Name & Quantity & Mass [kg] & Size [mm] &  Producer & Nominal Voltage \\
+    \hline
+    HV Battery Cell & GrePow & x2 & 9 & \(151 \times 65 \times 96\) &  Bought & 12 \\
+    Casing & Polycarbonate & x1 & 0.5 & 155 x 70 x 100 & self-built & - \\
+    NTC Thermistor & Vishay NTCLE413E2103F102L & x40 & 0.03 & 1000 x 3 x 3 & Outsourced & 500 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Parts List - HV Battery}
+    \label{table:hvbattery-components}
+\end{table}
 
 \subsubsection{PCBs}
 Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab grants access to PCB manufacturing equipment and materials for the rapid production of prototypes for initial testing and design validation. Once the PCBs are fabricated, they are assembled manually by our team members. Bigger PCBs are assembled in the facilities of the FabLab with the manual Pick and Place Machine and a reflow oven. \\
@@ -460,7 +491,8 @@ Our phases of production followed this structure:
 
 We produced the battery packs in cooperation with the ISEA (Institute for Power Electronics and Electrical Drives) at RWTH, whose experience helped us to assemble and design the parts more efficiently and more safely, as we had a considerable high voltage system.
 
-The casing will consist of polycarbonate. Polycarbonate is a material that is durable, lightweight, and impact resistant. The problems with material degradation through UV emissions do not impact us substantially, as we cover the battery pack inside the shell for most of the time. We will have safety measures preventing too much exposure to UV radiation. Also, the degradation is mainly of cosmetic nature (https://link.springer.com/article/10.1007/s11668-020-01002-9).
+Our initial plan was to use polycarbonate. Polycarbonate is a material that is durable, lightweight, and impact resistant. The problems with material degradation through UV emissions do not impact us substantially, as we cover the battery pack inside the shell for most of the time. We will have safety measures preventing too much exposure to UV radiation. Also, the degradation is mainly of cosmetic nature (https://link.springer.com/article/10.1007/s11668-020-01002-9). \\
+However, we decided to use more heat-resistant materials: Even though polycarbonate has a relatively high melting temperature, lithium cells are prone to thermal runaway, generating massive fires. Therefore, we will use
 
 \subsubsection*{Assembly}
 \begin{itemize}
@@ -481,13 +513,22 @@ The casing will consist of polycarbonate. Polycarbonate is a material that is du
 
 \subsection{Testing}
 %Testing content here
-We started testing the BMS and we will test the cells: This includes 
+We started testing the BMS and we will test the cells, confirming the statements of the manufacturers and our simulations: This includes 
 \begin{itemize}
     \item Capacity Testing: Measuring the total amount of charge a battery. We will identify outliers and not use them for the battery pack, but as spare ones.
     \item Voltage Testing: Measuring the voltage under load and no-load conditions, in comparison to the state of charge.
     \item Internal Resistance Testing: 
     Measuring the resistance within the battery cells, observing high internal resistances that may indicate degradation or defects.
     \item Temperature Testing: Evaluating the battery's performance under different temperature conditions. We will include high temperature situations in this (<50C). Also, we will validate the temperature graphs we received from the manufacturer for the heat dissipation at 200A discharge, as well as our own simulations.
+\end{itemize}
+\subsection{Safety and Risk Assesment}
+We will reduce the risks of the following events by the following to ensure the safety of the battery pack:
+\begin{itemize}
+    \item HV System active without supervision from controllers: Emergency shutdown or HV device error shall disconnect the Accumulator Isolation Contactors and de-energize the HV system.
+    \item Slight Overcurrent:A cell temperature and SoC based maximum current derating shall be implemented and communicated to the Traction Controller.
+    \item Loss of Contact: Any loss of communication shall immediately trigger an emergency shutdown and bring the HV system to a safe state.
+    \item Massive Overcurrent: A fuse will be installed in the line between the battery and the traction inverter.
+    \item Insulation Error: LEDs that are visible through the shell will indicate closed connectors to the main battery pack as well as a positive (insulated) signal by the IMD and proper functioning of the low-voltage system.
 \end{itemize}
 
 %\subsection{FMEA}

@@ -234,7 +234,7 @@ The complete part list can be found in \href{https://docs.google.com/spreadsheet
 % DI: This table should completely go away now that we have the hyperlink. @IAN hyperlink is for the detailed ones. Left it in case you thought we should still use it This is a problematic URL\footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf}{Click here to open}}.
 
         \item Hardware Rationale (HW design and concerns). \\
-        Critical points: Safety. The brakes should engage by default, and only release when all safety criteria are met. The board should be designed to be fail-safe, and process information and requests quickly.
+        \item The main critical point is safety, and accordance with the mechanical team's design. The brakes should engage by default, and only release when all safety criteria are met. The board should be designed to be fail-safe, and process information and requests quickly. We prototyped the designs previous to the final assembly, and could hence analyze, e.g., the potential power spikes of the valves, and the features of the microcontrollers. \\
         Our brakes controller's \href{https://drive.google.com/file/d/1a7zaJbmfFdLdrrGtLt2_ySVTqbc168NL/}{hardware design documentation} is uploaded (non-publicly) online, to view for the reader. We show only the schematic here. 
         \begin{figure}[H]
             \centering
@@ -245,7 +245,7 @@ The complete part list can be found in \href{https://docs.google.com/spreadsheet
 
 
         \item Firmware Rationale (Internal State machine and design concerns).
-        No stuck loops. Real-life transport scenario: Re-release of brakes is possible. 
+        In real-life transportation scenarios, we need to design a state machine in which the pods could not become stuck. Furthermore, in addition to last year's design, we now plan for the ability to re-release brakes after engaging them, which is a more realistic scenario.
         %Für Ian zum ausformulieren.
         %DINO: ONly added int. machine. 
 
