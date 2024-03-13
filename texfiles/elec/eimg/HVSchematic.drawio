@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-12T17:43:01.585Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="cRfPCYTbS8igJO6_wzuq" version="23.1.5" type="device">
+<mxfile host="Electron" modified="2024-03-13T00:11:13.294Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="3opR9UMJoLuHRxIfpI4V" version="23.1.5" type="device">
   <diagram name="Page-1" id="7e0a89b8-554c-2b80-1dc8-d5c74ca68de4">
-    <mxGraphModel dx="2662" dy="917" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2090" dy="583" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -139,13 +139,13 @@
           <mxGeometry x="-620.5" y="770" width="88" height="30" as="geometry" />
         </mxCell>
         <mxCell id="8sGMjqeMXZ33-afPzOO0-31" value="MSD" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="-532.5" y="770" width="60" height="30" as="geometry" />
+          <mxGeometry x="-532.5" y="762" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="8sGMjqeMXZ33-afPzOO0-32" value="Precharge Resistor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-690" y="937.5" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="8sGMjqeMXZ33-afPzOO0-33" value="Power Relay" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="-694" y="760" width="60" height="30" as="geometry" />
+          <mxGeometry x="-730" y="770" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="8sGMjqeMXZ33-afPzOO0-34" value="Precharge Relay" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-628" y="937.5" width="58" height="22.5" as="geometry" />
@@ -177,9 +177,6 @@
             <mxPoint x="-450" y="965.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8sGMjqeMXZ33-afPzOO0-43" value="965.5" style="text;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-790" y="730" width="60" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="8sGMjqeMXZ33-afPzOO0-47" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-740" y="827.5000000000001" as="sourcePoint" />
@@ -194,6 +191,36 @@
         </mxCell>
         <mxCell id="8sGMjqeMXZ33-afPzOO0-48" value="Power Relay" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-592.5" y="967.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aXGbtzBITssKyVOOnA7y-1" value="Brakes active" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-690.5" y="735" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aXGbtzBITssKyVOOnA7y-2" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.612;exitY=0.198;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="8sGMjqeMXZ33-afPzOO0-45" target="aXGbtzBITssKyVOOnA7y-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-630" y="750" as="sourcePoint" />
+            <mxPoint x="-580" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXGbtzBITssKyVOOnA7y-3" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="8sGMjqeMXZ33-afPzOO0-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-670" y="780" as="sourcePoint" />
+            <mxPoint x="-660" y="810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-625" y="840" />
+              <mxPoint x="-660" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXGbtzBITssKyVOOnA7y-4" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.211;exitY=-0.074;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="8sGMjqeMXZ33-afPzOO0-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-589" y="945" as="sourcePoint" />
+            <mxPoint x="-620" y="897.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-580" y="990" />
+              <mxPoint x="-620" y="990" />
+              <mxPoint x="-620" y="930" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

@@ -138,13 +138,65 @@ The LV battery itself does not communicate. Its sensor data is processed by the 
 When the voltage drops below a certain threshold, the complete system shuts down.
 
 \subsection{Final system description}
+
 %Description of the system here
-The two lead-acid batteries, chained in series, provide a nominal voltage of 24V (12V each). When fully charged, the voltage can increase up to 26 V. The lead acid batteries' voltage will drop while discharging. Hence, we monitor the voltage while using the LV battery system. Furthermore, we monitor the temperature through a NTC thermistor to prevent usage under overtemperature . \\
+The two lead-acid batteries, chained in series, provide a nominal voltage of 24V (12V each). When fully charged, the voltage can increase up to 26 V. The lead acid batteries' voltage will drop while discharging. Hence, we monitor the voltage while using the LV battery system. Through monitoring the voltage, we can also determine the state of charge, as lead-acid battery cells have characteristic discharge curves. We will not discharge the batteries to more than 30\% of their capacity.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+       \hline
+       Voltage & Capacity \\
+       \hline
+       12.89V & 100\% \\
+       \hline
+       12.78V & 90\% \\
+       \hline
+       12.65V & 80\% \\
+       \hline
+       12.51V & 70\% \\
+       \hline
+       12.41V & 60\% \\
+       \hline
+       12.23V & 50\% \\
+       \hline
+       12.11V & 40\% \\
+       \hline
+       11.96V & 30\% \\
+       \hline
+       11.81V & 20\% \\
+       \hline
+       11.70V & 10\% \\
+       \hline
+       11.63V & 0\% \\
+       \hline
+    \end{tabular}
+    \caption{Discharge curve of sealed L-A battery}
+    \label{lead-acid-discharge-curve}
+\end{table}
+Furthermore, we monitor the temperature through a NTC thermistor to prevent usage under overtemperature. Refer to the high voltage sectioin for details. \\
 The 24 V power source gets transferred down to 12V (for the Thermal Pump) and 5V for the micro-controllers by buck converters, and drives the valves and several sensors at 24V simultaneously. \\
 After reaching out to the EHW technical committee, we were able to clarify that a BMS, used by Lithium-Ion batteries, is not required for lead-acid batteries due to the inherently different chemical structure which makes over- and undercharging much less critical. \\
+Both terminals of the battery cells are marked red and black, respectively. To avoid reverse plugging, we use an automotive connector solution from Amphenol (ATP04-2P-MM01BLK + ATP06-2S-MM01BLK). They cannot be plugged in reverse and are rated for 25A, which is well above our limit. The wire gauge of 14-12 AWG fits the requirements of the other components. \\
 For charging, we are using a battery charger specified for 12V and 24V lead acid cells from Würth 0510955908. The charging of lead-acid batteries in series is unproblematic, given that we regularly test for drifts and manually balance the cells.\\
 
 \subsection{Manufacturing process}
+Parts List: \\
+\begin{table}[ht]
+    \centering
+    \begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{|>{\bfseries}m{2cm}|m{4cm}|m{1.5cm}|m{1.5cm}|m{2cm}|m{2cm}|m{2cm}|}
+    \hline
+    Component & Company/Product Name & Quantity & Mass [kg] & Size [mm] &  Producer & Nominal Voltage \\
+    \hline
+    LV Battery & KingLong WL1236W & x2 & 9 & \(151 \times 65 \times 96\) &  Bought & 12 \\
+    Casing & Polycarbonate & x1 & 0.5 & 155 x 70 x 100 & self-built & - \\
+    NTC Thermistor & Vishay NTCLE413E2103F102L & x1 & 0.03 & 1000 x 3 x 3 & Outsourced & 500 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Parts List - Power Electronics}
+    \label{table:components}
+\end{table}
 %Manufacturing process content here
 As the cells come in hard-shell covers already, the manufacturing process is not very complicated. We will 3D-print a case from Polycarbonate material which permits flow of air and prevents short circuits physically.
 

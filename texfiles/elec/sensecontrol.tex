@@ -21,8 +21,7 @@ In this section, the main components of the sensor network and software architec
 
 \subsection{Control Boards}
 \subsubsection{Introduction}
-\begin{enumerate}
-    \item Overview of all control boards (Brakes, Thermal, Telemetry):
+    Overview of all control boards (Brakes, Thermal, Telemetry):
     \begin{itemize}
         \item Brakes Controller: \\
         The brakes board controls the pod's friction braking system.
@@ -40,12 +39,12 @@ In this section, the main components of the sensor network and software architec
 Our Sense\&Control system includes three main boards: \\
 For the Braking Managament System \textbf{TO BE ADDED} \\
 The Thermal Management Controller is responsible for cooling the Traction Components, i.e., Motor and Traction Controller. The actuator is the coolant pump which is controlled  with the feedback of the temperature of coolant in the cooling loop (Refer to Diagram for Visualisation).  The Pump Speed is controlled via PWM to the MOSFET Bridge. The PWM duty cycle is simply calculated from a lookup table that is referenced to the temperature difference between target and actual temperatures. The only safety feature to be developed is to issue an emergency stop signal to HV Systems in the event the coolant temperature exceeds a critical temperature. \\
-Finally, the Telemetry Unit is responsible for receiving commands from, and transmitting diagnostic and sensor information to the commanding PC. The Telemetry unit then receives and broadcasts information as well as commands on the CAN bus as a Master Controller to all the slave devices. 
-    \item Diagram with the connection of all boards with NAP and control station:
+Finally, the Telemetry Unit is responsible for receiving commands from, and transmitting diagnostic and sensor information to the commanding PC. The Telemetry unit then receives and broadcasts information as well as commands on the CAN bus as a Master Controller to all the slave devices. \\
+Diagram with the connection of all boards with NAP and control station:
 
 %Für Ian: Das ist als Netzwerkdiagramm gedacht. Einfach telemetrysystems.png nehmen, ggf. kennzeichnen was unser NAP und control station ist. Das unten kommt erst später-
 %DINO: Check this information
-In relation to the overall system's NAP, a dedicated Router for wireless connection will be employed. On the other hand, the control station will be a team member's commanding PC (User Device)
+The telemetry system connects to a Network Access Point, which is the Rocket M2 as proposed by EHW. It transfers to the control station, which will be a team member's commanding PC (user device).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{texfiles/elec/eimg/telemetrysystems.png}
@@ -54,7 +53,7 @@ In relation to the overall system's NAP, a dedicated Router for wireless connect
 \end{figure}
 
 %DINO: Added (Networks) down there thought just hardware might be confusing. If it makes sense, erase the ()
-The implementaion of the (network's) hardware architecture goes as follows: 
+The implementation of the  hardware architecture goes as follows: 
 
 % FÜR IAN: habe hier aktuelle graphiken eingefügt, beschriftungen angepasst. musst du halt irgendwo an die richtige stelle schieben. schau mal was begin{figure}[h] macht.:
 %Done. Einfach H in alle gemacht. So sieht's gut genug 
@@ -76,51 +75,131 @@ The implementaion of the (network's) hardware architecture goes as follows:
         \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/telemetrysystems}
         \caption{Telemetry Unit Hardware Architecture}
         \label{fig:Telemetry Unit Hardware Architecture}
-    \end{figure}
-
-    \item Communication protocols used: 
-\begin{enumerate}
+\end{figure}
+Communication protocols used: 
+\begin{itemize}
     \item Control Area Network (CAN): CAN was implemented as the inter-board communication protocol. This decision is inspired by the automotive industry, where CAN has been used for decades as a robust and physically reliable protocol.
-    To add to that, many of our OEM devices (only) support CAN communication\footnote{\href{https://www.ti.com/lit/an/sloa101b/sloa101b.pdf}{CAN Description}}.
-    %Für IAN add Link to CAN Description online}
-    % DINO: I think you mean reference. Check if Footnote done correctly. Also did the same for SPI 
-    \item LAN: Used to transmit data between the Telemetry Unit and command PC.
-    \item Serial Peripheral Interface (SPI): Synchronous, full-duplex communication protocol used for connecting peripheral devices.The master device generates the clock signal on SCLK while transmitting data to the slave device via MOSI, and the slave device responds with data on MISO. Communication occurs simultaneously in both directions, what allows high-speed data transfer between devices\footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf?ts=1710046776474\&ref\_url=https\%253A\%252F\%252Fwww.google.com\%252F}{SPI Description}}.
+    To add to that, many of our OEM devices (only) support CAN communication. \href{https://www.ti.com/lit/an/sloa101b/sloa101b.pdf}{CAN Description}.
+    \item TCP/IP: Used to transmit data between the Telemetry Unit and command PC. We transmit wirelessly via UDP between the Rocket M2 and the command PC.
+    
+    \item Serial Peripheral Interface (SPI): Left empty on purpose.
+    \begin{comment}
+        Synchronous, full-duplex communication protocol used for connecting peripheral devices.The master device generates the clock signal on SCLK while transmitting data to the slave device via MOSI, and the slave device responds with data on MISO. Communication occurs simultaneously in both directions, what allows high-speed data transfer between devices \footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf?ts=1710046776474\}{SPI Description}}.
+    \end{comment}
+    \item Inter-Integrated Circuit (I2C): Multi-device communication protocol used for connecting sensors. Uses Master-Slave-Architecture.
+\end{itemize}
 
+\begin{comment}
 
-    \item Inter-Integrated Circuit (I2C): Multi-device communication protocol used for connecting sensors.
-\end{enumerate}
+    \begin{itemize}
+            \item Control Area Network (CAN): CAN was implemented as the inter-board communication protocol. This decision is inspired by the automotive industry, where CAN has been used for decades as a robust and physically reliable protocol.
+            To add to that, many of our OEM devices (only) support CAN communication. \href{https://www.ti.com/lit/an/sloa101b/sloa101b.pdf}{CAN Description}.
+            %Für IAN add Link to CAN Description online
+            % DINO: I think you mean reference. Check if Footnote done correctly. Also did the same for SPI 
+            \item TCP/IP: Used to transmit data between the Telemetry Unit and command PC. We transmit wirelessly via UDP between the Rocket M2 and the command PC.
+            \item Serial Peripheral Interface (SPI): Synchronous, full-duplex communication protocol used for connecting peripheral devices.The master device generates the clock signal on SCLK while transmitting data to the slave device via MOSI, and the slave device responds with data on MISO. Communication occurs simultaneously in both directions, what allows high-speed data transfer between devices \footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf?ts=1710046776474\}{SPI Description}}.
+            \item Inter-Integrated Circuit (I2C): Multi-device communication protocol used for connecting sensors.
+    \end{itemize}
 
-\end{enumerate}
-
+\end{comment}
 % Merged detailed content from the first snippet
 
 \subsection{State Machine of the Vehicle}
 % Continue with the structured format from the second snippet, ensuring to merge relevant content from the first snippet into these sections.
 
-We use different states in each component. Our pod has the following states:
-Generally (and in the main control of the pod), we have the following structure:
+We use different states in each component.
+Generally (and in the main control of the pod), we have the following structure of states:
+\begin{figure}[H]
+    \centering
+   \includegraphics[width=0.9\textwidth]{texfiles/elec/eimg/Statechart}
+    \caption{Overall State Chart}
+    \label{fig:overall-state-chart}
+\end{figure}
+Because of layout reasons, we decided to give the transitions and actions seperately:
+\begin{itemize}
+    \item Transitions requires:
+    \begin{itemize}
+        \item Initialize:
+        \begin{itemize}
+            \item Prepare: When all systems have been powered on. Controllers automatically enter this state.
+        \end{itemize}
+        \item Prepare:
+        \begin{itemize}
+            \item Emergency: Run conditions not met, which may be
+            \begin{itemize}
+                \item Insufficient initial Brake Pressure
+                \item Overheat
+                \item IMD trigger
+                \item Global Error Line Trigger
+                \item Undervoltage
+                \item Manual Interruption
+            \end{itemize}
+            \item Run: Prepare finished without incidents.
+        \end{itemize}
+        \item Run:
+        \begin{itemize}
+            \item Emergency: Safety hazard, such as
+            \begin{itemize}
+                \item Insufficient Brake Pressure/Pressure Leak
+                \item Overheat
+                \item IMD trigger
+                \item Undervoltage
+                \item Global Error Line Trigger
+                \item Manual emergency
+            \end{itemize}
+        \end{itemize}
+        \item Braking:
+        \begin{itemize}
+            \item Idle:
+            \begin{itemize}
+                \item Speed = Zero
+            \end{itemize}
+        \end{itemize}
+        \item Idle:
+        \begin{itemize}
+            \item Prepare:
+            \begin{itemize}
+                \item Manual decision
+                \item Requires: No emergency condition
+            \end{itemize}
+            \item Shutdown:
+            \begin{itemize}
+                \item DC Link almost discharged
+                \item Speed = Zero
+            \end{itemize}
+        \end{itemize}
+        \item Emergency:
+        \begin{itemize}
+            \item Shutdown:
+            \begin{itemize}
+                \item Safe shutdown conditions
+                \item DC Link almost discharged
+                \item Speed = Zero
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
 
 \subsection{Code Architecture and Class Diagram}
 % Insert content from the first snippet related to Code Architecture here.
-For each system respectively was the following software architecture implemented
+For each system respectively was the following software architecture implemented: Concerning the rulebook, we point out that the brakes controller checks for air pressure before and during running, while the thermal system checks for overtemperature, especially when temperatures are increasing. However, our simulations show that this is very unlikely to happen.
 \begin{figure}[H]
         \centering
-       \includegraphics[width=0.7\textwidth]{texfiles/elec/eimg/brakesoftware_ext}
+       \includegraphics[width=\textwidth]{texfiles/elec/eimg/brakesoftware_ext}
         \caption{Brakes System Software Architecture}
         \label{fig:Brakes System Software Architecture}
     \end{figure}
 
 \begin{figure}[H]
         \centering
-       \includegraphics[width=0.4\textwidth]{texfiles/elec/eimg/thermalsystemsflowchartsoftware}
+       \includegraphics[width=\textwidth]{texfiles/elec/eimg/thermalsystemsflowchartsoftware}
         \caption{Thermal System Software Architecture}
         \label{fig:Thermal System Software Architecture}
     \end{figure}
 
 \begin{figure}[H]
         \centering
-       \includegraphics[width=0.4\textwidth]{texfiles/elec/eimg/telemetrystate.png}
+       \includegraphics[width=\textwidth]{texfiles/elec/eimg/telemetrystate.png}
         \caption{Telemetry Unit Software Architecture}
         \label{fig:Telemetry Unit Software Architecture}
     \end{figure}
@@ -133,34 +212,33 @@ For each system respectively was the following software architecture implemented
     \begin{enumerate}
         \item Requirements of the board.
         Parts List:
-The complete part list can be found in \href{https://docs.google.com/spreadsheets/d/1GvvRlhKn8gMCE3rAxvrYHUjA288l9iqX/edit#gid=378650025}{this table}. 
+        \begin{table}[H]
+            \centering
+            \begin{adjustbox}{width=\textwidth,center}
+                \begin{tabular}{|>{\bfseries}m{2cm}|m{4cm}|m{1.5cm}|m{1.5cm}|m{2cm}|m{2cm}|m{2cm}|}
+                \hline
+                Component & Company/Product Name & Quantity & Mass [kg] & Size [mm] & Producer & Nominal Voltage \\
+                \hline
+                NTC Thermistor & Vishay NTCLE413E2103F102L & x40 & 0.03 & 1000 x 3 x 3 & Outsourced & 500 \\
+                \hline
+                Coolant Pump & Pierburg & 1 & 1 & - & Sponsored & 12 \\
+                Speed Sensor & Festo & x2 & 0.01 & - & Sponsored & 12 \\
+                \hline
+                \end{tabular}
+            \end{adjustbox}
+            \caption{Outline of Components of the Thermal Controller}
+            \label{tab:thermal-ctrl-components}
+        \end{table}
+The complete part list can be found in \href{https://docs.google.com/spreadsheets/d/1GvvRlhKn8gMCE3rAxvrYHUjA288l9iqX/edit#gid=378650025}{this table}. \\
 
-% DINO: This table should completely go away now that we have the hyperlink. Left it in case you thought we should still use itThis is a problematic URL\footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf?ts=1710046776474\&ref\_url=https\%253A\%252F\%252Fwww.google.com\%252F}{Click here to open}}.
-A collection of the most important ones is:
-            \begin{table}[h]
-                \centering
-                \begin{adjustbox}{width=\textwidth,center}
-                    \begin{tabular}{|c|c|c|c|c|c|c|}
-                    \hline
-                    \textbf{Amount} & \textbf{Name} & \textbf{Company (Serial Number)} & \textbf{Dimensions (mm x mm x mm)} & \textbf{Weight (kg)} & \textbf{Nominal Voltage} & \textbf{Expected max current} \\
-                    \hline
-                    38 & Additional Temperature Sensors (NTC, 10k Ohm) & Mouser & 1000 x 3 x 3 & $200 \times 10^{-6}$ & - & - \\
-                    \hline
-                    1 & Coolant Pump & Unknown & Unknown & Unknown & Unknown & Unknown \\
-                    \hline
-                    1 & MOSFET Bridge & Unknown & Unknown & Unknown & Unknown & Unknown \\
-                    \hline
-                    \end{tabular}
-                \end{adjustbox}
-                \caption{Description of Components}
-                \label{tab:components}
-            \end{table}
+% DI: This table should completely go away now that we have the hyperlink. @IAN hyperlink is for the detailed ones. Left it in case you thought we should still use it This is a problematic URL\footnote{\href{https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf}{Click here to open}}.
+
         \item Hardware Rationale (HW design and concerns). \\
         Critical points: Safety. The brakes should engage by default, and only release when all safety criteria are met. The board should be designed to be fail-safe, and process information and requests quickly.
         Our brakes controller's \href{https://drive.google.com/file/d/1a7zaJbmfFdLdrrGtLt2_ySVTqbc168NL/}{hardware design documentation} is uploaded (non-publicly) online, to view for the reader. We show only the schematic here. 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.5\linewidth]{texfiles/elec/eimg/Brakes_architecture}
+            \includegraphics[width=0.7\linewidth]{texfiles/elec/eimg/Brakesystems}
             \caption{Brakes Controller Hardware Schematic}
             \label{fig:Brakes Controller Hardware Schematic}
         \end{figure}
@@ -190,36 +268,30 @@ A collection of the most important ones is:
             \item Requirements of the board.\\
             Should drive the coolant pump. The control algorithm, planned as a PID controller, is to be implemented, but not necessary. We can let the thermal system run on a on-off scheme, which is less effective, but easier.
 
-          \begin{table}[H]
-    \centering
-    \begin{adjustbox}{width=\textwidth,center}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \textbf{Quantity} & \textbf{Part} & \textbf{Manufacturer} & \textbf{Description} \\
-        \hline
-        1 & Step Down Regulator + LDO & Texas Instruments / Analog Devices Ltd / Mouser & To provide 5VDC and 3.3VDC supply from 24VDC to Logic Circuitry \\
-        \hline
-        1 & Microcontroller & Texas Instruments & Microcontroller running the software \\
-        \hline
-        1 & Quad OpAmps & Texas Instruments / Analog Devices Ltd / Mouser & For Filtering and Scaling \\
-        \hline
-        1 & N Channel MOSFET & Infineon & For Pump PWM Generation \\
-        \hline
-        4 & Multiplexer & Texas Instruments & For distributing ADC - Thermistor \\
-        \hline
-        38 & 10K NTC thermistors & Mouser& Measuring temperature\\
-        \hline
-        1& Pump& Alphacool & Flow management\\
-        \hline
-        2 & Heat Conductors Muster & Würth & Thermal Interface Solutions Kit Article No. 400001\\
-        \hline
-    \end{tabular}
-    \end{adjustbox}
-    \caption{Parts for Realisation of Thermal System}
-    \label{tab:parts}
-\end{table}
+        \begin{table}[H]
+            \centering
+            \begin{adjustbox}{width=\textwidth,center}
+            \begin{tabular}{|>{\bfseries}m{2cm}|m{4cm}|m{1.5cm}|m{1.5cm}|m{2cm}|m{2cm}|m{2cm}|}
+                \hline
+                Component & Company/Product Name & Quantity & Mass [kg] & Size [mm] & Producer & Nominal Voltage \\
+                \hline
+                Microcontroller & Texas Instruments F280039C & 1 & - & - & - & - \\
+                \hline
+                Multiplexer & Texas Instruments & 8 & - & - & - & - \\
+                \hline
+                NTC Thermistor & Vishay NTCLE413E2103F102L & x40 & 0.03 & 1000 x 3 x 3 & Outsourced & 500 \\
+                \hline
+                Coolant Pump & Pierburg & 1 & 1 & - & Sponsored & 12 \\
+                Speed Sensor & Festo & x2 & 0.01 & - & Sponsored & 12 \\
+                Heat Conductors Muster & Würth & 2 & - & - & - & - \\
+                \hline
+            \end{tabular}
+            \end{adjustbox}
+            \caption{Components of the Telemetry Controller}
+            \label{tab:telemetry-ctrl-components}
+        \end{table}
             \item Hardware Rationale (HW design and concerns).
-            Simplicity. The brakes controller design was big. The thermal controller is mainly gathering sensor data, such as temperature sensors, and flow rate, and controlling the pump. The pump is a simple on-off device, and the temperature control is not critical. 
+            Simplicity. The brakes controller design was big. The thermal controller is mainly gathering sensor data, such as temperature sensors, and flow rate, and controlling the pump. The pump is a simple on-off device, and the (fine) temperature control is not critical. We set that 50 C shall not be exceeded in the batteries (which is not cooled by the liquid cooling system), while traction inverter and motor shall stay under 60 C. If we require a fan for the battery, it will be controlled by the BMS.
             \item Firmware Rationale (Internal State machine and design concerns).
             \item Testing and validation plan.
             \begin{itemize}
@@ -229,7 +301,7 @@ A collection of the most important ones is:
                 \item Test flow system sensors for accuracy and deviance.
                 \item Test maximum cooling power of pump. This testing scenario will not be used during the competition.
             \end{itemize}
-        \end{enumerate}
+    \end{enumerate}
 
         \item Telemetry Controller
         \begin{enumerate}
@@ -252,10 +324,14 @@ A collection of the most important ones is:
             
             \item Firmware Rationale (Internal State machine and design concerns).
 %To Ian: Include the state machines at Software Rationale.
-%Dino: check if correct. Mostly done with gpt. I think it did a great job doing the foundation though. 
-
-        Implementing real-time temperature feedback ensures precise control of the coolant pump, optimizing thermal management. The PWM control for pump speed enables accurate adjustment based on temperature differentials, enhancing energy efficiency. By including a safety feature that triggers an emergency stop signal, overheating is prevented, thereby safeguarding both the system's integrity and user safety. Prioritizing robustness and reliability through error handling mechanisms and fail-safe features safeguards against potential failures, maintaining system functionality. A focus on modularity and scalability was a mayor concern for the design. This allowed the creation of a flexible design, that can easily be expanded and enhanced in the future.
-
+%Di: check if correct. Mostly done with gpt. I think it did a great job doing the foundation though. 
+%Did not do a great job
+                The design concerns were:
+                \begin{itemize}
+                    \item Process data transmission from CAN line to the GUI in the user device. CAN bus simulations with CANoe have shown that the transmission speed is sufficient to not to stall the line. The data is transmitted more often than at 2 Hz.
+                    \item Process command transmission to the CAN line from the GUI in the user device in less then 100ms. With measuring transmission speeds of ~10ms, this is not a concern.
+                    \item The system should be able to handle the data from the sensors and the commands from the user.
+                \end{itemize}
         The state flow of the thermal system can be described as such:
         \begin{figure}[H]
             \centering
@@ -279,22 +355,99 @@ Through its connectivity abilities, we can connect to a Wireless LAN system for 
         \item the battery pack layout for both batteries
         \item the thermal system data
         \item acceleration data
-        \item check for abnormal situations, like \begin{itemize}
-            \item 
+        \item check for abnormal situations (out of range values) and carrying out safety procedures, consisting of:
+        \begin{itemize}
+            \item LV or HV Battery temperature or voltage out of range:
+            \begin{itemize}
+                \item Go into emergency state and shutdown
+            \end{itemize}
+            \item Temperature in motor or inverter close (10C) to operational limit:
+            \begin{itemize}
+                \item Set cooling pump to maximum. Limit current to inverter.
+            \end{itemize}
+            \item Temperature in motor or inverter over operational limit for more than 1 second:
+            \begin{itemize}
+                \item Assuming that previous state has been reached already, cut power to HV.
+            \end{itemize}
+            \item Brakes pressure out of range:
+            \begin{itemize}
+                \item To emergency.
+            \end{itemize}
+            \item Speed too high:
+            \begin{itemize}
+                \item Apply brakes.
+            \end{itemize}
+            \item IMD leak:
+            \begin{itemize}
+                \item To emergency. Proceed only with safety equipment (gloves, glasses, boots)
+            \end{itemize}
+            \item Latency of GUI too high/heartbeat missed:
+            \begin{itemize}
+                \item After second time: Emergency 
+            \end{itemize}
         \end{itemize}
     \end{itemize}
     \item Time Counter since start of run
     \item More informative audiovisual feedback
 \end{itemize} 
 
-\subsubsection*{Navigation}
+\subsubsection*{Navigation and Control}
 Our navigation system does not incorporate railway-like switches, nor GPS due to the track's short length. Instead, the pod solely uses an accelerometer and speed sensors to measure the velocities of both the front (guiding) wheel and the back (propulsion) wheel,
 determining the pod's dynamics. This also includes vibrations.\\
-In this iteration, we have clearly defined competition rules, and hence stick to simple acceleration/velocity/distance curved. In the future, we plan to implement a more complex navigation system, including a system that can compute the acceleration/speed automatically, which is a more realistic use case.
-\begin{enumerate}
-    \item Design requirements
-The Telemetry Devices possesses the following properties and constraints
+In this iteration, we have clearly defined competition rules, and hence stick to simple acceleration/velocity/distance curved. In the future, we plan to implement a more complex navigation system, including a system that can compute the acceleration/speed automatically, which is a more realistic use case. \\
+Our sequence of the run is as follows:
+\begin{itemize}
+    \item Start sequence:
+    \begin{itemize}
+        \item Initialize:
+        \begin{itemize}
+            \item Start Telemetry System
+            \item Start BMS
+            \item Start Cooling System at 0% Pump Rate
+            \item Start Braking System
+            \item Send signal to GUI
+        \end{itemize}
+        \item Prepare:
+        \begin{itemize}
+            \item Start Inverter (KL30)
+            \item Open precharge relay (~ 5s)
+            \item Open HV relay
+            \item Close precharge relay
+            \item Every individual system checks preparations
+        \end{itemize}
+    \end{itemize}
+    \item Run sequence:
+    \begin{itemize}
+        \item Start Cooling System at 50% Pump Rate
+        \item Release Brakes
+        \item Propel inverter to target speed
+        \item Wait for errors or stop signal
+    \end{itemize}
+    \item Brake sequence = Decelerating = Emergency Braking:
+    \begin{itemize}
+        \item Open precharge relay and HV relay and open valves (with same signal)
+        \item Wait until speed is zero
+    \end{itemize}
+    \item Shutdown sequence:
+    \begin{itemize}
+        \item HV relay is opened
+        \item Check:
+        \begin{itemize}
+            \item Speed Zero
+            \item Acceleration next to zero
+            \item Brakes Vented
+            \item Thermal Pump down
+        \end{itemize}
+        \item Inverter shuts down (Turnoff KL30)
+        \item Brakes are shut down
+        \item BMS is shut down
+        \item Cooling system is shut down
+        \item Telemetry system is shut down
+    \end{itemize}
+\end{itemize}
 
+\subsubsection{Design requirements}
+The Telemetry Devices possesses the following properties and constraints:
 \begin{table}[H]
     \centering
     \begin{adjustbox}{width=0.5\textwidth,center}
@@ -322,11 +475,11 @@ To allow the correct transmission of information, the following CAN signals shou
         \hline
         Traction Controller & Target Speed or Torque \\ 
         \hline
-        Battery Pack & Emergency Disconnect \\ 
+        Battery Pack/Raspberry Pi4 & Emergency Disconnect \\ 
         \hline
-        Thermal Management System & Target Temperature \\ 
+        Thermal Management System & Manual Pump Control \\ 
         \hline
-        Brakes Controller & Brake Engage Command \\ 
+        Brakes Controller & Brake Engage/Manual decision Command \\ 
         \hline
     \end{tabular}
     \end{adjustbox}
@@ -355,19 +508,5 @@ To allow the correct transmission of information, the following CAN signals shou
 \label{tab:CAN signals.}
 \end{table}
 
-All the above signals shall be transmitted to the command PC over Wireless communication.
-
-    \item Network Diagrams:
-The overall system can be described with the following chart:
-
-%I dont think we have
-    \item Sub-networks Diagrams (Track, Vehicle and Spectators)
-
-    \item Graphical User Interface (GUI)
-\end{enumerate}
-
-
-% Insert content from the first snippet related to GUI here.
-
-% Continue merging additional sections and sub-sections from the first snippet into the structured format of the second snippet as needed.
+All the above signals shall be transmitted to the command PC over wireless ethernet.
 

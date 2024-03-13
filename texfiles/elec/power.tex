@@ -84,7 +84,7 @@ This gives us the following specifications of our precharge circuit:
 In our simulations, we see that the power through the circuit when switching to the main valve at t = 10s is not higher than 35 Watts, which is perfectly acceptable.
 
 \subsubsection*{Discharge Circuit}
-It is convenient and advantegeous to use a discharge circuit when shutting of the system, tackling the safety hazard of a charged HV DC Link capacitor. We use the same resistor to discharge the capacitor. The peak power through the resistor is \( \frac{504^2}{5000} = 50W \), . The time constant is \( \tau = 5k \Omega \times 0.24 \times 10^{-3} \, \text{F} = 1.2s \). This means that the capacitor is discharged to 1\% of its voltage after 12 seconds. This is acceptable and in accordance with the recommendation of the producing company, Leadrive, who suggests a minimum of 4 seconds.
+It is convenient and advantegeous to use a discharge circuit when shutting of the system, tackling the safety hazard of a charged HV DC Link capacitor. We use the same resistor to discharge the capacitor. The power through the resistor is \( \frac{444V^2}{4700\Omega} = 42W \), even with the maximum power, it is \( \frac{504V^2}{4700\Omega} = 54W \), which the resistor can tolerate according to its data sheet. The time constant is \( \tau = 4.7k \Omega \times 0.24 \times 10^{-3} \, \text{F} = 1.128s \). This means that the capacitor is discharged to 1\% of its voltage after 12 seconds. This is acceptable and in accordance with the recommendation of the producing company, Leadrive, who suggests a minimum of 4 seconds.
 
 \subsubsection{Present Schematics or logic diagrams of the boards.}
 
@@ -106,7 +106,7 @@ by discretizing through Finite-Element-Methods.
 \subsection{Description of subsystem control}
 %Description of subsystem control content here
 \subsubsection{(a) Briefly reference the control systems of the boards, which should be explained in the levitation or propulsion subsection respectively.}
-The precharge and discharge circuits are controlled via the relays. That is possible throough the Raspberry Pi 4 of the telemetry system, which also handles the CAN communication with the inverter of Leadrive.
+The precharge and discharge circuits are controlled via the relays. That is possible throough the Raspberry Pi 4 of the telemetry system, which also handles the CAN communication with the inverter of Leadrive. Furthermore, the HV relays are controlled by the Brakes controller to prevent braking and propelling at the same time. This is possible as we release the brakes by giving a constant power to the valves. At the same time, this will be required to close the relays. 
 
 
 \subsection{Electrical system characteristics}   
@@ -174,7 +174,7 @@ The precharge and discharge circuits are controlled via the relays. That is poss
 All the electric subsystems are located within the pod. \\
 
 The phsyical connection matrix is as following:
-\begin{table}
+\begin{table}[H]
     \centering
     \begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -200,7 +200,7 @@ The phsyical connection matrix is as following:
 
 The data connection matrix is as following. All communication between boards are via CAN, if not specified otherwise:
 
-\begin{table}
+\begin{table}[H]
     \centering
     \begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
@@ -224,15 +224,11 @@ The data connection matrix is as following. All communication between boards are
 
 
 \subsection{Final system description}
-Parts List: \\
-
-
-
-
+    
 \subsubsection*{Precharge and Discharge Circuit}
 We have a precharge circuit and discharge circuit for the DC Link Capacitor during the startup/shutdown phase to deal with the empty/charged capacitor. The design can be seen in \href{fig:HVSchematic}{this figure from above}.
 We utilize the following \href{tab:precharge-relay-specs}{relay}: KT24-1A-40L-THT from Meder electronic and the following \href{tab:precharge-resistor}{resistor} WH50-4K7JI from TT Electronics.
-
+The circuits will be integrated into the battery casing. It shall be avoided that the discharge relay is activated while the HV relay connections are closed.
 \begin{table}[h] 
 \begin{tabular}{|l|c|}
     \toprule
@@ -276,8 +272,6 @@ We utilize the following \href{tab:precharge-relay-specs}{relay}: KT24-1A-40L-TH
     Capacitance & & & 0.5 & pF \\
     Dielectric Strength Coil/Contact & & & 7 & KV DC \\
     Dielectric Strength Contact/Contact & & 1.2 & & KV DC \\
-    Housing Material & & & & \\
-    Approvals & & & yes & \\
     \hline
     \end{tabular}
     \caption{Precharge/Discharge Relay Specifications}
@@ -289,6 +283,7 @@ We utilize the following \href{tab:precharge-relay-specs}{relay}: KT24-1A-40L-TH
 The Insulation Monitoring Device that is mandatory for EHW participants, as well as Formula Students teams, is not built inhouse, after receiving the respective advice from the EHW technical jury. By reaching out to Bender, we received their device (Bender A-ISOMETER ® iso-F1 IR155-3204) through their Formula Students program. This device was approved for the FSE competitions. It is configured for a responding insulation resistance value of 500 kOhm between HV+ and Chassis, and between HV- and Chassis, following the guidance of approx. \(500 \frac{\Omega}{V}\). This takes into account that we might increase the dimension of our system in future designs. The calculation takes place with a DCP factor of 10, meaning that the detection value is calculated out of the mean of 10 measurements, which was suggested by the manufacturer.\\
 Furthermore, we have the IMD set to detect undervoltage at 400V, which helps us do detect serious malfunctioning. This is a redundant feature that is also handled by the BMS. We do not expect our battery pack to ever fall under 400V. \\
 The device is certified according to ISO16750. It will trigger a LED when there is no leak. Furthermore, we will read its outputs, which are a PWM signal, and a status binary output showing the proper working. Both the duty cycle and the frequency of the PWM contain relevant information. Both outputs furthermore require 2.2kOhm pull-down resistors. \\
+The insulation monitoring device will measure directly from the high voltage battery pack output. We assume that the highest risk of leaks is at the output of the battery pack, as it is self-built, and not completely closed. Furthermore, it poses the greatest danger. The inverter might have a leak too. If it is connected to the battery, the IMD will detect the leak as well. If not, the (passive) discharge of the DC link capacitor would slowly reduce the risk. \\
 \begin{table}[H]
     \centering
     \caption{Insulation Monitoring Device Specifications}
@@ -304,17 +299,15 @@ The device is certified according to ISO16750. It will trigger a LED when there 
         Max. operating current \(I_S\) & 150 mA \\
         Max. current \(I_k\) & 2 A \\
         Inrush current & 6 A/2 ms \\
-        HV voltage range (L+/L-) \(U_n\) & AC 0 V…1000 V (peak value) \\
-        & 0…660 V r.m.s. (10 Hz…1 kHz) \\
+        HV voltage range (L+/L-) \(U_n\)
         & DC 0 V…1000 V \\
         Power consumption & < 2 W \\
         Response value hysteresis (DCP) & 25 \% \\
         Response value \(R_{an}\) & 100 kΩ…1 MΩ \\
         Undervoltage detection & 0 V…500 V \\
         Load dump protection (-32xx) & < 60 V \\
-        Load dump protection (-42xx) & < 50 V \\
         Measurement method & Bender-DCP technology \\
-        Factor averaging \(F_{ave}\) (output M) & 1…10 (factory set: 10) \\
+        Factor averaging \(F_{ave}\) (output M) & 10 \\
         ESD protection, contact discharge   & ≤ 10 kV (to terminals)\\
         ESD protection, contact discharge  & ≤ 25 kV (indirectly to environment) \\
         ESD protection (air discharge – handling of the PCB) & ≤ 6 kV \\
@@ -323,15 +316,54 @@ The device is certified according to ISO16750. It will trigger a LED when there 
     \end{adjustbox}
 \end{table}
 
-\subsubsection*{Overcurrent Protection and MSD}
-We buy the manual safety disconnect from Amphenol (Amphenol MSDM6302 + Amphenol MSDF000R). This MSD can be opened without removing any parts of the Fermion as it is accesible by opening a lid of the shell. It can be opened with one hand and is rated for a temperature between -40°C and 70°C. There is a fuse built in the MSD. It is rated for 630A and 690V. The manufacturer recommends that the current be a third of the rated fuse current, which is \(630A/3 = 210A\). \footnote{\href{https://www.amphenol-industrial.de/de/amph/download/viewFile/MTA0}{Product Sheet EXCEL|MATE MSD
+\subsubsection*{Protections}
+\par MSD: We buy the manual safety disconnect from Amphenol (Amphenol MSDM6302 + Amphenol MSDF000R). This MSD can be opened without removing any parts of the Fermion as it is accesible by opening a lid of the shell. It can be opened with one hand - but only manually - and is rated for a temperature between -40°C and 70°C. There is a fuse built in the MSD. It is rated for 630A and 690V. The manufacturer recommends that the current be a third of the rated fuse current, which is \(630A/3 = 210A\). \footnote{\href{https://www.amphenol-industrial.de/de/amph/download/viewFile/MTA0}{Product Sheet EXCEL|MATE MSD
 Manual Service Disconnect}, Amphenol PCD Shenzhen} \\
-
-
+\par Relays: We use one contactor at each side to open the poles of the High Voltage battery pack, controlled both by BMS and braking system. The ratings are well above our power limits.
+\par Reverse polarity connection: The HV-IPT cables and connectors come from automotive standards and are rated for well above our power limits. Also, they are asymmetic, so that a reverse polarity connection is avoided. 
 \subsection{Manufacturing process}
+Parts List: \\
+\begin{table}[ht]
+    \centering
+    \begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{|>{\bfseries}m{2.2cm}|m{2.2cm}|m{1.2cm}|m{1.5cm}|m{2.5cm}|m{1.9cm}|m{1.5cm}|m{1.3cm}|}
+    \hline
+    Component & Company/Product Name & Quantity & Mass [kg] & Size [mm] &  In-house/ outsourced & Nominal Voltage \\
+    \hline
+    Inverter & Leadrive EV0019 & x1 & 9 & \(300 \times 300 \times 100\) &  Bought & 660 \\
+    \hline
+    Cable AC & TE Connectivity & x3 & 0.5 & - & Outsourced & 1000 \\
+    \hline
+    Cable DC & TE Connectivity & x2 & 0.5 & - & Outsourced & 1000 \\
+    \hline
+    Connector AC & TE Connectivity & x6 & 0.5 & - & Outsourced & 1000 \\
+    \hline
+    Connector DC & TE Connectivity & x4 & 0.5 & - & Outsourced & 1000 \\
+    \hline
+    IMD & Bender IR155-3204 & x1 & 0.2 & 140x60x15 & Bought & 1000 \\
+    \hline
+    MSD Plug & Amphenol MSD6302 & x1 & 0.6 & 106x104x100 & Bought & 690 \\
+    \hline
+    MSD Receptacle & Amphenol MSDF000F & x1 & 0.1 & - & Bought & 690 \\
+    \hline
+    Relay & MEDER KT24-1A-40L-THT & x3 & 0.1 & 10x3x13 & Bought & 24/1000 \\
+    \hline
+    Contactor & Gigavac GV200 & x2 & 0.4 & 73x80x56 & Bought & 24/800 \\
+    \hline
+    Pre-/Discharge Resistor & TT Elec. WH50-4K7JI & x2 & 0.04 & 73 x 51 x 17 & Bought & 500\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Parts List - Power Electronics}
+    \label{table:powerelec-partslist}
+\end{table}
+\par High Voltage Interlock:
+\par Cabling: The high voltage cables are all orange, and will be marked differently for high and low sides. We have the following
+
+
 %Manufacturing process content here
-Our PCB Design
 \subsubsection{PCBs}
+Our PCB Design follows the requirements of the printing company, which is either a prototype machine in the FabLab of our university, or JLCPCB, or Würth Elektronik. They are designed in Altium Designer, which checkes automatically for some errors.
 \par Prototyping: Prototype PCBs are fabricated in the FabLab associated with our university. The FabLab provides access to PCB manufacturing equipment and materials, enabling the rapid production of prototypes for initial testing and design validation.
     Once the PCBs are fabricated, they are assembled manually by our team members. 
 \par Production: We ordered our final PCBs from JLCPCB, a leading PCB manufacturing service. In addition to JLCPCB, we also collaborate with Würth Elektronik who produce 

@@ -1,0 +1,29 @@
+\subsubsection{Preliminary Inverter Safety and Testing Plan}
+Based on the datasheet provided by our Traction Inverter supplier (LEADRIVE Technology Germany GmbH), the inverter is a ASIL-C compatible device. Therefore, it already internally consists both hardware and software safety features to protect both the power electronics and the motor such as the Overvoltage, Over Current and Motor temperature. However, in the interest of ensuring electrical safety of both the pod and the team members the following tests will be performed:
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{|p{7.5cm}|p{10cm}|}
+        \hline
+        \textbf{Parameter} & \textbf{Test Method} \\
+        \hline
+        Over Voltage & Set the over voltage threshold in the inverter to a low voltage to see if the over voltage error is thrown and verify the PWM Phase outputs using Oscilloscope to confirm that the inverter is disabled, thereby verifying the functionality.\\
+	\hline
+	Over Current & Set the over current threshold in the inverter to a low current and drive the motor to trigger an over current fault, verify the PWM Phase outputs using Oscilloscope to confirm that the inverter is disabled, thereby verifying the functionality.\\
+	\hline
+	Motor Over Temperature &  Simulate an overtemperature by selecting an appropriate resistance as a substitute to the Thermistor inputs and verify the error status of the inverter thereby verifying the functionality.\\
+	\hline
+	Inverter Over Temperature & Functionality cannot be verified independantly as the thresholds are set by the manufacturer for the internal hardware.\\
+         \hline
+	Emergency Shutdown & Simulate an global error by pulling the global error connector to a low state by connecting to ground, verify the error status via CAN and verify the PWM phase outputs using Oscilloscope to confirm that the inverter is disabled.\\
+	\hline
+    \end{tabular}
+    \end{adjustbox}
+    \label{tab:preliminvtest}
+    \caption{List of Preliminary Inverter Tests}
+    
+\end{table}
+
+\noindent
+The adjustments of the thresolds/calibration data mentioned in the table \ref{tab:preliminvtest} is performed using XCP via CAN based on the manufacturer's recommendations.
